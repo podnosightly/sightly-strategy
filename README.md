@@ -10,11 +10,11 @@ This folder is a "shelf" that holds a Claude plugin so the Sightly team can inst
 
 You give them one thing: the web address of this folder on GitHub. It looks like:
 
-`your-github-username/sightly-strategy`
+`podnosightly/sightly-strategy`
 
 In their Claude, they open plugin settings, paste that address to add the shelf, and click **Install** next to **culture-desk-rfp**. Behind the scenes, their Claude just reads this folder off the internet and installs the plugin. That's the whole thing.
 
-*(If a teammate uses the developer tool "Claude Code" instead of the regular app, the shortcut is to type `/plugin marketplace add your-github-username/sightly-strategy`, then `/plugin` to install. Same result.)*
+*(If a teammate uses the developer tool "Claude Code" instead of the regular app, the shortcut is to type `/plugin marketplace add podnosightly/sightly-strategy`, then `/plugin` to install. Same result.)*
 
 ## How you update it later (the payoff)
 
