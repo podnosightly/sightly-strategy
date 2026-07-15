@@ -1,0 +1,225 @@
+{
+  "$meta": {
+    "name": "Sightly Master Deck — Design Tokens",
+    "source": "Google Slides: 'Copy of Sightly Overview' (51 slides)",
+    "sourceFileId": "1JwOhz8nrMB4CtpGRQKXT_ojm2hYzcDvo2benRIqjPhI",
+    "extractedFrom": "Live slide SVG render (exact fills, gradient stops, font styles) — not eyeballed from pixels",
+    "extractedDate": "2026-06-29",
+    "notes": "Values are ground-truth from the deck source. Where the deck used several near-identical values for what is clearly one intended color, this file lists ONE canonical token and records the duplicates under 'variantsFoundInDeck' so they can be cleaned up. See the companion spec (.md) for the QA cleanup list.",
+    "reconciledWith": "Official Sightly / BrandMentality brand palette, cross-checked 2026-07-10. Canonical values now carry official brand names ('officialName') where one exists; 'official: true' marks a color confirmed by the brand guide; 'driftInDeck' lists values the deck used that differ from the official color. #000000 and #111111 are adopted as the base darks to match the deck's newer, blacker format.",
+    "unitNote": "Font sizes are in points (pt). Colors are hex. Opacity (alpha) is 0–1."
+  },
+
+  "canvas": {
+    "aspectRatio": "16:9",
+    "orientation": "widescreen",
+    "renderReferencePx": { "width": 1280, "height": 720 },
+    "baseTheme": "dark (content sits on a near-black background)"
+  },
+
+  "color": {
+    "_comment": "Semantic tokens. 'value' is the canonical hex to use. 'variantsFoundInDeck' = near-duplicates that exist in the file today and should be consolidated to 'value'.",
+
+    "background": {
+      "base-black":        { "value": "#000000", "officialName": "Base Dark (new)", "canonical": true, "use": "Primary slide background. The deck's new blacker/darker base." },
+      "base-near-black":   { "value": "#111111", "officialName": "Base Dark 2 (new)", "canonical": true, "use": "Most common dark fill — slide bodies and large dark panels. Part of the new darker base.", "variantsFoundInDeck": ["#121212", "#212121", "#222222"] },
+      "sightly-black":     { "value": "#111619", "officialName": "Sightly Black", "official": true, "use": "Official brand near-black (slightly blue-tinted). Deck now runs blacker than this — see _note." },
+      "sightly-black-02":  { "value": "#121212", "officialName": "Sightly Black 02", "official": true },
+      "mentality-black":   { "value": "#282828", "officialName": "Mentality Black", "official": true, "use": "BrandMentality specialty near-black." },
+      "surface-dark":      { "value": "#2C2C2C", "use": "Cards / panels raised slightly off the black background. (Not in official palette.)" },
+      "_note": "OFFICIAL PALETTE UPDATE: the brand guide's darkest values are Sightly Black #111619 / #121212. The deck now uses pure #000000 and #111111 as its base — blacker and flatter. #000000 and #111111 are adopted here as the base darks to match the new format; the official guide should be updated to add them."
+    },
+
+    "text": {
+      "primary":   { "value": "#FFFFFF", "use": "Headlines, key labels, logo on dark." },
+      "body":      { "value": "#EEEEEE", "officialName": "Light Grey", "official": true, "use": "Default body copy on dark. The single most-used color in the deck, and the official Light Grey." },
+      "muted":     { "value": "#595959", "use": "De-emphasized / secondary text on dark. (Not in official palette.)", "variantsFoundInDeck": ["#9E9E9E", "#BFBFBF", "#444746"] },
+      "on-light":  { "value": "#111111", "use": "Text placed on light/white surfaces." }
+    },
+
+    "brand": {
+      "cyan":            { "value": "#00AEEF", "officialName": "Sightly Blue", "official": true, "use": "Primary Sightly brand color. Logo accent, key highlights, primary emphasis, hand-drawn accent marks.", "variantsFoundInDeck": ["#02B0F1", "#01AEEF", "#00ADEF", "#02B1F1"] },
+      "cyan-deep":       { "value": "#1CA0DA", "use": "Deeper cyan used at the saturated end of the hero gradient." },
+      "cyan-steel":      { "value": "#295572", "use": "Muted steel-cyan surface — table headers, data cards." },
+      "cyan-tint":       { "value": "#E9F8FF", "use": "Pale cyan fill for light chips/cells (e.g. moment-category grid). (Not in official palette.)", "variantsFoundInDeck": ["#E5F4FF"] },
+      "cyan-tint-mid":   { "value": "#BFE1FB", "officialName": "Light Blue", "official": true, "use": "Official Light Blue — deeper pale-cyan chip fill.", "driftInDeck": ["#BEE1FB"] }
+    },
+
+    "accent": {
+      "purple":         { "value": "#7B61FF", "officialName": "Mentality Purple", "official": true, "use": "Secondary accent. Emphasis text, big stat numerals, 'Understand Culture' pillar, Appendix section.", "variantsFoundInDeck": ["#8F7EFF", "#4F46E5", "#5A42D2"] },
+      "orange":         { "value": "#FF6F07", "officialName": "Sightly Orange", "official": true, "use": "Tertiary accent. 'Activate Smarter' pillar, energy/alert moments.", "note": "The deck actually uses #EA430F, which is DRIFT from the official Sightly Orange. Use #FF6F07.", "driftInDeck": ["#EA430F"] },
+      "teal":           { "value": "#6FEABC", "officialName": "Mentality Teal", "official": true, "use": "Positive / 'available' highlight. (Previously mislabeled here as 'mint green'.)" },
+      "mentality-green":{ "value": "#36F518", "officialName": "Mentality Green", "official": true, "use": "BrandMentality specialty green — rare use only." },
+      "text-over-teal": { "value": "#065F46", "officialName": "Text Color Over Mentality Teal", "official": true, "use": "Dark green for text placed on Mentality Teal." },
+      "red":            { "value": "#CC0000", "use": "Strong red — YouTube section, negative/decline. (Not in official palette.)", "variantsFoundInDeck": ["#980000", "#FF0000"] },
+      "pink-red":       { "value": "#FF2D55", "use": "Pink-red used for the TikTok section divider. (Not in official palette.)" },
+      "_note": "Deck greens #2CA679 / #6AA84F / #137333 are NOT brand colors (likely chart defaults). Official greens are Mentality Teal #6FEABC and specialty Mentality Green #36F518."
+    },
+
+    "surfaceSteel": {
+      "_comment": "Dark steel-blue family used for cards, table rows and data panels. Most map to official brand names.",
+      "sightly-slate": { "value": "#333D47", "officialName": "Sightly Slate", "official": true, "use": "Primary dark steel surface (cards, table body)." },
+      "dark-grey":     { "value": "#455560", "officialName": "Dark Grey", "official": true, "use": "Steel border / surface." },
+      "dark-blue":     { "value": "#295572", "officialName": "Dark Blue", "official": true, "use": "Steel-cyan surface — table headers, data cards." },
+      "dark-blue-v2":  { "value": "#34546F", "officialName": "Dark Blue v2", "official": true, "use": "Gradient / panel steel-blue." },
+      "steel-600":     { "value": "#36434D", "use": "Steel variant. NOT in official palette — consolidate to Sightly Slate #333D47." },
+      "steel-400":     { "value": "#5D7E95", "use": "Muted steel-blue. NOT in official palette." },
+      "steel-navy":    { "value": "#00354A", "use": "Deep navy in gradient panels. NOT in official palette." }
+    },
+
+    "neutralLight": {
+      "_comment": "Near-white / grey surfaces. Light Grey, Medium Grey and Mentality Grey are official.",
+      "white":         { "value": "#FFFFFF" },
+      "light-grey":    { "value": "#EEEEEE", "officialName": "Light Grey", "official": true, "use": "Official Light Grey (same token as text.body)." },
+      "medium-grey":   { "value": "#D4D9D9", "officialName": "Medium Grey", "official": true, "use": "Official Medium Grey.", "note": "Deck uses #DDDDDD, DRIFT from Medium Grey #D4D9D9.", "driftInDeck": ["#DDDDDD"] },
+      "mentality-grey":{ "value": "#A0A3A3", "officialName": "Mentality Grey", "official": true, "note": "Deck uses #A1A4A4, DRIFT from Mentality Grey #A0A3A3.", "driftInDeck": ["#A1A4A4"] },
+      "gray-50":       { "value": "#F9FAFB", "use": "NOT in official palette.", "variantsFoundInDeck": ["#F9F9F9"] },
+      "gray-100":      { "value": "#F5F5F5", "use": "NOT in official palette.", "variantsFoundInDeck": ["#F8F8F8"] },
+      "slate-400":     { "value": "#94A3B8", "use": "Slate-gray secondary text on light. NOT in official palette.", "variantsFoundInDeck": ["#9CA3AF"] }
+    },
+
+    "system": {
+      "link-blue": { "value": "#1A73E8", "use": "Appears ~51× — this is the default Google Docs hyperlink blue, NOT a Sightly brand color. Flagged for cleanup; restyle links to brand cyan.", "status": "off-brand / auto-applied" }
+    }
+  },
+
+  "gradient": {
+    "_comment": "The deck's signature look is ONE gradient form ('hero sweep') recolored per section, plus soft 'glow' gradients used as highlights. The hero sweep is essentially a soft glow of the section color fading in over black: it starts as a faint warm tint and ramps UP in opacity toward the section color. Direction is vertical (top -> bottom).",
+
+    "hero-sweep": {
+      "form": "linear, vertical (top to bottom)",
+      "structure": "Holds an almost-constant section-color hue while opacity ramps smoothly up from near-zero to the section color. The visible effect is a colored glow fading in over black, not a two-color blend.",
+      "startColor": "#00AEEF",
+      "startOpacity": 0.045,
+      "recolors": {
+        "blue":    { "endColor": "#1CA0DA", "endOpacity": 0.875, "use": "Title / brand slides" },
+        "dark":    { "endColor": "#333D47", "endOpacity": 1.0,   "use": "Neutral dark section base" },
+        "purple":  { "endColor": "#8F7EFF", "endOpacity": 1.0,   "use": "Appendix / strategy sections" },
+        "red":     { "endColor": "#FF0000", "endOpacity": 1.0,   "use": "YouTube section" },
+        "pink":    { "endColor": "#FF2D55", "endOpacity": 1.0,   "use": "TikTok section" },
+        "neutral": { "endColor": "#2C2C2C", "endOpacity": 1.0,   "use": "Generic dark divider" }
+      },
+      "canonicalStops_blue": [
+        { "offset": "0%",    "color": "#00AEEF", "alpha": 0.043 },
+        { "offset": "12.5%", "color": "#449FBF", "alpha": 0.147 },
+        { "offset": "25%",   "color": "#309FCC", "alpha": 0.251 },
+        { "offset": "37.5%", "color": "#28A0D2", "alpha": 0.355 },
+        { "offset": "50%",   "color": "#23A0D5", "alpha": 0.459 },
+        { "offset": "62.5%", "color": "#21A0D7", "alpha": 0.563 },
+        { "offset": "75%",   "color": "#1FA0D8", "alpha": 0.667 },
+        { "offset": "87.5%", "color": "#1DA0D9", "alpha": 0.771 },
+        { "offset": "100%",  "color": "#1CA0DA", "alpha": 0.875 }
+      ],
+      "stopCountInDeck": "17–20 evenly spaced stops; the 9 above are a faithful simplification.",
+      "cssExample": "linear-gradient(180deg, rgba(0,174,239,0.04) 0%, rgba(48,159,204,0.25) 25%, rgba(35,160,213,0.46) 50%, rgba(31,160,216,0.67) 75%, rgba(28,160,218,0.88) 100%)"
+    },
+
+    "glow-purple": {
+      "form": "radial / soft glow",
+      "officialName": "Purple Gradient (BrandMentality)",
+      "structure": "Solid Mentality Purple at center fading to fully transparent.",
+      "stops": [
+        { "offset": "0%",   "color": "#4F46E5", "alpha": 1 },
+        { "offset": "50%",  "color": "#8F7EFF", "alpha": 0.5 },
+        { "offset": "100%", "color": "#FFFFFF", "alpha": 0 }
+      ],
+      "use": "Highlight glow behind featured elements / personas."
+    },
+
+    "glow-green": {
+      "form": "radial / soft glow",
+      "officialName": "Teal Gradient (BrandMentality)",
+      "structure": "Mentality Teal at center fading to transparent.",
+      "stops": [
+        { "offset": "0%",   "color": "#6FEABC", "alpha": 1 },
+        { "offset": "100%", "color": "#FFFFFF", "alpha": 0 }
+      ],
+      "use": "Positive / 'available' highlight glow."
+    },
+
+    "blue-gradient": {
+      "form": "radial / soft glow",
+      "officialName": "Blue Gradient (Sightly)",
+      "structure": "Sightly Blue at center fading to transparent — the cyan orb / swoosh accent.",
+      "stops": [
+        { "offset": "0%",   "color": "#00AEEF", "alpha": 1 },
+        { "offset": "100%", "color": "#FFFFFF", "alpha": 0 }
+      ],
+      "use": "Accent orbs, swooshes, and highlights."
+    },
+
+    "panel-light": {
+      "form": "linear, subtle",
+      "officialName": "Grey Gradient (Sightly)",
+      "structure": "Light Grey fading to white / transparent.",
+      "stops": [
+        { "offset": "0%",   "color": "#EEEEEE", "alpha": 1 },
+        { "offset": "100%", "color": "#FFFFFF", "alpha": 0 }
+      ],
+      "use": "Soft light panel / divider on light backgrounds."
+    },
+
+    "mentality-tri-gradient": {
+      "form": "two stacked shapes",
+      "officialName": "Mentality Tri-Gradient",
+      "structure": "The signature BrandMentality mark gradient — two overlapping / stacked shapes blending Mentality Purple #7B61FF into Mentality Teal #6FEABC, with a Sightly Blue #00AEEF transition.",
+      "colors": ["#7B61FF", "#00AEEF", "#6FEABC"],
+      "use": "BrandMentality identity gradient; hero orbs on Brand Mentality product slides."
+    },
+
+    "_officialNamedGradients": "Per the brand guide: SIGHTLY = Grey Gradient (#EEEEEE→transparent), Blue Gradient (#00AEEF→transparent), plus the deck's hero sweep and its section recolors. BRANDMENTALITY = Mentality Tri-Gradient (two stacked shapes), Purple Gradient, and Teal Gradient."
+  },
+
+  "typography": {
+    "fontFamily": {
+      "primary": "Inter",
+      "note": "Inter is the system font (>3,900 text runs). Open Sans (~170 runs), Roboto and Arial also appear — these are inconsistencies / pasted content and should be normalized to Inter. 'Google Sans' counts are UI chrome, not slide content.",
+      "fallback": "Inter, 'Helvetica Neue', Arial, sans-serif"
+    },
+    "weights": {
+      "light":     300,
+      "regular":   400,
+      "medium":    500,
+      "bold":      700,
+      "black":     900,
+      "_alsoSeen": [600, 800],
+      "primaryPair": "Regular (400) for body, Bold (700) for headings/emphasis, Light (300) for some large/intro text.",
+      "displayWeight": "Inter Black (900) is the named display weight for hero stats and big headline numbers — used heavily (e.g. 244 runs in the Media Kit)."
+    },
+    "scale_pt": {
+      "_comment": "Intentional type levels (pt). The deck also contains many 4–10pt runs that come from embedded product screenshots and dense tables — those are content, not the type system.",
+      "display-xl":   { "size": 75, "use": "Giant hero stat numerals (also seen 88 / 111 on feature slides).", "weight": 900 },
+      "display":      { "size": 60, "use": "Large stat / impact numbers.", "weight": 900 },
+      "title":        { "size": 45, "use": "Slide titles (e.g. 'Who is Sightly?').", "weight": 700, "altSizes": [46, 41] },
+      "heading":      { "size": 33, "use": "Section / card group headings.", "weight": 700, "altSizes": [37, 30] },
+      "subhead":      { "size": 23, "use": "Sub-headlines, pillar labels, intro lines.", "weight": 700, "altSizes": [27, 24, 21] },
+      "lead":         { "size": 19, "use": "Lead / intro paragraph.", "weight": 400, "altSizes": [18] },
+      "body":         { "size": 15, "use": "Default body copy.", "weight": 400, "altSizes": [16, 14] },
+      "body-small":   { "size": 13, "use": "Dense body / card copy.", "weight": 400, "altSizes": [12] },
+      "caption":      { "size": 11, "use": "Captions, labels.", "weight": 400, "altSizes": [10] },
+      "fine":         { "size": 9,  "use": "Fine print, footnotes, source lines.", "weight": 400, "altSizes": [8] }
+    },
+    "emphasisInText": {
+      "rule": "Within body copy, key phrases are colored inline rather than only bolded.",
+      "colors": ["brand.cyan (#00AEEF)", "accent.purple (#7B61FF)"]
+    }
+  },
+
+  "shape": {
+    "cornerRadius": { "card": "medium-large rounded corners (~12–16px at 1280px width)", "chip": "fully/large rounded", "panel": "large rounded" },
+    "cardBorder": { "style": "1px solid, colored to match the section accent (cyan / purple / orange)", "fill": "dark steel or near-black" },
+    "organicBlob": { "desc": "Large soft-edged organic black 'blob' shapes layered over the hero sweep to create the signature title/divider look. Built with black->black->white feathered gradients used as masks.", "maskGradientsInDeck": 36 }
+  },
+
+  "components": {
+    "titleSlide":      "Black background + hero-sweep (blue) + organic black blobs + centered white Sightly logo.",
+    "sectionDivider":  "Black background + hero-sweep recolored to the section (purple/red/pink/etc.) + organic blob; short title lower-left in white; small Sightly mark.",
+    "statCalloutBar":  "Dark rounded panel; row of very large purple-gradient numerals (75pt+) with hand-drawn cyan accent marks (circle/underline/arrow/check); small light label under each metric.",
+    "comparisonColumns": "3 columns with italic colored headers in the cyan/purple/orange triad; each column = stacked rounded cards with a 1px accent-colored border, dark fill, bold white title + #EEEEEE body.",
+    "momentGrid":      "Cyan header pill + grid of pale-cyan (#E9F8FF) rounded chips with cyan text; the featured chip is solid brand cyan.",
+    "dualColumnBullet":"Left: bulleted body copy with colored emphasis. Right: supporting visual, grid, or screenshot.",
+    "dataTable":       "Steel-blue (#295572 / #333D47) header and row fills, light text; used on metric and pricing slides.",
+    "caseStudy":       "Embedded product screenshots / photos on black with caption text.",
+    "footerMark":      "Small white Sightly logo, lower-left."
+  }
+}
