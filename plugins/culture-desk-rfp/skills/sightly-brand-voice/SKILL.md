@@ -44,11 +44,18 @@ structure, `sightly-visual-brand` for design tokens, and the copy rules below fo
 
 ## Gate 1 — the self-audit that actually catches things
 
-Ordinary self-assessment fails on your own writing. Run these four checks explicitly and report
+Ordinary self-assessment fails on your own writing. Run these five checks explicitly and report
 what each one found.
 
 **Favourite-line first.** Audit the lines you are most pleased with before anything else. Any line
 that reads as quotable, aphoristic, slogan-shaped or "punchy" is a prime suspect.
+
+**Restate in plain words.** The ban on aphorisms is useless without a test, so here it is. Take any
+line that reads as quotable and restate it as a flat factual sentence. If the restatement says
+nothing a reader could act on or disagree with, the line was decoration and it comes out. Reversal
+and mirror constructions are the highest-yield suspects — "owns its category, and that has stopped
+protecting it", "we're not selling reach, we're selling compression" — because the symmetry is doing
+the work an argument should be doing. Ask what the sentence asserts, not whether it reads well.
 
 **No exemption for inherited copy.** Lines carried from an approved deck, a template, a shell or a
 colleague’s draft get audited exactly like new copy. Approved layout does not mean approved cadence.
@@ -109,6 +116,9 @@ Approved: "Brand Suitability" (never "brand safety" externally), "Social Intelli
 Culture". YouTube = "badged YouTube Measurement Program (YTMP) partner"; TikTok = "badged TikTok
 Marketing Partner, Media Buying Technology category".
 
+The creative deliverable is a **"sizzle"** (a sizzle reel). "Scissors" is a speech-to-text error that
+has circulated in planning guidance and is not a term.
+
 Prohibited: "Brand Safety" and "Social Listening" (external); competitor names in client-facing
 materials; white-label partner names (Infegy, Transmit Live, the news-API provider, the Spotify audio
 partner name). IRIS.TV and Spectrum Reach are the only externally nameable partners, and always
@@ -121,9 +131,33 @@ reference file (e.g. 2X search intent / 3X purchase intent — MAGNA study; 1 of
 partners; 2B daily data assessments). Never invent a proof point or a number that is not in the
 reference.
 
-## Data trust
+**No proof point is drop-in ready.** Check each against the project's do-not-use register before
+use. Some have been retired, some are disputed, and one carries no named source at all: the "+20%
+engagement lift" in the reference file has no study attached and should not ship until it does. Two
+further figures are under dispute and are not to be used pending resolution — the CA Lottery "Set
+for Life" brand lift, and the YTMP data-volume multiple, which appears in circulation as both 400x
+and 4,000x. Where another skill or a template hands you a proof point as pre-cleared, this list
+overrides it.
 
-Client-provided data, Brand Mentality® outputs, research-team pulls and anything the strategist
-confirms are verified. Do not audit them, rate their reliability, or hedge them. Caveats appear only
-where the source document itself states a limitation, and are attributed to that document rather
-than presented as your own doubt.
+## Data trust — provenance is given, sufficiency is tested once
+
+Two different things hide under the word "verified", and separating them is what makes this work.
+
+**Provenance is given.** Client-provided data, Brand Mentality® outputs, research-team pulls and
+anything the strategist confirms are real and correctly measured. Never audit whether the number
+exists, never rate the source's reliability, never hedge it in output. Caveats appear only where the
+source document itself states a limitation, and are attributed to that document rather than
+presented as your own doubt.
+
+**Sufficiency is tested once, on intake.** Before anything is built on a figure, name the claim it
+will be used to support and check whether it supports that claim. A number can be real, correctly
+measured, and still not carry the sentence written on top of it. Sufficiency is a property of the
+claim, not of the data, so confirming the data does not settle it.
+
+**Then the verdict is durable.** Whatever survives intake is true for the rest of the project. Do
+not re-open it, re-hedge it, or raise it again mid-build. Whatever fails goes to the do-not-use
+register and does not come back, however useful it looks later. Skepticism belongs at the boundary;
+certainty after it.
+
+Re-litigating confirmed data mid-build is a failure, not diligence. So is carrying a figure into
+copy because nobody asked what it was being made to prove.
