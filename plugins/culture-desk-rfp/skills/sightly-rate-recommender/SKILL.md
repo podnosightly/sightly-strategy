@@ -26,7 +26,7 @@ Both live in the **Rate Cards and Benchmarks** folder (folder ID `19XFLRFr-CIWDM
 
 **`rate_library_full_v3`** — the raw line items behind the summary. Columns: `source_file, agency, brand, category, channel, campaign_type, format, objective, rate_type, currency, net_rate, billing_rate, flight, notes, geo, flight_year`. Load this only when you need a tighter filter than the summary offers (e.g., "just this agency in this category since 2024") or the strategist wants to see the actual deals behind a benchmark.
 
-Rates in the library are **`billing_rate`** — gross/billing side. The media plan builder handles net-vs-gross and the 30% margin separately, so label everything this skill proposes as a billing rate and don't try to net it down here.
+Rates in the library are **`billing_rate`** — gross/billing side, which is the side the plan is built on. Label everything this skill proposes as a billing rate and **do not net it down.** There is no 30% margin conversion anywhere in the plan-building path; the plan sums to the client's budget and the rate is the lever.
 
 ## Inputs you need before you start
 
@@ -92,7 +92,7 @@ Also write a short markdown summary, `<client>-confirmed-rates-summary.md`: whic
 
 With the rate card confirmed, offer to hand off:
 
-> "Rates are locked. Want me to run `sightly-media-plan-builder` with these pre-loaded as the strategist-provided rates? I'll still need budget (net or gross), flight dates, geos, and the persona split for it."
+> "Rates are locked. Want me to run `sightly-media-plan-builder` with these pre-loaded as the strategist-provided rates? I'll still need budget, flight dates, geos, and the persona split for it."
 
 Do not auto-invoke the builder — the strategist owns when the plan gets built, and the builder needs inputs this skill doesn't collect (budget, personas, allocation). If they say go, pass the confirmed rates through as the CPU for each matching NETWORK/PLACEMENT line so the builder never has to assume a rate.
 
@@ -105,4 +105,4 @@ Every number this skill shows must trace to the rate library. If a tactic has no
 - It does not update the rate library — that's the monthly `sightly-rate-library-monthly-update`.
 - It does not build the plan CSV, allocate budget across personas, or run feasibility checks — that's `sightly-media-plan-builder`, which this skill feeds.
 - It does not put benchmark distributions, ranges, or sample counts into client-facing materials — only the single confirmed rate travels downstream.
-- It does not net down billing rates or apply margin — the builder owns that.
+- It does not net down billing rates or apply margin, and neither does the builder. Nothing in the plan-building path nets anything down.
