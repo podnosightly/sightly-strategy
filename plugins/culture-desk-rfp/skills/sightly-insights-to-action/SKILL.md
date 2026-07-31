@@ -23,6 +23,8 @@ Turn verified Brand Mentality® data and a client brief into a proposal strategy
 
 Confirm you have both inputs. If either is missing, ask for it rather than guessing.
 
+**If the Brand Mentality data does not exist yet, do not just ask for it — go build the request.** That is Step 3a, `sightly-mentality-prompt-builder`, which routes the question to the right executor and writes either an agent prompt or a listening-platform query spec. This skill is Step 3b and cannot start until the pull returns. Improvising a read from press coverage or general knowledge while waiting is the exact failure both skills exist to prevent.
+
 1. **Verified Brand Mentality® data** — Brand Profile output, Anticipation Board moments and narratives, social/competitive intelligence, targeting exports, or similar. The strategist should confirm the data is verified. Once confirmed, its provenance is settled — do not re-audit it or hedge it later. What that confirmation does *not* settle is sufficiency: whether a given figure supports the specific claim you build on it. Test that once, here, before Phase 1 proceeds, and record anything that fails.
 2. **The client brief** — at minimum: client, brand(s), objective, budget, geos, flight dates, target audience, platform preferences or constraints, and any hard client asks (for example "self-service only", "anti-news", named partnerships).
 
