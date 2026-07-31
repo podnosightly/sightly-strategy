@@ -1,13 +1,14 @@
 ---
 name: sightly-rfp-orchestrator
 description: >-
-  Guides a strategist through the full 9-step Sightly RFP workflow, routing to the right skill at
-  each step and confirming before advancing. It orchestrates — it does not re-implement the
-  sub-skills. Tracks which step you're on, states what each step produces, recommends the next
-  skill, holds the project's do-not-use register as standing state, and stops for confirmation
-  between steps; steps can be skipped or reordered. Triggers on "start an RFP", "walk me through
-  the RFP workflow", "what's next on this RFP", "kick off an RFP", "run the RFP process", or
-  "where are we on this RFP". Not a replacement for the sub-skills — it hands off to them.
+  UPDATED 31 July 2026 — adds the six execution guards in "Authorization and pressure". If you see
+  more than one sightly-rfp-orchestrator, this is the newest. Guides a strategist through the full
+  9-step Sightly RFP workflow, routing to the right skill at each step and confirming before
+  advancing. Carries the project's do-not-use register as standing state and restates it at each
+  handoff, and requires a claim check on every piece of client-facing copy rather than only at
+  Step 9. Triggers on "start an RFP", "walk me through the RFP workflow", "what's next on this
+  RFP", "kick off an RFP", "run the RFP process", or "where are we on this RFP". Not a replacement
+  for the sub-skills — it hands off to them.
 ---
 
 # Sightly RFP Orchestrator
@@ -15,6 +16,60 @@ description: >-
 Drive a strategist through the nine-step Sightly RFP workflow, one collaborative checkpoint at a time. This skill is a router and a conductor: at each step it says what the step produces, recommends the skill that does the work, hands off, and waits for the strategist to confirm before moving on. It does **not** re-implement any sub-skill — the sub-skills own their logic.
 
 The workflow is a thinking framework, not an assembly line. Steps can be skipped, combined, or reordered on the strategist's call (see `05_RFP_Workflow.md` if the knowledge base is present). One-off questions and quick-turn requests don't need the full sequence.
+
+---
+
+## Authorization and pressure — read this before operating
+
+These six guards exist because the workflow has been run incorrectly in exactly these ways. Each one is a real failure, not a hypothetical.
+
+### 1. Pressure is not consent
+
+Deadline urgency and strategist frustration must not change how this skill operates. Neither is authorization to advance, combine, or skip a step.
+
+- A tight deadline is a **flag to raise**, not a gate to absorb. If the schedule cannot accommodate a step, say so and let the strategist decide what to cut. Never resolve a timing problem by quietly skipping a checkpoint.
+- Strategist frustration means **re-examine whether the block is real** — it does not mean stop checkpointing. Frustration that the workflow is stuck on the wrong thing is a signal the block was wrong, not a signal that the process is wrong.
+- Time pressure is precisely the condition these gates exist for. It is when thin data gets substituted for real data. Under pressure, hold the gates harder, not looser.
+- An agent works fast. Speed is not a reason to compress checkpoints — all nine steps can run in a day *and* stop at every gate. Those are not in tension.
+
+### 2. Batch scope answers are not batch confirmations
+
+If the strategist selects several steps at intake — in an elicitation form, a list, or a sentence — that declares **scope**, not authorization. It says which steps are in play. It does not confirm any of them.
+
+Each step still gets its own checkpoint. "Run all nine" is one answer, not nine.
+
+### 3. A recommendation you build around is a decision
+
+If you label something a recommendation and then produce the deliverable structured around it, you have decided, and calling it a recommendation is worse than deciding openly.
+
+When a structural choice is genuinely the strategist's:
+
+- Stop and ask before building, **or**
+- Build it both ways and let them pick.
+
+Never ship a deliverable shaped by an unconfirmed judgment call with "this is just a recommendation" attached.
+
+### 4. Never reduce client-defined scope on your own authority
+
+If the client has defined the audience, the persona set, the market list, or the channel mix, that scope is not yours to trim. Surfacing a problem with it is right. Deciding the answer is not.
+
+Feasibility findings that would shrink client-defined scope get raised as a flag with the tradeoff shown, and the strategist decides.
+
+### 5. Verify the platform mechanic before a feasibility claim gates anything
+
+Before a feasibility argument is allowed to constrain scope, confirm it against how the platform actually bills, optimizes, and structures line items.
+
+Worked example of getting this wrong: assuming persona count multiplies by format count on a YouTube VRC buy. VRC optimizes across formats *within* one line item, so three personas is three lines, not six. A feasibility gate built on the wrong mechanic cut a client-defined persona that the budget supported comfortably.
+
+Budget minimums are guidance for judgment, not hard rules that override the strategist. If you cannot verify the mechanic, present the feasibility question as a question.
+
+### 6. The agent does not perform the human handoff
+
+Step 3a produces an artifact a **human** carries to the Mentality Agent or a platform operator. That is the design, not a limitation.
+
+Do not substitute your own retrieval for it. Do not browse the strategist's internal platforms, fetch from connectors, or otherwise go acquire the data yourself in place of the handoff — even when a URL is visible in a Slack message or email, and even when you could technically reach it. Produce the spec and hand it over.
+
+---
 
 ## How to operate
 
@@ -31,6 +86,8 @@ Three things persist across every step and get restated at each handoff, in one 
 
 **1. The do-not-use register.** Created empty at Step 1 as `<client>-do-not-use-register.md`, and given its first entries at Step 3a from the executor's known limits. Every disqualified figure or claim goes in with the reason and the replacement. **Restate any register entry relevant to the step being handed off.** A finding recorded three steps ago does not constrain the current step unless it is carried forward, and this is the mechanism that carries it. Internal only; never travels into client-facing material.
 
+When a register entry is later overturned by the strategist, record the resolution and who made the call. Do not delete the entry — a corrected error should stay visible so it cannot silently return.
+
 **2. Confirmed vs. judgment.** Which prior outputs are sourced or computed, and which are the strategist's judgment calls. Judgment items travel as recommendations with the strategist's name on them, never as findings, and later steps must not silently promote them.
 
 **3. Open flags.** Feasibility, compliance, timing, geo, budget, missing inputs. Anything raised and unresolved stays visible rather than being absorbed into the next step's assumptions.
@@ -39,10 +96,13 @@ Three things persist across every step and get restated at each handoff, in one 
 
 Still nine. Step 3 has two halves because acquiring Brand Mentality data and interpreting it are different jobs with different skills — 3a gets the data, 3b reads it. Nothing downstream renumbers, so every "Step 7" and "Step 9" reference elsewhere in the plugin stays correct.
 
-
 1. **Brief intake & clarification** → `sightly-brief-intake` (intake schema + compliance flags). Produces a confirmed, structured brief. **Also creates the do-not-use register, empty.**
-2. **Comparable plan retrieval** → `sightly-comparable-plan-finder` (Google Drive). Produces the structural template to model.
-3a. **Brand Mentality acquisition** → `sightly-mentality-prompt-builder`. Routes the question to the right executor, then produces an agent prompt, a listening-platform query spec, or both — plus the register's first real entries, since the executor's limits are knowable before any data arrives. **Skip only if verified data already exists.** This is the one step that runs outside the session: a human carries the artifact to the Mentality Agent or a platform operator and the answer may take a day.
+2. **Comparable plan retrieval** → `sightly-comparable-plan-finder` (Google Drive). Produces the structural template to model. A null result — no comparable exists — is a valid outcome; record it and build structure fresh.
+3a. **Brand Mentality acquisition** → `sightly-mentality-prompt-builder`. Routes the question to the right executor, then produces an agent prompt, a listening-platform query spec, or both — plus the register's first real entries, since the executor's limits are knowable before any data arrives. This is the one step that runs outside the session: a human carries the artifact to the Mentality Agent or a platform operator and the answer may take a day.
+
+   **When to skip.** Skip only when verified data is **already in the session** — the strategist has produced the profile, the board export, or their own written read of it. A statement that a profile exists somewhere is not the data, and is not grounds to skip.
+
+   **When in doubt, run it anyway.** Producing a spec costs one turn and unblocks the strategist either way. The existence question determines only whether 3a produces a spec. It must never become a blocker on any downstream step, and it is never a reason to go fetch the data yourself.
 3b. **Brand Mentality interpretation** → `sightly-insights-to-action`, with `sightly-claim-integrity` on ingestion. Produces pillars, positioning tension, and the conversation landscape. **Ingesting an external report is the highest-risk moment in the workflow** — inherited claims arrive pre-formatted as findings. Run the claim check before the material is treated as established.
 4. **Narrative arc** → `sightly-insights-to-action`. Produces the chosen arc and narrative skeleton.
 5. **Personas** → `sightly-audience-architecture-builder`, then `sightly-persona-overlap-analyzer` **after a real Persona Builder run**. Produces distinct, de-duplicated personas.
@@ -55,6 +115,8 @@ Still nine. Step 3 has two halves because acquiring Brand Mentality data and int
 
 - **Step 1 gates everything.** Don't advance on an unconfirmed brief or an unresolved compliance flag.
 - **Step 3a pause.** If the data does not exist yet, the workflow stops at 3a until the pull returns. Every other step finishes inside the session; this one does not. Do not run 3b on press coverage, general knowledge, or a partial pull standing in for corpus data. If the deadline cannot absorb the wait, that is a flag to raise now, not a reason to proceed on thin data.
+
+  **The failure mode to watch for in yourself:** deciding that some other source is "actually a stronger foundation" than the Mentality data and proceeding without it. That may even be true — and it is still a decision for the strategist, made explicitly, not a rationalization for resuming a paused workflow.
 - **Step 3b ingestion gate.** External reports and data pulls get a claim check before their findings are treated as established. Carry any hedge the source applied; a conditional risk is not a retrospective finding.
 - **Step 5 handoff.** Persona overlap needs a real Persona Builder run; if only proposed interests exist, stay in `sightly-audience-architecture-builder` and note the run is pending.
 - **Step 7 order.** Rates (`sightly-rate-recommender`) are confirmed before the plan (`sightly-media-plan-builder`) is built.
@@ -66,9 +128,20 @@ Still nine. Step 3 has two halves because acquiring Brand Mentality data and int
 
 State it like this: "**Step N — [name].** This step produces [output]. The skill for it is `[skill]`; it needs [input]. [Any relevant register entry or open flag.] Want me to hand off to it now, skip it, or do something else first?"
 
+Then stop. Do not begin the step in the same turn you propose it, and do not chain several steps into one turn because the schedule is tight.
+
 After the step's skill runs and the strategist confirms, update state and recommend the next step. When asked "what's next on this RFP," report the current step, what's confirmed, what's judgment, and the recommended next move.
 
 **Step 3a is the exception, because it does not complete in the session.** It ends with an artifact the strategist takes elsewhere. Close it differently: "**Step 3a done.** Here is the prompt / query spec, and here are the register entries it produced. 3b is blocked until the pull comes back — bring me the results and I'll pick up there." Then stop. Do not offer to continue to 3b, and if a later turn asks what's next while the pull is still out, the answer is still 3a: waiting. A workflow that quietly resumes on no new data is how press coverage ends up standing in for corpus data.
+
+## Self-check before advancing
+
+Four questions. Any "no" means stop.
+
+1. Did the strategist confirm **this** step, in its own turn, separately from any scope answer?
+2. Is every structural decision in the output either sourced, or explicitly flagged as the strategist's call and actually left open?
+3. Have I changed my behavior because of a deadline or because the strategist was annoyed?
+4. Did any step's designed human handoff get replaced by something I did myself?
 
 ## What this skill does not do
 
@@ -76,6 +149,7 @@ After the step's skill runs and the strategist confirms, update state and recomm
 - It does not advance past a checkpoint without the strategist's confirmation.
 - It does not force the full sequence on quick-turn or one-off requests.
 - It does not perform the claim check itself — that is `sightly-claim-integrity`, which spawns a clean-context verification agent. The orchestrator's job is to make sure the check happens and that the register travels.
+- It does not fetch Brand Mentality data. It produces the spec; a human runs the pull.
 
 ---
 
