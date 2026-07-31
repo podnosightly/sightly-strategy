@@ -110,8 +110,9 @@ Culture". YouTube = "badged YouTube Measurement Program (YTMP) partner"; TikTok 
 Marketing Partner, Media Buying Technology category".
 
 Prohibited: "Brand Safety" and "Social Listening" (external); competitor names in client-facing
-materials; white-label partner names (Infegy, the news-API provider, the Spotify audio partner
-name).
+materials; white-label partner names (Infegy, Transmit Live, the news-API provider, the Spotify audio
+partner name). IRIS.TV and Spectrum Reach are the only externally nameable partners, and always
+lead with Sightly.
 
 ## Messaging pillars and proof points
 

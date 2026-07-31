@@ -10,9 +10,19 @@ This is the feasibility gate the media plan builder consults in Step A. Embedded
 | **Tier 2** | Lower-funnel per ad format (conversion, dynamic ad formats, influencer) or standard account. |
 | **Tier 3** | Hyper-localized, 4+ personas (multiple cut minimums). |
 
-## Margin note
+## Which column to use
 
-Gross minimums assume **30% margin**. All figures are **minimums per month**.
+**Compare against the Gross columns.** The client's budget is a gross/billing figure and the plan
+sums to it, so the gross minimums are the live gate. The NET columns are retained for reference
+only — never convert a client budget to net in order to run this check.
+
+Gross minimums were originally derived assuming a 30% margin. That derivation is history, not an
+instruction: do not apply a 30% conversion to anything. All figures are **minimums per month**.
+
+**Open item — the gross figures are approximate.** They assume roughly 30% margin, but real plans
+have run nearer 15%. When a platform lands close to its floor, say that the floor itself is
+approximate rather than reporting a clean pass or fail. Whether this table should carry a margin
+range is an unresolved decision, not something to settle inside a build.
 
 ## Platform minimums
 
