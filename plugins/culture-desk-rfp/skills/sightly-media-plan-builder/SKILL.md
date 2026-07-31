@@ -82,7 +82,7 @@ Before touching any line items, validate that the budget can fund what the brief
 - **Tier 2**: lower-funnel, conversion, dynamic, or influencer; or a standard account.
 - **Tier 3**: hyper-localized, 4+ personas (multiple cut minimums).
 
-For each platform in scope, compute the **monthly net budget** that will land on that platform and compare it to the minimum for its tier. If it falls below the minimum, you have three choices, in order of preference:
+For each platform in scope, compute the **monthly budget** that will land on that platform, at the budget as given, and compare it to the **Gross** minimum for its tier. Do not convert anything to net. If it falls below the minimum, you have three choices, in order of preference:
 
 1. Recommend dropping the platform from the plan and reallocating to platforms that can be funded properly.
 2. Recommend a higher total budget if the brief leaves room to negotiate.
