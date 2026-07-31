@@ -9,7 +9,7 @@ Each slide below lists its fixed structural elements: the constant lines that ar
 ## Slide 1 — Intelligence Intro
 
 **Fixed opener (reproduce, fill brackets):**
-"Before a dollar is spent, Brand Mentality(R) is already reading the [category] conversation across social, news, and video. Here is what it is surfacing for [client], what it tells us, and the strategy it points to."
+"Before a dollar is spent, Brand Mentality® is already reading the [category] conversation across social, news, and video. Here is what it is surfacing for [client], what it tells us, and the strategy it points to."
 
 **Fixed header:** "What this unlocks for [client]:"
 
@@ -30,7 +30,7 @@ Each slide below lists its fixed structural elements: the constant lines that ar
 "Intent peaks around [what]. Across this flight, that means [the named moments inside the window]."
 
 **Fixed supply line (reproduce, adjust the platform clause to the buy):**
-"Sightly supplies the Brand Profile, Anticipation Boards, and SmartLists(TM). Only a one-click push to your [DSP] seat."
+"Sightly supplies the Brand Profile, Anticipation Boards, and SmartLists™. Only a one-click push to your [DSP] seat."
 For a badged-platform buy, replace the platform clause with the correct badged-partner phrasing (for example, the badged TikTok Marketing Partner, Media Buying Technology category line, or the badged YouTube Measurement Program (YTMP) partner line).
 
 ---
@@ -53,7 +53,7 @@ For a badged-platform buy, replace the platform clause with the correct badged-p
 - Format:
 
 **Fixed build bullets (labels verbatim, content scoped to the confirmed channels only):**
-- "Contextual and Audience Segment Build:" then the segment build from the Brand Mentality(R) profile.
+- "Contextual and Audience Segment Build:" then the segment build from the Brand Mentality® profile.
 - "Activation:" then the activation description for the confirmed channels.
 
 ---
@@ -61,7 +61,7 @@ For a badged-platform buy, replace the platform clause with the correct badged-p
 ## Slide 4 — Personas
 
 **Fixed intro line (reproduce):**
-"Brand Mentality(R) validated the audiences from the brief and made them actionable. Inside each one is the tension they sit with, the moment that flips them, and where to reach them."
+"Brand Mentality® validated the audiences from the brief and made them actionable. Inside each one is the tension they sit with, the moment that flips them, and where to reach them."
 
 **Fixed per-persona structure:** the persona name on its own line, then prose built on three beats in this order: the tension the persona sits with, the moment that flips them, and where to reach them. One block per confirmed persona. Keep persona names and roles identical to the locked strategy.
 
@@ -72,7 +72,7 @@ For a badged-platform buy, replace the platform clause with the correct badged-p
 **Fixed opener shape (fill brackets):**
 "[Personas] are not only [the obvious official content]."
 
-**Flexes:** the full content universe Brand Mentality(R) activates across for this client, named specifically: the content types, formats, communities, and conversation moments the strategy identified, resolving to when both audiences decide it is finally time to tune in. This is where the breadth of the SmartLists(TM) build shows.
+**Flexes:** the full content universe Brand Mentality® activates across for this client, named specifically: the content types, formats, communities, and conversation moments the strategy identified, resolving to when both audiences decide it is finally time to tune in. This is where the breadth of the SmartLists™ build shows.
 
 ---
 
