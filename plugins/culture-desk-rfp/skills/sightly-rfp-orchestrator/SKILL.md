@@ -29,7 +29,7 @@ The workflow is a thinking framework, not an assembly line. Steps can be skipped
 
 Three things persist across every step and get restated at each handoff, in one or two lines. Not a recap of the whole workflow — just the constraints the next step could violate.
 
-**1. The do-not-use register.** Created empty at Step 1 as `<client>-do-not-use-register.md`. Every disqualified figure or claim goes in with the reason and the replacement. **Restate any register entry relevant to the step being handed off.** A finding recorded three steps ago does not constrain the current step unless it is carried forward, and this is the mechanism that carries it. Internal only; never travels into client-facing material.
+**1. The do-not-use register.** Created empty at Step 1 as `<client>-do-not-use-register.md`, and given its first entries at Step 3a from the executor's known limits. Every disqualified figure or claim goes in with the reason and the replacement. **Restate any register entry relevant to the step being handed off.** A finding recorded three steps ago does not constrain the current step unless it is carried forward, and this is the mechanism that carries it. Internal only; never travels into client-facing material.
 
 **2. Confirmed vs. judgment.** Which prior outputs are sourced or computed, and which are the strategist's judgment calls. Judgment items travel as recommendations with the strategist's name on them, never as findings, and later steps must not silently promote them.
 
@@ -37,9 +37,13 @@ Three things persist across every step and get restated at each handoff, in one 
 
 ## The 9 steps and their skills
 
+Still nine. Step 3 has two halves because acquiring Brand Mentality data and interpreting it are different jobs with different skills — 3a gets the data, 3b reads it. Nothing downstream renumbers, so every "Step 7" and "Step 9" reference elsewhere in the plugin stays correct.
+
+
 1. **Brief intake & clarification** → `sightly-brief-intake` (intake schema + compliance flags). Produces a confirmed, structured brief. **Also creates the do-not-use register, empty.**
 2. **Comparable plan retrieval** → `sightly-comparable-plan-finder` (Google Drive). Produces the structural template to model.
-3. **Brand Mentality discovery** → `sightly-insights-to-action`, with `sightly-claim-integrity` on ingestion. Produces pillars, positioning tension, and the conversation landscape. **Ingesting an external report is the highest-risk moment in the workflow** — inherited claims arrive pre-formatted as findings. Run the claim check before the material is treated as established.
+3a. **Brand Mentality acquisition** → `sightly-mentality-prompt-builder`. Routes the question to the right executor, then produces an agent prompt, a listening-platform query spec, or both — plus the register's first real entries, since the executor's limits are knowable before any data arrives. **Skip only if verified data already exists.** This is the one step that runs outside the session: a human carries the artifact to the Mentality Agent or a platform operator and the answer may take a day.
+3b. **Brand Mentality interpretation** → `sightly-insights-to-action`, with `sightly-claim-integrity` on ingestion. Produces pillars, positioning tension, and the conversation landscape. **Ingesting an external report is the highest-risk moment in the workflow** — inherited claims arrive pre-formatted as findings. Run the claim check before the material is treated as established.
 4. **Narrative arc** → `sightly-insights-to-action`. Produces the chosen arc and narrative skeleton.
 5. **Personas** → `sightly-audience-architecture-builder`, then `sightly-persona-overlap-analyzer` **after a real Persona Builder run**. Produces distinct, de-duplicated personas.
 6. **Platform & format roles** → `sightly-platform-role-planner`. Produces the justified platform lineup that feeds the plan.
@@ -50,7 +54,8 @@ Three things persist across every step and get restated at each handoff, in one 
 ## Stop-gaps (do not skip silently)
 
 - **Step 1 gates everything.** Don't advance on an unconfirmed brief or an unresolved compliance flag.
-- **Step 3 ingestion gate.** External reports and data pulls get a claim check before their findings are treated as established. Carry any hedge the source applied; a conditional risk is not a retrospective finding.
+- **Step 3a pause.** If the data does not exist yet, the workflow stops at 3a until the pull returns. Every other step finishes inside the session; this one does not. Do not run 3b on press coverage, general knowledge, or a partial pull standing in for corpus data. If the deadline cannot absorb the wait, that is a flag to raise now, not a reason to proceed on thin data.
+- **Step 3b ingestion gate.** External reports and data pulls get a claim check before their findings are treated as established. Carry any hedge the source applied; a conditional risk is not a retrospective finding.
 - **Step 5 handoff.** Persona overlap needs a real Persona Builder run; if only proposed interests exist, stay in `sightly-audience-architecture-builder` and note the run is pending.
 - **Step 7 order.** Rates (`sightly-rate-recommender`) are confirmed before the plan (`sightly-media-plan-builder`) is built.
 - **Client-facing copy gate — applies at every step, not only Step 9.** No interpretive claim ships in client-facing copy without a verification pass via `sightly-claim-integrity`. Copy gets written on many turns; the 5-gate QA fires once. A claim entering at Step 3 is structural in five places by Step 9, and removing it then means rework, which creates pressure to keep it. Check at the point of writing.
@@ -62,6 +67,8 @@ Three things persist across every step and get restated at each handoff, in one 
 State it like this: "**Step N — [name].** This step produces [output]. The skill for it is `[skill]`; it needs [input]. [Any relevant register entry or open flag.] Want me to hand off to it now, skip it, or do something else first?"
 
 After the step's skill runs and the strategist confirms, update state and recommend the next step. When asked "what's next on this RFP," report the current step, what's confirmed, what's judgment, and the recommended next move.
+
+**Step 3a is the exception, because it does not complete in the session.** It ends with an artifact the strategist takes elsewhere. Close it differently: "**Step 3a done.** Here is the prompt / query spec, and here are the register entries it produced. 3b is blocked until the pull comes back — bring me the results and I'll pick up there." Then stop. Do not offer to continue to 3b, and if a later turn asks what's next while the pull is still out, the answer is still 3a: waiting. A workflow that quietly resumes on no new data is how press coverage ends up standing in for corpus data.
 
 ## What this skill does not do
 

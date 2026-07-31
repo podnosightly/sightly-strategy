@@ -41,6 +41,7 @@ If the Culture Desk knowledge base is present, read `01_RFP_Intake_Schema.md` (t
 - **Creative assets available** — what exists vs. what needs producing.
 - **Decision timeline** — due date for the response and the client's decision date.
 - **Request type** — RFP, request for strategy, request for targeting, pricing, insights, new-biz.
+- **Brand Mentality data status** — does verified Brand Mentality or social intelligence data already exist for this brand, or does it have to be pulled? If it has to be pulled, Step 3a (`sightly-mentality-prompt-builder`) is on the critical path, and it is the only step that waits on someone outside the session.
 
 ## Regulated categories (flag immediately)
 
@@ -53,7 +54,7 @@ Produce a single intake summary the strategist can confirm at a glance:
 1. **Intake summary table** — every schema field with its extracted value, or `— missing`.
 2. **Clarifying questions** — the targeted questions that unlock the build (2–3 if the brief is thin; the full gap list if it's solid), each tied to the field it fills.
 3. **Compliance flag** — regulated category status: clear, or flagged with the category and next step.
-4. **Recommendation** — proceed, or hold for answers / compliance review.
+4. **Recommendation** — proceed, or hold for answers / compliance review. If Brand Mentality data does not exist yet, say so here and name Step 3a as a scheduling dependency rather than a later detail — a pull that waits on a human or a platform operator can cost a day, and it sits upstream of every interpretive step in the workflow.
 
 End by asking the strategist to confirm the intake (and answer the clarifying questions) before Step 2. Do not advance the workflow on an unconfirmed or incomplete brief.
 
