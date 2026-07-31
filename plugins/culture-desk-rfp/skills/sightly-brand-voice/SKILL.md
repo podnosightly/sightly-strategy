@@ -17,6 +17,21 @@ Enforce Sightly's written brand voice on every piece of copy this skill touches.
 codification lives in `references/brand-voice-full.md` — load it before writing or auditing, and
 treat it as the source of truth. This body is the operational summary.
 
+## Gate 0 — read before writing
+
+Before producing any copy, state which reference material you have read in this session, by
+filename. If that list is empty, stop and read it. Do not draft first and consult the reference
+after the user pushes back.
+
+For long-form prose written in a named person’s voice — emails to sellers or clients, internal
+notes, written strategy summaries — the voice exemplars in `references/voice-exemplars.md` are
+required reading, not optional context. Approximating someone’s voice from a description of it
+produces copy they will reject.
+
+**The exemplars do not apply to slide copy.** They are long-form emails, and their register will
+produce sprawl inside a slide’s word budget. Slide copy follows the deck-builder skills for
+structure, `sightly-visual-brand` for design tokens, and the copy rules below for the sentences.
+
 ## When writing new copy
 
 1. Read `references/brand-voice-full.md` first.
@@ -24,8 +39,27 @@ treat it as the source of truth. This body is the operational summary.
    consultative not transactional; an experienced media strategist speaking, never a generic ad-tech
    or vague-AI voice.
 3. Apply the copy rules below to every sentence.
-4. Before returning, self-audit against the banned-patterns list and terminology rules. Fix
-   violations silently — do not hand back copy that breaks a rule.
+4. Run the Gate 1 self-audit below before returning anything. Fix violations silently — do not
+   hand back copy that breaks a rule.
+
+## Gate 1 — the self-audit that actually catches things
+
+Ordinary self-assessment fails on your own writing. Run these four checks explicitly and report
+what each one found.
+
+**Favourite-line first.** Audit the lines you are most pleased with before anything else. Any line
+that reads as quotable, aphoristic, slogan-shaped or "punchy" is a prime suspect.
+
+**No exemption for inherited copy.** Lines carried from an approved deck, a template, a shell or a
+colleague’s draft get audited exactly like new copy. Approved layout does not mean approved cadence.
+
+**Sweep the class, not the instance.** When you find a violation, search the whole artifact for
+every other instance of that pattern before reporting. State the count: "found and fixed 6 em
+dashes", not "fixed the em dashes". A fix reported without a count is incomplete.
+
+**Invented-term check.** Scan for any term you coined during the session and then used as though it
+were established vocabulary. If a reader outside the conversation could not define it, it is jargon.
+Replace it with the plain description.
 
 ## When auditing / cleaning up existing copy
 
@@ -33,7 +67,7 @@ Go line by line. For each issue, name the rule it breaks and give the fix. Group
 severity (terminology/compliance first, then copy-rule violations, then polish). Flag any prohibited
 term, banned pattern, or unsupported claim explicitly.
 
-## The 10 copy rules (enforced)
+## The 12 copy rules (enforced)
 
 1. First sentence of every paragraph carries the idea. No warm-up, no restating the brief.
 2. One job per sentence. Two ideas joined by a dash or "but" → split or cut the weaker half.
@@ -47,6 +81,13 @@ term, banned pattern, or unsupported claim explicitly.
    Never open cold into a bullet list.
 9. Three line-wraps maximum per paragraph.
 10. No orphan words (a single word alone on a line).
+11. Every number carries its denominator and its consequence in the same visual unit. "23.7%" is
+    an orphan. "23.7% of everyone engaging with the title arrived through slate coverage, so the
+    buy puts it in front of fans already paying for the platform" is a claim. A stat without both
+    does not ship.
+12. No bare label fragments as section beats. "The opportunity." followed by nothing is the
+    bold-label bullet executed in prose. A named opener is fine when a full sentence immediately
+    does the work.
 
 ## Hard "never use" list (abbreviated — full list in reference)
 
@@ -56,6 +97,10 @@ cliches ("move the needle", "at the end of the day"); hollow intensifiers ("game
 "transformative", "crucial", "vital"); triplet patterns; "It's not X, it's Y"; "Not just X but Y";
 throat-clearing openers ("In today's landscape", "It's no secret", "When it comes to"); bold-label
 bullets; "we believe" / "we feel" (say "here is what this does and why").
+
+Also never: comma-stacked fragment cadence ("One file, two plans, built to split"); status-field
+phrasing in prose ("Numbers are directional until we hear budget"); aphorisms that compress a real
+point into something quotable and meaningless.
 
 ## Terminology (must enforce)
 
@@ -74,3 +119,10 @@ Anchor claims to the six messaging pillars and back them with the citable proof 
 reference file (e.g. 2X search intent / 3X purchase intent — MAGNA study; 1 of 7 global YTMP
 partners; 2B daily data assessments). Never invent a proof point or a number that is not in the
 reference.
+
+## Data trust
+
+Client-provided data, Brand Mentality® outputs, research-team pulls and anything the strategist
+confirms are verified. Do not audit them, rate their reliability, or hedge them. Caveats appear only
+where the source document itself states a limitation, and are attributed to that document rather
+than presented as your own doubt.
