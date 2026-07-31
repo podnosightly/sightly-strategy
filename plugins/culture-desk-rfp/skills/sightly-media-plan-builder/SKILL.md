@@ -114,7 +114,9 @@ For each persona, build the line items. Apply these rules:
 
 **Every format needs a role.** Within a platform, do not run three video formats on the same audience unless each one is doing something distinct.
 
-**No fantasy planning.** Real rates, real inventory, real targeting. If you do not have a confirmed rate for a placement, ask the strategist before building the line. Do not assume CPMs/CPVs/CPCs.
+**No fantasy planning.** Real rates, real inventory, real targeting. If you do not have a confirmed rate for a placement, either ask the strategist or take a baseline from comparable prior plans via `sightly-rate-recommender` and label it as a baseline. What you never do is invent a number.
+
+**The same rule covers audience size.** Any addressable-audience or reach figure that did not come from a platform, a Persona Builder run, or the strategist is your own estimate. Label it as an estimate at the point of use, and state any budget recommendation resting on it as contingent on that figure. A budget recommendation quietly built on a self-generated audience number is fantasy planning with a media plan wrapped around it.
 
 **One line per placement-persona pair**, unless the strategy calls for splitting by flight phase or geo. Consolidate device to "All Devices" on a single line unless the strategy specifically requires device-level breakouts (NOTES this rationale).
 
@@ -246,8 +248,8 @@ See `references/worked_example.md` for two full worked examples covering the mat
 
 - It does not write deck copy. That's Step 9.
 - It does not develop personas from scratch. That's Step 5 — this skill consumes the personas.
-- It does not pull rates from prior campaigns. The Rate Policy is explicit: rates are always provided by the strategist for the current build.
-- It does not run QA. That's `12_QA_Framework.md`. If asked to QA after building, run the 5-gate framework separately.
+- It does not decide rates on its own. Every rate arrives confirmed by the strategist, whether they set it from scratch or accepted a baseline drawn from comparable prior plans by `sightly-rate-recommender`.
+- It does not run the full five-gate QA. But the plan's numbers do not wait for Step 9: run `sightly-qa-gate` Gates 2 and 3 over the finished plan before handing it on, and resolve any failure here rather than passing it downstream.
 
 ---
 

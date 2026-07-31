@@ -113,6 +113,8 @@ Use these constructions when they fit naturally. Do not overuse.
 - Infegy (social data partner, white-labeled, do not name externally)
 - News API provider (white-labeled, do not name externally)
 - Spotify audio partner name (white-labeled, do not name externally)
+- Transmit Live (white-labeled, do not name externally). IRIS.TV and Spectrum Reach are the only
+  externally nameable partners, and always lead with Sightly.
 
 ---
 
@@ -129,8 +131,13 @@ Use these constructions when they fit naturally. Do not overuse.
 
 ## Proof Points (Sales-Ready, Citable)
 
+**Check each against the project's do-not-use register before use.** Nothing on this list is
+drop-in ready. Two items below are marked as unusable pending resolution and must not ship.
+
 - **2X search intent, 3X purchase intent** — MAGNA x Sightly Media Trials Research Study
-- **+20% engagement lift** when advertisers align with real-time relevant content (SmartLists)
+- **+20% engagement lift** when advertisers align with real-time relevant content (SmartLists).
+  **DO NOT USE.** No study is named for this figure anywhere in the knowledge base. It needs a
+  source attached before it goes in front of a client.
 - **99% VCR** for financial brand CTV case study
 - **+234% branded search lift** for luxury fragrance campaign (YouTube)
 - **+117% site traffic / +73% time-on-site** for Moen (SmartLists self-service)
@@ -143,7 +150,10 @@ Use these constructions when they fit naturally. Do not overuse.
 - **Badged TikTok Marketing Partner** (Media Buying Technology category)
 - **2B data assessments per day; 18M YouTube videos in database**
 - **Data refresh every 5 minutes**
-- **YouTube API access: 200M calls vs. 50K standard (4,000x advantage)**
+- **YouTube API access: 200M calls vs. 50K standard (4,000x advantage)**. **Multiple disputed —
+  do not cite it.** The advantage circulates as both 400x and 4,000x. 200M ÷ 50K is 4,000, so if
+  400x is the correct figure then one of the call counts is also wrong. Until that is resolved,
+  describe the access advantage qualitatively and leave the multiple out.
 
 ---
 

@@ -7,9 +7,11 @@ description: "Turns the monthly Sightly rate library into confirmed, strategist-
 
 ## What this skill does and why it exists
 
-Sightly maintains a rate library — historical CPM/CPV/CPC/CPCV rates pulled from real client media plans, refreshed monthly by `sightly-rate-library-monthly-update` and stored in Google Drive. The media plan builder deliberately refuses to guess rates: its Rate Policy says rates are *always provided by the strategist, never assumed*. That leaves a gap. Somebody has to turn the library's evidence into a confirmed number for each line before the plan gets built.
+Sightly maintains a rate library — historical CPM/CPV/CPC/CPCV rates pulled from real client media plans, refreshed monthly by `sightly-rate-library-monthly-update` and stored in Google Drive. The media plan builder deliberately refuses to guess rates: no rate reaches a plan without a strategist confirming it. That leaves a gap. Somebody has to turn the library's evidence into a confirmed number for each line before the plan gets built.
 
-This skill fills that gap. It is a decision partner, not an autopilot. It lays the historical evidence in front of the strategist — for each tactic, every relevant benchmark cut with its sample size — and lets the strategist decide. The output is a confirmed rate card that becomes the strategist-provided rates the media plan builder consumes. The Rate Policy stays intact, because by the time the builder runs, nothing is assumed — every rate was confirmed by a human against real data.
+**Prior plans are a valid baseline.** The Rate Policy as originally written read as a ban on using historical rates at all. In practice it is not. A rate drawn from comparable prior plans is legitimate evidence and a legitimate starting point. Where no single comparable fits — a new category, an unusual geo, a format with two thin samples — blend the closest cuts, and say which cuts you blended and why. What the policy forbids is an *unconfirmed* rate reaching a plan, not a *historical* one.
+
+This skill fills that gap. It is a decision partner, not an autopilot. It lays the historical evidence in front of the strategist — for each tactic, every relevant benchmark cut with its sample size — and lets the strategist decide. The output is a confirmed rate card that becomes the strategist-provided rates the media plan builder consumes. The Rate Policy stays intact, because by the time the builder runs nothing is assumed — every rate was confirmed by a human against real data, including the ones baselined from prior plans.
 
 The evidence here is Sightly's own historical deal data, so this is legitimate internal decision support. But the raw benchmark numbers are internal. Never let a distribution, a range, or a sample count land in a client-facing document — only the single confirmed rate belongs in a plan.
 
@@ -44,7 +46,7 @@ If the strategist hasn't named the tactics yet, that's fine — help them assemb
 
 ### Step 1 — Load the library
 
-Load `summary_by_tactic_and_agency` from Drive and parse the four sections. Note the freshness (the monthly update runs on the 1st) so you can tell the strategist how current the data is. If the file can't be found, stop and say so — do not fall back to invented or externally-researched numbers, which would violate the Rate Policy and the anti-fabrication discipline.
+Load `summary_by_tactic_and_agency` from Drive and parse the four sections. Note the freshness (the monthly update runs on the 1st) so you can tell the strategist how current the data is. If the file can't be found, stop and say so — do not fall back to invented or externally-researched numbers. Historical Sightly plans are a valid baseline; numbers from outside Sightly's own data are not, and inventing one violates the anti-fabrication discipline.
 
 ### Step 2 — Walk tactic by tactic (show all cuts, no default)
 
