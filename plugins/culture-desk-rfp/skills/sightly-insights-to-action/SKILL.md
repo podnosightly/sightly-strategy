@@ -23,7 +23,7 @@ Turn verified Brand Mentality® data and a client brief into a proposal strategy
 
 Confirm you have both inputs. If either is missing, ask for it rather than guessing.
 
-1. **Verified Brand Mentality® data** — Brand Profile output, Anticipation Board moments and narratives, social/competitive intelligence, targeting exports, or similar. The strategist should confirm the data is verified; the whole method assumes the numbers are real.
+1. **Verified Brand Mentality® data** — Brand Profile output, Anticipation Board moments and narratives, social/competitive intelligence, targeting exports, or similar. The strategist should confirm the data is verified. Once confirmed, its provenance is settled — do not re-audit it or hedge it later. What that confirmation does *not* settle is sufficiency: whether a given figure supports the specific claim you build on it. Test that once, here, before Phase 1 proceeds, and record anything that fails.
 2. **The client brief** — at minimum: client, brand(s), objective, budget, geos, flight dates, target audience, platform preferences or constraints, and any hard client asks (for example "self-service only", "anti-news", named partnerships).
 
 If the Culture Desk knowledge base is available in the project, read these first; they govern everything downstream: `19_Insights_to_Action.md`, `04_Hard_Rules.md`, `02_Sightly_Brand_Voice.md`, `07_Persona_Standards.md`. The rules below are the working summary, but the knowledge base is the source of truth if it is present.
@@ -38,9 +38,13 @@ If the Culture Desk knowledge base is available in the project, read these first
 
 **Hard Rules terminology for anything client-facing.** "Brand Suitability" not "brand safety"; "Social Intelligence" not "social listening"; Brand Mentality®, Anticipation Software®, SmartLists™ with their marks. Never name competitors in client-facing work (use "other offerings in the market"). Never name white-label partners. Never use "programmatic" in Spotify materials. IRIS.TV and Spectrum Reach can be named, always leading with Sightly. Transmit Live is a white-label partner and is never named client-facing. Never frame Sightly's size as a limitation, and never position Sightly as insight-only — it is always activation-led. If no BAV equity data is provided, frame the tension in plain strategic terms; do not invent a BAV quadrant.
 
-**Stop at every phase gate.** Present the phase, then wait for the strategist to confirm or adjust before moving on. This is a partnership, not an assembly line. Do not race ahead to the next phase or to slides.
+**Stop at every phase gate, and label what you are asking them to approve.** Present the phase, then wait for the strategist to confirm or adjust before moving on. This is a partnership, not an assembly line. Do not race ahead to the next phase or to slides.
+
+Every gate carries a short **claim ledger** so the strategist knows what kind of statement each one is before signing off. Mark every material claim as **sourced** (traceable to the data or the brief, with the source named), **computed** (derived from sourced inputs, with the derivation stated), or **judgment** (your strategic read, defensible but not evidenced). Sign-off is on epistemic status, not on prose. If a phase rests mostly on judgment, say so plainly rather than letting a confident register imply evidence that is not there.
 
 **Flag before you deliver.** Budget feasibility, geo spread, flight timing, platform minimums, scope mismatches (for example a brief that names two brands but supplies data for one), and strategic flaws all get surfaced up front, not buried at the end.
+
+**Re-read your own findings before you start persuading.** The moment this skill switches from analysing data to writing narrative, stop and re-read every flag, caveat and exclusion the session has already produced, then restate them. Findings do not survive a change of register on their own: a confound written into an audit file twenty minutes ago will not be remembered by the paragraph that wants the number. Before any narrative or slide copy is written, state the project's do-not-use list explicitly, read from the file if one exists rather than from memory of the conversation.
 
 ---
 
@@ -54,7 +58,7 @@ Objective: turn raw data into a structured intelligence picture. Stop after this
 
 **1C. Audience clusters.** Identify the *fewest* clusters that cover the entire breadth of the target audience while minimizing overlap between them (usually 2-4). Build them on behavior and motivation, not demographics. A reliable test: if a candidate cluster is defined by an *occasion* (game day) or an *intent state* (on-the-go, hungry now) rather than an intrinsic motivation, it probably is not a standalone cluster. It overlaps everything and should be treated as a cross-cutting layer applied across the real clusters, not counted as one. For each cluster, note what they care about, how they consume content, and which content signals would reach them.
 
-Present 1A, 1B, and 1C, then stop for review.
+Present 1A, 1B, and 1C with the claim ledger, then stop for review.
 
 ---
 
@@ -68,7 +72,7 @@ Objective: turn insights into targetable real-time moments and personas. Anchor 
 
 **2C. Signals.** For each persona, define always-on signals (persistent targeting) and reactive signals (triggered when conversation hits roughly 2-3x baseline). Anchor the reactive triggers to the actual spike types the data shows, not invented events.
 
-**Then name the argument.** State the single strongest strategic argument this data supports, plus two runners-up, each with its tradeoff. The strongest argument is usually the one that resolves the client's hardest explicit asks using the capability competitors cannot replicate (the real-time Anticipation Board → SmartLists → Activation Manager chain). Present it plainly. Stop for review.
+**Then name the argument.** State the single strongest strategic argument this data supports, plus two runners-up, each with its tradeoff. The strongest argument is usually the one that resolves the client's hardest explicit asks using the capability competitors cannot replicate (the real-time Anticipation Board → SmartLists → Activation Manager chain). Present it plainly, with the claim ledger. Stop for review.
 
 ---
 
@@ -82,7 +86,7 @@ Write three things:
 2. **Channel-by-channel rationale** — one tight rationale per channel. **Weight channels by where the data actually shows engagement,** not by template habit. If the strongest signal is short-form social content, do not center the plan on live/CTV inventory just because a past deck did. Let each platform's role follow the data.
 3. **Why Sightly** — positioning specific to this client, built on the activation chain, and on the self-service tooling if the brief is self-service. Tie it back to the client's hardest asks.
 
-Flag any gaps honestly: missing case studies (do not invent them), rates to confirm, and the appendix list of data points that did not earn a place in the narrative. Stop for review.
+Flag any gaps honestly: missing case studies (do not invent them), rates to confirm, and the appendix list of data points that did not earn a place in the narrative. Stop for review with the claim ledger.
 
 ---
 
