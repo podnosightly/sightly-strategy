@@ -219,7 +219,7 @@ Plain prose. No bullet points unless there are genuinely three or more parallel 
 
 Before building anything, confirm you have:
 
-- **Total budget** — and **explicitly ask whether it is net or gross** on every build. If gross, apply Sightly's 30% margin to derive net before running feasibility checks against `references/budget_minimums.md` (or `09_Budget_Minimums.md` if available in the working directory) (those minimums are stated in both net and gross). The CSV BUDGET column is always in net dollars unless the strategist requests otherwise; if so, note this in the summary.
+- **Total budget** — **the plan always sums to the budget the client gave. Never net it down.** There is no 30% margin conversion in this skill. The rate is the lever, not the total: if feasibility fails, change the rate or the platform mix, never the budget. Run feasibility checks against the **Gross** columns of `references/budget_minimums.md` (or `09_Budget_Minimums.md` if available in the working directory), at the budget as stated. The single exception is Google Brand Lift Study thresholds, which are quoted in net and compared in net. The CSV BUDGET column carries the client's dollars.
 - **Flight dates** (start and end, ISO format preferred).
 - **Geos / markets**.
 - **Personas** — at least one. With names and brief descriptors.
