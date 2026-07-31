@@ -1,3 +1,10 @@
+> **Correction note, read first.** The feasibility checks in these examples compare against the
+> **NET** minimums, which is no longer how the gate runs. Feasibility now compares the budget as
+> given against the **Gross** columns of `budget_minimums.md`, and nothing is converted to net. The
+> method these examples demonstrate still holds; the specific minimum figures quoted in them do not.
+> They have deliberately not been re-derived here, because changing them changes the worked
+> conclusions, and that needs a strategist rather than a find-and-replace.
+
 # Worked Examples — Sightly Media Plan Builder
 
 Two end-to-end examples showing how the math, allocation, and CSV structure come together. Read these before building if you've never built a Sightly plan before.
