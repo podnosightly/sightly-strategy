@@ -7,28 +7,30 @@ description: "Turns the monthly Sightly rate library into confirmed, strategist-
 
 ## What this skill does and why it exists
 
-Sightly maintains a rate library — historical CPM/CPV/CPC/CPCV rates pulled from real client media plans, refreshed monthly by `sightly-rate-library-monthly-update` and stored in Google Drive. The media plan builder deliberately refuses to guess rates: no rate reaches a plan without a strategist confirming it. That leaves a gap. Somebody has to turn the library's evidence into a confirmed number for each line before the plan gets built.
+Sightly maintains a rate library — historical CPM/CPV/CPC/CPCV rates pulled from real client media plans, refreshed monthly by `sightly-rate-library-monthly-update` and stored in Google Drive. The media plan builder deliberately refuses to guess rates: its Rate Policy says rates are *always provided by the strategist, never assumed*. That leaves a gap. Somebody has to turn the library's evidence into a confirmed number for each line before the plan gets built.
 
-**Prior plans are a valid baseline.** The Rate Policy as originally written read as a ban on using historical rates at all. In practice it is not. A rate drawn from comparable prior plans is legitimate evidence and a legitimate starting point. Where no single comparable fits — a new category, an unusual geo, a format with two thin samples — blend the closest cuts, and say which cuts you blended and why. What the policy forbids is an *unconfirmed* rate reaching a plan, not a *historical* one.
-
-This skill fills that gap. It is a decision partner, not an autopilot. It lays the historical evidence in front of the strategist — for each tactic, every relevant benchmark cut with its sample size — and lets the strategist decide. The output is a confirmed rate card that becomes the strategist-provided rates the media plan builder consumes. The Rate Policy stays intact, because by the time the builder runs nothing is assumed — every rate was confirmed by a human against real data, including the ones baselined from prior plans.
+This skill fills that gap. It is a decision partner, not an autopilot. It lays the historical evidence in front of the strategist — for each tactic, every relevant benchmark cut with its sample size — and lets the strategist decide. The output is a confirmed rate card that becomes the strategist-provided rates the media plan builder consumes. The Rate Policy stays intact, because by the time the builder runs, nothing is assumed — every rate was confirmed by a human against real data.
 
 The evidence here is Sightly's own historical deal data, so this is legitimate internal decision support. But the raw benchmark numbers are internal. Never let a distribution, a range, or a sample count land in a client-facing document — only the single confirmed rate belongs in a plan.
 
-## The two source files (both in Drive)
+## The two source files (both Google Sheets in Drive)
 
-Both live in the **Rate Cards and Benchmarks** folder (folder ID `19XFLRFr-CIWDMMp-0ZuA1id-VEjEZHBB`).
+Both live in the **Rate Cards and Benchmarks** folder (folder ID `19XFLRFr-CIWDMMp-0ZuA1id-VEjEZHBB`). Both are **Google Sheets** (export/download as CSV to parse). Match titles exactly — the folder also contains dated pipeline files (`rate_library_additions_YYYY-MM.csv`, run-status and worklist files) that are history, not sources.
 
-**`summary_by_tactic_and_agency`** — the primary source. Pre-aggregated benchmarks with `count, median, mean, min, max, currency, rate_types` for each group, in four sections:
+**`summary_by_tactic_and_agency`** — the primary source. A single table (one tab) where every row carries a leading **`section`** column identifying which grouping it belongs to. Columns, in order: `section, channel, campaign_type, format, rate_type, agency_norm, geo, category, count, median, mean, min, max, currency, rate_types`. Group columns not used by a row's section are blank. Filter by `section`:
 
 - `BY_TACTIC` — grouped by channel, campaign_type, format, rate_type. The overall market rate for a tactic.
-- `BY_AGENCY_TACTIC` — grouped by agency_norm, channel, campaign_type, format, rate_type. What a specific agency has historically paid.
+- `BY_AGENCY_TACTIC` — adds agency_norm. What a specific agency has historically paid.
 - `BY_GEO_CHANNEL` — grouped by geo, channel, rate_type. Regional pricing.
-- `BY_CATEGORY_TACTIC` — grouped by category, channel, campaign_type, format, rate_type. What an advertiser vertical has historically paid.
+- `BY_CATEGORY_TACTIC` — adds category. What an advertiser vertical has historically paid.
 
-**`rate_library_full_v3`** — the raw line items behind the summary. Columns: `source_file, agency, brand, category, channel, campaign_type, format, objective, rate_type, currency, net_rate, billing_rate, flight, notes, geo, flight_year`. Load this only when you need a tighter filter than the summary offers (e.g., "just this agency in this category since 2024") or the strategist wants to see the actual deals behind a benchmark.
+`count` is sample size; `currency` is the group's most common currency; `rate_types` is the slash-joined set present in the group. The summary covers flight_year ≥ 2024 only.
 
-Rates in the library are **`billing_rate`** — gross/billing side, which is the side the plan is built on. Label everything this skill proposes as a billing rate and **do not net it down.** There is no 30% margin conversion anywhere in the plan-building path; the plan sums to the client's budget and the rate is the lever.
+**`rate_library_full_v3`** — the raw line items behind the summary, on the tab named **`data`**. Columns (17, in order): `source_file, agency, brand, category, channel, campaign_type, format, objective, rate_type, currency, net_rate, billing_rate, flight, notes, format_original, geo, flight_year`. Load this only when you need a tighter filter than the summary offers (e.g., "just this agency in this category since 2024") or the strategist wants to see the actual deals behind a benchmark.
+
+**Freshness check:** the monthly update runs on the 1st. If the folder contains a `rate_library_additions_YYYY-MM.csv` dated *after* the master Sheet's last-modified time, that month's rows may not be merged yet — load it too and include its rows when computing cuts (or at minimum tell the strategist the benchmarks predate it).
+
+Rates in the library are **`billing_rate`** — gross/billing side. The media plan builder handles net-vs-gross and the 30% margin separately, so label everything this skill proposes as a billing rate and don't try to net it down here.
 
 ## Inputs you need before you start
 
@@ -46,7 +48,7 @@ If the strategist hasn't named the tactics yet, that's fine — help them assemb
 
 ### Step 1 — Load the library
 
-Load `summary_by_tactic_and_agency` from Drive and parse the four sections. Note the freshness (the monthly update runs on the 1st) so you can tell the strategist how current the data is. If the file can't be found, stop and say so — do not fall back to invented or externally-researched numbers. Historical Sightly plans are a valid baseline; numbers from outside Sightly's own data are not, and inventing one violates the anti-fabrication discipline.
+Load `summary_by_tactic_and_agency` from Drive and split it into the four sections by the `section` column. Note the freshness (the monthly update runs on the 1st; check for an unmerged additions CSV as described above) so you can tell the strategist how current the data is. If the file can't be found, stop and say so — do not fall back to invented or externally-researched numbers, which would violate the Rate Policy and the anti-fabrication discipline.
 
 ### Step 2 — Walk tactic by tactic (show all cuts, no default)
 
@@ -70,8 +72,9 @@ Guidance to surface alongside the numbers, because it changes how much to trust 
 - **The agency and category cuts are usually the most decision-relevant** — they reflect what this buyer / this vertical actually pays — but only when the sample supports it. When agency n is thin, the category or overall cut is the better anchor.
 - **Flag divergence.** If the cuts disagree a lot (agency well below overall, say), name it and offer the likely reason (this agency negotiates hard, or these were older/smaller deals) so the strategist decides with eyes open.
 - **Currency and geo consistency.** Never show a GBP benchmark next to a USD decision. Filter first.
+- **Auction vs. reservation.** Reservation products (YouTube Select lineups, Pause Ads, Shorts First Position, YouTube TV, live-sports PiP) price on a different curve than auction tactics and their rates are subject to change at booking — don't blend the two when anchoring.
 
-Record the strategist's decision for the line: the confirmed rate, which cut (if any) it was anchored to, and a one-line reason if they overrode the evidence. If they want to see the raw deals behind a number, pull the matching rows from `rate_library_full_v3` and show `source_file, agency, brand, billing_rate, flight, geo`.
+Record the strategist's decision for the line: the confirmed rate, which cut (if any) it was anchored to, and a one-line reason if they overrode the evidence. If they want to see the raw deals behind a number, pull the matching rows from `rate_library_full_v3` and show `source_file, agency, brand, billing_rate, flight, geo` — and screen out rows whose `notes` flag a suspect rate before presenting them as evidence.
 
 If the strategist asks for a recommendation on a specific line, give one with reasoning ("I'd anchor to the category median of $0.045 — the agency cut is only n=4 and skews old"), but keep the decision theirs.
 
@@ -94,7 +97,7 @@ Also write a short markdown summary, `<client>-confirmed-rates-summary.md`: whic
 
 With the rate card confirmed, offer to hand off:
 
-> "Rates are locked. Want me to run `sightly-media-plan-builder` with these pre-loaded as the strategist-provided rates? I'll still need budget, flight dates, geos, and the persona split for it."
+> "Rates are locked. Want me to run `sightly-media-plan-builder` with these pre-loaded as the strategist-provided rates? I'll still need budget (net or gross), flight dates, geos, and the persona split for it."
 
 Do not auto-invoke the builder — the strategist owns when the plan gets built, and the builder needs inputs this skill doesn't collect (budget, personas, allocation). If they say go, pass the confirmed rates through as the CPU for each matching NETWORK/PLACEMENT line so the builder never has to assume a rate.
 
@@ -107,4 +110,4 @@ Every number this skill shows must trace to the rate library. If a tactic has no
 - It does not update the rate library — that's the monthly `sightly-rate-library-monthly-update`.
 - It does not build the plan CSV, allocate budget across personas, or run feasibility checks — that's `sightly-media-plan-builder`, which this skill feeds.
 - It does not put benchmark distributions, ranges, or sample counts into client-facing materials — only the single confirmed rate travels downstream.
-- It does not net down billing rates or apply margin, and neither does the builder. Nothing in the plan-building path nets anything down.
+- It does not net down billing rates or apply margin — the builder owns that.
