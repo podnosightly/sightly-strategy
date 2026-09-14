@@ -44,7 +44,7 @@ structure, `sightly-visual-brand` for design tokens, and the copy rules below fo
 
 ## Gate 1 — the self-audit that actually catches things
 
-Ordinary self-assessment fails on your own writing. Run these five checks explicitly and report
+Ordinary self-assessment fails on your own writing. Run these six checks explicitly and report
 what each one found.
 
 **Favourite-line first.** Audit the lines you are most pleased with before anything else. Any line
@@ -68,13 +68,15 @@ dashes", not "fixed the em dashes". A fix reported without a count is incomplete
 were established vocabulary. If a reader outside the conversation could not define it, it is jargon.
 Replace it with the plain description.
 
+**Money-and-abstraction actor check.** Scan for any dollar figure or abstract noun (a budget, a plan, a tier, a scenario) sitting in the subject slot of a verb, and rewrite each with a human subject: "$500K holds the mix" becomes "at $500K we hold the mix"; "the plan carries the reach" becomes "we carry the reach at that level". A product or channel as the actor is fine; money and abstractions are not.
+
 ## When auditing / cleaning up existing copy
 
 Go line by line. For each issue, name the rule it breaks and give the fix. Group findings by
 severity (terminology/compliance first, then copy-rule violations, then polish). Flag any prohibited
 term, banned pattern, or unsupported claim explicitly.
 
-## The 12 copy rules (enforced)
+## The 13 copy rules (enforced)
 
 1. First sentence of every paragraph carries the idea. No warm-up, no restating the brief.
 2. One job per sentence. Two ideas joined by a dash or "but" → split or cut the weaker half.
@@ -95,6 +97,7 @@ term, banned pattern, or unsupported claim explicitly.
 12. No bare label fragments as section beats. "The opportunity." followed by nothing is the
     bold-label bullet executed in prose. A named opener is fine when a full sentence immediately
     does the work.
+    13. No dollar figure or abstract noun as the actor of a verb. A budget, a plan, a tier or a scenario cannot perform the action: not "$500K holds the mix", not "the plan carries the reach". Put a human subject on the verb, "at $500K we hold the mix", "we add the reach". A product or channel as the actor is fine and matches real Sightly emails ("Brand Mentality® reads the conversation", "YouTube anchors the plan"); the rule targets money and abstractions only.
 
 ## Hard "never use" list (abbreviated — full list in reference)
 
