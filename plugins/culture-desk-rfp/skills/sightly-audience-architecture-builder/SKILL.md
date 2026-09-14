@@ -33,8 +33,7 @@ These are the exact places the manual version goes wrong. Get these right and th
 
 **Anti-fabrication is the default.** Every interest tag, channel-opportunity read, and Brand Mentality statistic is a *proposal* until a real run confirms it. Mark them `[confirm via Persona Builder run]` or `[BM run]`. Platform proof points that are stable and real (e.g. 2B daily data assessments, 18M YouTube videos, 15k+ TikTok trends, 150k+ publishers) may be carried as-is. Never invent campaign-specific counts (videos indexed, moment counts, VTRs) — leave them bracketed.
 
-**Client-safe naming.** No insider slang (e.g. "mark/smark"). Persona names should read cleanly to the client.
-
+**Use the client's own names.** When the brief names its audience segments, client-facing output uses those exact names. If the strategy consolidates several of the brief's segments into fewer working personas, keep every one of the client's original names visible on the page — nest them, don't replace them. Coining new behavior-led names is for the internal architecture only; it never overwrites a name the client wrote. No insider slang (e.g. "mark/smark"), and any name that does reach the client reads cleanly. The same rule covers anything mapped or numbered: refer to a moment or mapped item by its full descriptive name ("the Thanksgiving travel peak"), never an internal shorthand code ("Moment 2"), in any client-facing or shared output.
 **Boards are monitors, not categories.** An Anticipation Board is a live theme that surfaces moments before they peak — seed each with concrete, named examples tied to the flight window (real events, publications, creators, formats), not generic buckets.
 
 ## Inputs the skill needs
@@ -57,7 +56,7 @@ Propose the fewest personas that cover the audience with minimal overlap, split 
 
 Each persona uses this structure:
 
-- **Name** — client-safe, behavior-led.
+- **Name** — the client's own name for the segment when the brief named it; otherwise client-safe and behavior-led. When the brief's segments are grouped into fewer personas, keep every client name visible in the grouping.
 - **Bio** — who they are and their relationship to the category (1–2 sentences).
 - **The tension** — the friction that keeps them from the goal.
 - **The moment that flips them** — the trigger (often tied to the tentpole).
