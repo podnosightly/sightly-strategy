@@ -50,6 +50,8 @@ Additional fields that may belong as columns or in NOTES depending on plan compl
 
 ### Moments reserve representation
 
+**Only when the confirmed strategy calls for a reserve.** If the reactive component runs through a single consolidated auto-optimizing buy, there is no separate reserve line — see the precedence note in Step B.
+
 When a moments reserve is part of the plan (Brand Mentality data is available and the campaign has a reactive component), include it as its own line items at the bottom of the CSV — do not bury it inside a regular persona line. Use:
 
 - **PLACEMENT TYPE**: `Reserve`
@@ -92,6 +94,8 @@ This is the feasibility gate. Never silently plan below the floor — the callou
 
 ### Step B — Persona-level budget allocation
 
+**The confirmed strategy sets the plan's structure, and it overrides this skill's defaults.** Before allocating anything, check the confirmed strategy (the `<client>_insights_to_action_CONFIRMED.md` file, or the strategist's locked direction). If it specifies a single consolidated, auto-optimizing buy — one line that optimizes across inventory itself, with the personas rolling up inside it — then that is the plan: one fluid line per budget scenario, with no per-persona line items, no moments reserve, and no separate always-on line for a broad or catch-all audience. Do not split by persona, add a reserve, or add a catch-all line unless the brief or the confirmed strategy asks for it. The per-persona allocation below is the default only when the strategy leaves the structure open.
+
 Read the persona list from the brief or from Step 5 of the RFP Workflow. The skill does **not** prescribe a default split — every campaign is different and the strategist owns the allocation decision.
 
 **Before building any line items, resolve the allocation explicitly.** Ask the strategist one direct question: *do you have a target allocation across personas, or should I propose one?* This is not optional — even if the brief is detailed elsewhere, allocation is almost always something the strategist wants to own or confirm. Asking once up-front prevents the awkward situation of building a full CSV and having to redo it.
@@ -101,7 +105,7 @@ If the strategist asks you to propose: propose a specific split with the rationa
 If the strategist provides an allocation: honor it. Push back once only if it violates one of these guardrails:
 
 - The **primary persona** — the one most aligned to the core business objective — should receive the largest share. If the strategist has the primary persona getting less than another persona, ask once whether that's intentional.
-- A **moments reserve** is appropriate when Brand Mentality data exists and the campaign has a reactive cultural component. If neither applies, omit it.
+- A **moments reserve** is a discrete line only when the confirmed strategy calls for one. When the reactive component runs through a single consolidated auto-optimizing buy, the package leans into the moment itself and there is no reserve line (see the precedence note above). Where a reserve does apply, it fits a campaign with Brand Mentality data and a reactive cultural component; if neither applies, omit it.
 - **Equal splits are a red flag.** If every persona ends up with the same allocation, surface this concern explicitly. Either the personas are not actually differentiated (a persona-development problem) or the allocation reflects default thinking. Do not silently ship an equal split — ask once.
 
 Document the allocation in the narrative summary with the *why*, not just the *what*.
