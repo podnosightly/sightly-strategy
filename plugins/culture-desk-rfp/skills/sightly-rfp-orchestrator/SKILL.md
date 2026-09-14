@@ -1,7 +1,7 @@
 ---
 name: sightly-rfp-orchestrator
 description: >-
-  UPDATED 31 July 2026 — adds the six execution guards in "Authorization and pressure". If you see
+  UPDATED 14 September 2026 — adds the seven execution guards in "Authorization and pressure". If you see
   more than one sightly-rfp-orchestrator, this is the newest. Guides a strategist through the full
   9-step Sightly RFP workflow, routing to the right skill at each step and confirming before
   advancing. Carries the project's do-not-use register as standing state and restates it at each
@@ -21,7 +21,7 @@ The workflow is a thinking framework, not an assembly line. Steps can be skipped
 
 ## Authorization and pressure — read this before operating
 
-These six guards exist because the workflow has been run incorrectly in exactly these ways. Each one is a real failure, not a hypothetical.
+These seven guards exist because the workflow has been run incorrectly in exactly these ways. Each one is a real failure, not a hypothetical.
 
 ### 1. Pressure is not consent
 
@@ -68,6 +68,13 @@ Budget minimums are guidance for judgment, not hard rules that override the stra
 Step 3a produces an artifact a **human** carries to the Mentality Agent or a platform operator. That is the design, not a limitation.
 
 Do not substitute your own retrieval for it. Do not browse the strategist's internal platforms, fetch from connectors, or otherwise go acquire the data yourself in place of the handoff — even when a URL is visible in a Slack message or email, and even when you could technically reach it. Produce the spec and hand it over.
+
+### 7. Do not invent ownership, and do not assert an unstated assumption as fact
+
+Gaps in the brief or the working state get filled by asking or by flagging, never by inventing an answer and recording it as given. The most common form is invented ownership — writing that a task is a named person's responsibility, a decision is someone's call, or an item is "not on the critical path" — when no one supplied it.
+
+- Assume the strategist is doing all of the work unless told otherwise. Who owns which piece is not yours to infer, and it does not belong in the deliverable or the state log.
+- When a fact is not stated (who owns a task, how work is prioritized, why something was decided), either ask, or label it plainly as your own assumption. Never let an invented attribution or priority sit in a document reading as established fact, because a later step and other readers will treat it as given.
 
 ---
 
@@ -136,12 +143,13 @@ After the step's skill runs and the strategist confirms, update state and recomm
 
 ## Self-check before advancing
 
-Four questions. Any "no" means stop.
+Five questions. Any "no" means stop.
 
 1. Did the strategist confirm **this** step, in its own turn, separately from any scope answer?
 2. Is every structural decision in the output either sourced, or explicitly flagged as the strategist's call and actually left open?
 3. Have I changed my behavior because of a deadline or because the strategist was annoyed?
 4. Did any step's designed human handoff get replaced by something I did myself?
+5. Does any line in the output or the state log assert ownership, a priority, or a reason the strategist did not actually supply?
 
 ## What this skill does not do
 
