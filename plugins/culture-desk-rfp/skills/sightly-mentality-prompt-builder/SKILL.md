@@ -1,11 +1,11 @@
 ---
 name: sightly-mentality-prompt-builder
-description: UPDATED 17 September 2026 (v1.5.0) — rebuilt for the current Brand Mentality Agent, no listening-platform routing, with the full 8-point rigor preamble baked into every prompt. If you see more than one sightly-mentality-prompt-builder, this is the newest. Turns an RFP or research question into rigorous, ready-to-run prompts for Sightly's Brand Mentality Agent, and drives it to produce the reads, Insights/Highlights reports, signals, artifacts and visualizations an RFP needs. Use when asking the Mentality Agent for a read, designing a cultural/social/competitive pull, running an Insights or Highlights report, pulling signals, or turning a question into something executable. Triggers on "write a Mentality prompt", "brief the agent", "design the query", "what should I ask for", "spec this pull", "get me a read on X", "run an insights report", "pull signals". Not for interpreting results into strategy — that is sightly-insights-to-action.
+description: UPDATED 17 September 2026 (v1.6.0) — adds the Execution Protocol that forces breadth and depth: a tool-sweep checklist, a six-variation term floor, a full-body read rule, and a coverage self-audit, so the agent stops answering landscape questions with one thin pull. If you see more than one sightly-mentality-prompt-builder, this is the newest. Turns an RFP or research question into rigorous, ready-to-run prompts for Sightly's Brand Mentality Agent, and drives it to produce the reads, Insights/Highlights reports, signals, artifacts and visualizations an RFP needs. Use when asking the Mentality Agent for a read, designing a cultural/social/competitive pull, running an Insights or Highlights report, pulling signals, or turning a question into something executable. Triggers on "write a Mentality prompt", "brief the agent", "design the query", "spec this pull", "get me a read on X", "run an insights report", "pull signals". Not for interpreting results into strategy — that is sightly-insights-to-action.
 ---
 
 # Sightly Mentality Agent — Operator & Prompt Builder
 
-*Version 1.5.0 · Updated 17 September 2026 · rebuilt for the current Brand Mentality Agent (no listening-platform routing).*
+*Version 1.6.0 · Updated 17 September 2026 · adds the Execution Protocol (breadth + depth enforcement) on top of the v1.5.0 rebuild for the current Brand Mentality Agent (no listening-platform routing).*
 
 This skill turns a research or RFP question into rigorous, executable work on Sightly's Brand Mentality Agent, and drives the agent to produce the actual outputs the RFP process needs: ad-hoc reads, Insights and Highlights reports, signals, audience targeting, HTML artifacts, and the visualizations inside them.
 
@@ -28,7 +28,66 @@ The Brand Mentality Agent is a self-sufficient research instrument. It runs its 
 
 ## The prompt construction standard — the bar every prompt meets
 
-Every prompt this skill hands over is one block the strategist pastes whole into the Mentality Agent. It has two parts, and it is not finished until both are complete. **Never abbreviate the preamble. Never tell the strategist to "prepend" anything. Never ship a terse block.** Terseness is the failure mode; specificity is the product.
+Every prompt this skill hands over is one block the strategist pastes whole into the Mentality Agent. It has three parts, and it is not finished until all three are complete: **Part A0 — the Execution Protocol** (the breadth/depth forcing function, at the top), **Part A — the 8-point rigor preamble** (verbatim), and **Part B — the structured request**. **Never abbreviate any of them. Never tell the strategist to "prepend" anything. Never ship a terse block.** Terseness is the failure mode; specificity is the product.
+
+Why A0 exists: the 8-point preamble *asks* the agent to "exhaust the tool surface," but an aspiration has no forcing function — left to itself the agent runs one narrow query, skips tools like `get_news_moments`, reads snippets instead of full bodies, and calls thin results a finding. A0 converts the aspiration into procedure: a checklist it must complete, a term-variation floor, a full-body rule, a stopping rule, and a self-audit it must print before it is allowed to conclude.
+
+### Part A0 — the Execution Protocol (verbatim, at the top of every prompt)
+
+```
+EXECUTION PROTOCOL — run all of this. It is procedure, not suggestion.
+
+- RUN THE FULL SWEEP (a checklist, not a vibe). Before searching, list every tool
+  that could bear on this question and commit to calling each; you account for all
+  of them in the self-audit at the end. Start broad, then narrow — open with wide
+  framings to survey the landscape before drilling into specifics. Unless a tool is
+  genuinely irrelevant (and you say why), you call: get_news_articles AND
+  get_news_moments (moments cluster stories articles scatter; run both sort_by=size
+  and sort_by=recency); get_social_media_posts AND get_social_media_narratives,
+  pulled PER PLATFORM, not five platforms lumped into one call; get_trends for the
+  macro shape; get_tiktok_hashtags to DISCOVER the vernacular (feeds the term rule
+  below); get_youtube_videos / get_youtube_channels where a creator/content
+  landscape is in scope; and search_web + read_web_pages + find_similar_pages +
+  answer_from_web for anything the above don't reach. One tool or one call is not a
+  search. A tool you did not call is a gap to report, not a step to skip.
+
+- VARY THE TERMS (a floor of six, not a ceiling of one). A single obvious phrase
+  misses most of the conversation, because people don't all use your words. Per
+  sub-question, run AT LEAST SIX term variations spanning: (a) the literal term;
+  (b) synonyms and alternate phrasings; (c) the community/vernacular term people
+  actually use — discover it with get_tiktok_hashtags, don't guess it; (d) proper
+  nouns / entities involved (people, titles, events, brands); (e) the adjacent or
+  umbrella category; (f) the critic or backlash framing, so you capture the whole
+  conversation and not only the flattering half. A single call caps at 3
+  search_terms, so this is several calls per tool. That is expected.
+
+- READ FULL BODIES BEFORE YOU QUOTE OR CHARACTERIZE. Snippets truncate at ~2,000
+  characters and drop the specifics. On the top items, pull the full article body
+  (the full-content option on get_news_articles) and run read_web_pages on the
+  actual URLs for verbatim quotes and named detail. Never quote or characterize a
+  specific claim from a snippet alone.
+
+- THIN IS A TRIGGER, NOT A FINDING. Do not call a topic small, limited, quiet or
+  absent until the recall floor is met: every applicable tool called, six+ term
+  variations across two+ tools, full bodies read on the top items, and at least one
+  reformulation using vernacular found in the data. "Limited results" means widen
+  and re-run. Only after the floor is met may you report thinness — and then as a
+  stated coverage limit naming the terms and tools you tried, never as a conclusion
+  about the world.
+
+- CLOSE WITH A COVERAGE SELF-AUDIT. Before any findings, print this table, one row
+  per tool. No conclusions until it is complete:
+    | Tool | Called? | Terms / params used | Volume returned | Gap or next step |
+    | get_news_articles | | | | |
+    | get_news_moments | | | | |
+    | get_social_media_posts | | | | |
+    | get_social_media_narratives | | | | |
+    | get_trends | | | | |
+    | get_tiktok_hashtags | | | | |
+    | get_youtube_videos / channels | | | | |
+    | open web (search / read) | | | | |
+  Any row empty or thin: widen and re-run before writing the conclusion, not after.
+```
 
 ### Part A — the full 8-point rigor preamble (verbatim, in every prompt)
 
@@ -94,9 +153,11 @@ Below the preamble, write the request with all of these. A prompt missing any on
 
 ## Worked example — the bar
 
-This is a real, complete prompt (Part A prepended, then Part B fully specified). Any prompt you produce should be at this level of specificity. The manual's Part 0 carries both worked examples.
+This is a real, complete prompt (Part A0 and Part A prepended, then Part B fully specified). Any prompt you produce should be at this level of specificity. The manual's Part 0 carries both worked examples fully expanded, including the Execution Protocol and the closing self-audit.
 
 ```
+[Part A0 — the Execution Protocol above, verbatim]
+
 [Part A — the full 8-point preamble above, verbatim]
 
 Now the request:
@@ -136,6 +197,10 @@ In the output, for every vertical give: the total volume with its date window, t
 number of distinct channels and videos behind it, at least five real example
 channel URLs and five real example video URLs a SmartList could use, and the
 denominator behind every percentage.
+
+Before any findings, print the coverage self-audit table from the Execution Protocol
+— every tool row filled — and if any vertical is thin, widen and re-run before you
+write it up.
 ```
 
 ## Workflow
@@ -165,10 +230,10 @@ Match the need to the agent output, then build the prompt/form:
 Routing the two apart: a broad brand / competitor / culture **discovery** run — ranked signals, moments, planning — is the **Insights Report**; don't hand-assemble a parallel one. A **targeted acquisition** with a specific buyable output — seeding SmartList content types, one platform's landscape, a competitor territory scan — is an **ad-hoc read**, even when it "maps a landscape." (Worked example 1, content-type seeding, is an ad-hoc read for exactly that reason.)
 
 ### Step 4 — Build the prompt to the standard
-Write Part A verbatim, then Part B with every element. For a report/job, fill the form fields from the manual and carry the same rigor into the `intent` field and the output expectations. **Always replace `<BRAND>` / profile name before handing it over** — a leftover placeholder is how the wrong brand enters a pull.
+Write Part A0 (the Execution Protocol) and Part A verbatim, then Part B with every element. For a report/job, the form fields carry the rigor — fold the Execution Protocol's intent (full sweep, term variation, full-body reads, thin-is-a-trigger, self-audit) into the `intent` field and the output expectations, since a form doesn't take the pasted preamble. **Always replace `<BRAND>` / profile name before handing it over** — a leftover placeholder is how the wrong brand enters a pull.
 
 ### Step 5 — Run and hold the output contract
-Enforce what Part B asked for: every percentage with its denominator; every volume with its window; distinct-entity counts; real URLs; source on every figure; coverage caveats at the point of use; data and inference separated; "no data found" over a filled gap. State sample sizes; never dress a count up as significance.
+Enforce what Part B asked for: every percentage with its denominator; every volume with its window; distinct-entity counts; real URLs; source on every figure; coverage caveats at the point of use; data and inference separated; "no data found" over a filled gap. State sample sizes; never dress a count up as significance. **Require the coverage self-audit before any conclusions** — an empty or thin row means a tool was skipped or a pull was too narrow, so send it back to widen and re-run rather than accepting the thin read. "Limited results" is never the final answer until the recall floor is met.
 
 ### Step 6 — Visualizations
 Describe the shape of the answer, not the component — "a ranked horizontal bar of theme volume," "the sentiment split as a donut with denominators" — and the agent renders it from real arrays. It won't draw data the tools didn't return. Full render set in manual Part 4.

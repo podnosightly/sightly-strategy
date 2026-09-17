@@ -1,6 +1,6 @@
 # Brand Mentality® Agent — Operating Manual & Prompt Library
 
-*For Dan Podnos / Sightly strategy team. Rebuilt 16 September 2026 from the agent's own capability audit.*
+*For Dan Podnos / Sightly strategy team. Rebuilt 16 September 2026 from the agent's own capability audit; Execution Protocol (breadth + depth enforcement) added 17 September 2026 — skill v1.6.0.*
 
 **Source of truth.** Everything here comes from your capability audit — the agent describing its own live tool surface. Sightly's older knowledge-base docs describe an earlier, more limited agent; where they and your audit disagree, your audit wins and this manual follows it. The agent runs its own research pulls end to end, within the window it can see — there is no external hand-off step. This manual assumes the current agent, not the old one.
 
@@ -9,15 +9,74 @@
 - **Agent runs this** — you can prompt the agent to do it in chat.
 - **UI-only** — a real feature, but the agent has no tool for it. You do it in the app; asking the agent won't work. Knowing these is half the point of the manual.
 
-**How to use the prompts.** The authoritative, paste-whole standard is **Part 0** (the full 8-point preamble + all Part B elements); Worked example 1 there is a complete prompt to model. The shorter blocks in Parts 1–5 are the capability reference and scaffolds — assemble the real prompt to the Part 0 standard rather than pasting them as-is, and note that the report, job and ops blocks in Parts 3 and 5 are forms filled per their fields. One warning: replace `<BRAND>` before you paste — a leftover `<BRAND>` is how the wrong brand ends up in a pull.
+**How to use the prompts.** The authoritative, paste-whole standard is **Part 0** (the Execution Protocol + the full 8-point preamble + all Part B elements); Worked example 1 there is a complete prompt to model. The shorter blocks in Parts 1–5 are the capability reference and scaffolds — assemble the real prompt to the Part 0 standard rather than pasting them as-is, and note that the report, job and ops blocks in Parts 3 and 5 are forms filled per their fields. One warning: replace `<BRAND>` before you paste — a leftover `<BRAND>` is how the wrong brand ends up in a pull.
 
-**The one framing rule.** The agent is a self-sufficient research instrument. The only hard limits worth memorizing are the ~1 January 2026 data floor and the enumerated coverage caps in Part 6. It will not fabricate — its own constraint is that every number, chart and claim traces to a real tool result — so the way to get depth is to ask real questions and make it show its counts, not to hedge the question in advance.
+**The one framing rule.** The agent is a self-sufficient research instrument. The only hard limits worth memorizing are the ~1 January 2026 data floor and the enumerated coverage caps in Part 6. It will not fabricate — its own constraint is that every number, chart and claim traces to a real tool result — so the way to get depth is to ask real questions and make it show its counts, not to hedge the question in advance. Breadth is a separate discipline: the agent under-searches by default, so the **Execution Protocol (Part 0, Part A0)** forces the full tool sweep, a six-variation term floor, full-body reads, and a coverage self-audit before it can conclude — that is how you stop it answering a landscape question with one thin pull.
 
 ---
 
 ## PART 0 — THE PROMPT STANDARD (AUTHORITATIVE)
 
-Every **research prompt** handed to the Mentality Agent is built like this and pasted whole. **This standard supersedes the shorter blocks in Parts 1–5** — treat those as scaffolds. A research read expands to this full standard (8-point preamble + all Part B elements) before running; the report, job and ops blocks in Parts 3 and 5 are **forms**, not research reads — fill their fields and carry the rigor into the `intent` / config, they do not take the research preamble. Terseness is the failure mode; specificity is the product.
+Every **research prompt** handed to the Mentality Agent is built like this and pasted whole. **This standard supersedes the shorter blocks in Parts 1–5** — treat those as scaffolds. A research read expands to this full standard (the Execution Protocol + 8-point preamble + all Part B elements) before running; the report, job and ops blocks in Parts 3 and 5 are **forms**, not research reads — fill their fields and carry the rigor into the `intent` / config, they do not take the research preamble. Terseness is the failure mode; specificity is the product.
+
+**Why Part A0 exists.** The 8-point preamble *asks* the agent to "exhaust the tool surface," but an aspiration has no forcing function — left to itself the agent runs one narrow query, skips tools like `get_news_moments`, reads snippets instead of full bodies, and reports thin results as a finding instead of widening. Part A0 converts the aspiration into procedure: a tool-sweep checklist, a six-variation term floor, a full-body read rule, a thin-is-a-trigger stopping rule, and a coverage self-audit the agent must print before it is allowed to conclude. It sits at the top of every research prompt, above Part A.
+
+**Part A0 — the Execution Protocol, verbatim, at the top of every prompt:**
+
+```
+EXECUTION PROTOCOL — run all of this. It is procedure, not suggestion.
+
+- RUN THE FULL SWEEP (a checklist, not a vibe). Before searching, list every tool
+  that could bear on this question and commit to calling each; you account for all
+  of them in the self-audit at the end. Start broad, then narrow — open with wide
+  framings to survey the landscape before drilling into specifics. Unless a tool is
+  genuinely irrelevant (and you say why), you call: get_news_articles AND
+  get_news_moments (moments cluster stories articles scatter; run both sort_by=size
+  and sort_by=recency); get_social_media_posts AND get_social_media_narratives,
+  pulled PER PLATFORM, not five platforms lumped into one call; get_trends for the
+  macro shape; get_tiktok_hashtags to DISCOVER the vernacular (feeds the term rule
+  below); get_youtube_videos / get_youtube_channels where a creator/content
+  landscape is in scope; and search_web + read_web_pages + find_similar_pages +
+  answer_from_web for anything the above don't reach. One tool or one call is not a
+  search. A tool you did not call is a gap to report, not a step to skip.
+
+- VARY THE TERMS (a floor of six, not a ceiling of one). A single obvious phrase
+  misses most of the conversation, because people don't all use your words. Per
+  sub-question, run AT LEAST SIX term variations spanning: (a) the literal term;
+  (b) synonyms and alternate phrasings; (c) the community/vernacular term people
+  actually use — discover it with get_tiktok_hashtags, don't guess it; (d) proper
+  nouns / entities involved (people, titles, events, brands); (e) the adjacent or
+  umbrella category; (f) the critic or backlash framing, so you capture the whole
+  conversation and not only the flattering half. A single call caps at 3
+  search_terms, so this is several calls per tool. That is expected.
+
+- READ FULL BODIES BEFORE YOU QUOTE OR CHARACTERIZE. Snippets truncate at ~2,000
+  characters and drop the specifics. On the top items, pull the full article body
+  (the full-content option on get_news_articles) and run read_web_pages on the
+  actual URLs for verbatim quotes and named detail. Never quote or characterize a
+  specific claim from a snippet alone.
+
+- THIN IS A TRIGGER, NOT A FINDING. Do not call a topic small, limited, quiet or
+  absent until the recall floor is met: every applicable tool called, six+ term
+  variations across two+ tools, full bodies read on the top items, and at least one
+  reformulation using vernacular found in the data. "Limited results" means widen
+  and re-run. Only after the floor is met may you report thinness — and then as a
+  stated coverage limit naming the terms and tools you tried, never as a conclusion
+  about the world.
+
+- CLOSE WITH A COVERAGE SELF-AUDIT. Before any findings, print this table, one row
+  per tool. No conclusions until it is complete:
+    | Tool | Called? | Terms / params used | Volume returned | Gap or next step |
+    | get_news_articles | | | | |
+    | get_news_moments | | | | |
+    | get_social_media_posts | | | | |
+    | get_social_media_narratives | | | | |
+    | get_trends | | | | |
+    | get_tiktok_hashtags | | | | |
+    | get_youtube_videos / channels | | | | |
+    | open web (search / read) | | | | |
+  Any row empty or thin: widen and re-run before writing the conclusion, not after.
+```
 
 **Part A — the full 8-point rigor preamble, verbatim, in every prompt:**
 
@@ -79,11 +138,64 @@ For this request, apply full research rigor:
 - **Decision this serves:** one line.
 - **In the output, give:** total volume with its date window; the count of distinct channels/videos/authors behind it; a named number of real example URLs where relevant; any split the task needs (buyable vs. kids, fandom vs. gift); and the denominator behind every percentage.
 
-A prompt missing any Part B element is not finished.
+A prompt missing any Part B element is not finished — and a prompt without Part A0 (the Execution Protocol) at the top, or its closing coverage self-audit, is not finished either.
 
 ### Worked example 1 — content landscape (SmartList seeding)
 
 ```
+EXECUTION PROTOCOL — run all of this. It is procedure, not suggestion.
+
+- RUN THE FULL SWEEP (a checklist, not a vibe). Before searching, list every tool
+  that could bear on this question and commit to calling each; you account for all
+  of them in the self-audit at the end. Start broad, then narrow — open with wide
+  framings to survey the landscape before drilling into specifics. Unless a tool is
+  genuinely irrelevant (and you say why), you call: get_news_articles AND
+  get_news_moments (moments cluster stories articles scatter; run both sort_by=size
+  and sort_by=recency); get_social_media_posts AND get_social_media_narratives,
+  pulled PER PLATFORM, not five platforms lumped into one call; get_trends for the
+  macro shape; get_tiktok_hashtags to DISCOVER the vernacular (feeds the term rule
+  below); get_youtube_videos / get_youtube_channels where a creator/content
+  landscape is in scope; and search_web + read_web_pages + find_similar_pages +
+  answer_from_web for anything the above don't reach. One tool or one call is not a
+  search. A tool you did not call is a gap to report, not a step to skip.
+
+- VARY THE TERMS (a floor of six, not a ceiling of one). A single obvious phrase
+  misses most of the conversation, because people don't all use your words. Per
+  sub-question, run AT LEAST SIX term variations spanning: (a) the literal term;
+  (b) synonyms and alternate phrasings; (c) the community/vernacular term people
+  actually use — discover it with get_tiktok_hashtags, don't guess it; (d) proper
+  nouns / entities involved (people, titles, events, brands); (e) the adjacent or
+  umbrella category; (f) the critic or backlash framing, so you capture the whole
+  conversation and not only the flattering half. A single call caps at 3
+  search_terms, so this is several calls per tool. That is expected.
+
+- READ FULL BODIES BEFORE YOU QUOTE OR CHARACTERIZE. Snippets truncate at ~2,000
+  characters and drop the specifics. On the top items, pull the full article body
+  (the full-content option on get_news_articles) and run read_web_pages on the
+  actual URLs for verbatim quotes and named detail. Never quote or characterize a
+  specific claim from a snippet alone.
+
+- THIN IS A TRIGGER, NOT A FINDING. Do not call a topic small, limited, quiet or
+  absent until the recall floor is met: every applicable tool called, six+ term
+  variations across two+ tools, full bodies read on the top items, and at least one
+  reformulation using vernacular found in the data. "Limited results" means widen
+  and re-run. Only after the floor is met may you report thinness — and then as a
+  stated coverage limit naming the terms and tools you tried, never as a conclusion
+  about the world.
+
+- CLOSE WITH A COVERAGE SELF-AUDIT. Before any findings, print this table, one row
+  per tool. No conclusions until it is complete:
+    | Tool | Called? | Terms / params used | Volume returned | Gap or next step |
+    | get_news_articles | | | | |
+    | get_news_moments | | | | |
+    | get_social_media_posts | | | | |
+    | get_social_media_narratives | | | | |
+    | get_trends | | | | |
+    | get_tiktok_hashtags | | | | |
+    | get_youtube_videos / channels | | | | |
+    | open web (search / read) | | | | |
+  Any row empty or thin: widen and re-run before writing the conclusion, not after.
+
 For this request, apply full research rigor:
 
 1. EXHAUST THE TOOL SURFACE. Do not stop at one tool or one call. Run parallel
@@ -167,11 +279,68 @@ In the output, for every vertical give: the total volume with its date window, t
 number of distinct channels and videos behind it, at least five real example
 channel URLs and five real example video URLs a SmartList could use, and the
 denominator behind every percentage.
+
+Before any findings, print the coverage self-audit table from the Execution Protocol
+— every tool row filled — and if any vertical is thin, widen and re-run before you
+write it up.
 ```
 
 ### Worked example 2 — TikTok hashtag targeting
 
 ```
+EXECUTION PROTOCOL — run all of this. It is procedure, not suggestion.
+
+- RUN THE FULL SWEEP (a checklist, not a vibe). Before searching, list every tool
+  that could bear on this question and commit to calling each; you account for all
+  of them in the self-audit at the end. Start broad, then narrow — open with wide
+  framings to survey the landscape before drilling into specifics. Unless a tool is
+  genuinely irrelevant (and you say why), you call: get_news_articles AND
+  get_news_moments (moments cluster stories articles scatter; run both sort_by=size
+  and sort_by=recency); get_social_media_posts AND get_social_media_narratives,
+  pulled PER PLATFORM, not five platforms lumped into one call; get_trends for the
+  macro shape; get_tiktok_hashtags to DISCOVER the vernacular (feeds the term rule
+  below); get_youtube_videos / get_youtube_channels where a creator/content
+  landscape is in scope; and search_web + read_web_pages + find_similar_pages +
+  answer_from_web for anything the above don't reach. One tool or one call is not a
+  search. A tool you did not call is a gap to report, not a step to skip.
+
+- VARY THE TERMS (a floor of six, not a ceiling of one). A single obvious phrase
+  misses most of the conversation, because people don't all use your words. Per
+  sub-question, run AT LEAST SIX term variations spanning: (a) the literal term;
+  (b) synonyms and alternate phrasings; (c) the community/vernacular term people
+  actually use — discover it with get_tiktok_hashtags, don't guess it; (d) proper
+  nouns / entities involved (people, titles, events, brands); (e) the adjacent or
+  umbrella category; (f) the critic or backlash framing, so you capture the whole
+  conversation and not only the flattering half. A single call caps at 3
+  search_terms, so this is several calls per tool. That is expected.
+
+- READ FULL BODIES BEFORE YOU QUOTE OR CHARACTERIZE. Snippets truncate at ~2,000
+  characters and drop the specifics. On the top items, pull the full article body
+  (the full-content option on get_news_articles) and run read_web_pages on the
+  actual URLs for verbatim quotes and named detail. Never quote or characterize a
+  specific claim from a snippet alone.
+
+- THIN IS A TRIGGER, NOT A FINDING. Do not call a topic small, limited, quiet or
+  absent until the recall floor is met: every applicable tool called, six+ term
+  variations across two+ tools, full bodies read on the top items, and at least one
+  reformulation using vernacular found in the data. "Limited results" means widen
+  and re-run. Only after the floor is met may you report thinness — and then as a
+  stated coverage limit naming the terms and tools you tried, never as a conclusion
+  about the world.
+
+- CLOSE WITH A COVERAGE SELF-AUDIT. Before any findings, print this table, one row
+  per tool. No conclusions until it is complete:
+    | Tool | Called? | Terms / params used | Volume returned | Gap or next step |
+    | get_news_articles | | | | |
+    | get_news_moments | | | | |
+    | get_social_media_posts | | | | |
+    | get_social_media_narratives | | | | |
+    | get_trends | | | | |
+    | get_tiktok_hashtags | | | | |
+    | get_youtube_videos / channels | | | | |
+    | open web (search / read) | | | | |
+  Any row empty or thin: widen and re-run before writing the conclusion, not after.
+
 For this request, apply full research rigor:
 
 1. EXHAUST THE TOOL SURFACE. Do not stop at one tool or one call. Run parallel
@@ -249,13 +418,17 @@ split into always-on fandom tags and reactive tentpole or gift tags.
 In the output, give each hashtag with its volume, its time bucket, and whether it
 is rising or steady; the sample size behind any sentiment read; and a clear split
 between fandom hashtags and parenting or gift hashtags.
+
+Before any findings, print the coverage self-audit table from the Execution Protocol
+— every tool row filled, TikTok buckets and per-platform social cross-checks shown —
+and if a hashtag set looks thin, widen the categories and re-run before writing it up.
 ```
 
 ---
 
 ## PART 1 — HOW TO GET A RIGOROUS READ
 
-Everything the agent does well on a research question comes from one well-built prompt. The block below is a **compressed scaffold** — the authoritative, paste-whole form is the **Part 0 standard** (the full 8-point preamble + all Part B elements), and Worked example 1 there is a complete model. Use the scaffold as a quick shape, then expand it to the Part 0 standard before running.
+Everything the agent does well on a research question comes from one well-built prompt. The block below is a **compressed scaffold** — the authoritative, paste-whole form is the **Part 0 standard** (the Execution Protocol + the full 8-point preamble + all Part B elements), and Worked example 1 there is a complete model. Use the scaffold as a quick shape, then expand it to the Part 0 standard — Execution Protocol included — before running.
 
 ### The master research prompt
 
@@ -263,14 +436,19 @@ Everything the agent does well on a research question comes from one well-built 
 Run a full-rigor read for the question at the bottom. Hold to these standards for
 the whole response, not just the first tool call:
 
-- USE EVERY RELEVANT TOOL, not one. Run get_news_articles + get_news_moments for
+- USE EVERY RELEVANT TOOL, not one — a checklist you complete and report against, not
+  a suggestion. Start broad, then narrow. Run get_news_articles + get_news_moments for
   press coverage and clustering; get_social_media_posts + get_social_media_narratives
-  for social sentiment and narrative clustering; get_trends for the macro shape;
-  get_tiktok_hashtags where TikTok matters (use it to DISCOVER the vernacular, not
-  just to confirm tags I already named); get_youtube_videos / get_youtube_channels
-  for the creator and content landscape; and search_web / read_web_pages /
-  answer_from_web for anything the others don't cover. Use up to 3 search_terms
-  variants per call to widen recall.
+  for social sentiment and narrative clustering, PER PLATFORM not lumped; get_trends for
+  the macro shape; get_tiktok_hashtags where TikTok matters (use it to DISCOVER the
+  vernacular, not just to confirm tags I already named); get_youtube_videos /
+  get_youtube_channels for the creator and content landscape; and search_web /
+  read_web_pages / answer_from_web for anything the others don't cover. Run AT LEAST SIX
+  search-term variations per sub-question (literal / synonym / vernacular from
+  get_tiktok_hashtags / entities / adjacent category / critic framing) — a call caps at
+  3 terms, so that is several calls per tool — and pull FULL article bodies (the
+  full-content option + read_web_pages on the URLs) before quoting or characterizing any
+  specific claim.
 - SHOW THE NUMBERS. Surface the real counts from the results — total volume, the
   date / platform / publisher / sentiment distributions, sample sizes. Every
   percentage carries its denominator; every volume carries its window. If a set is
@@ -294,6 +472,10 @@ the whole response, not just the first tool call:
   one number.
 - MIND THE FLOOR: these tools do not reach before ~1 January 2026. If the question
   needs anything earlier, tell me it is out of range instead of approximating it.
+- SELF-AUDIT BEFORE YOU CONCLUDE: print a tool-by-tool coverage table — tool | called? |
+  terms used | volume | gap. Thin is a trigger to widen and re-run, never a finding: do
+  not call a conversation small until the full sweep, the six term variations, and the
+  full-body reads are all done, and then report the thinness as a coverage limit.
 - END WITH THE CALL: lean-in / lean-away / stay-informed / ignore, tied to the decision below.
 
 BRAND: <BRAND>
