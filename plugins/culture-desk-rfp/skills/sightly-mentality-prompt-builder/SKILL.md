@@ -1,83 +1,36 @@
 ---
-name: "sightly-mentality-prompt-builder"
-description: "Builds rigorous prompts and query specs for Brand Mentality research. Routes each question to the right executor first — the Mentality Agent's own tool surface, or a listening-platform operator — then writes either a full-rigor agent prompt with named tool fan-out, or a runnable query spec with seed logic, term variants, channel scope and required output fields. Use when asking the Mentality Agent for a read, briefing someone with listening-platform access, designing a social or cultural intelligence pull, or when a research question needs to be turned into something executable. Triggers on \"write a Mentality prompt\", \"brief the agent\", \"design the query\", \"what should I ask for\", \"spec this pull\", \"get me a read on X\". Not for interpreting results — that's sightly-insights-to-action. This is Step 3a of the Sightly RFP workflow, the acquisition half of Brand Mentality discovery, and it also runs standalone for research questions that have nothing to do with a proposal."
+name: sightly-mentality-prompt-builder
+description: UPDATED 17 September 2026 (v1.5.0) — rebuilt for the current Brand Mentality Agent, no listening-platform routing, with the full 8-point rigor preamble baked into every prompt. If you see more than one sightly-mentality-prompt-builder, this is the newest. Turns an RFP or research question into rigorous, ready-to-run prompts for Sightly's Brand Mentality Agent, and drives it to produce the reads, Insights/Highlights reports, signals, artifacts and visualizations an RFP needs. Use when asking the Mentality Agent for a read, designing a cultural/social/competitive pull, running an Insights or Highlights report, pulling signals, or turning a question into something executable. Triggers on "write a Mentality prompt", "brief the agent", "design the query", "what should I ask for", "spec this pull", "get me a read on X", "run an insights report", "pull signals". Not for interpreting results into strategy — that is sightly-insights-to-action.
 ---
 
-# Sightly Mentality Prompt Builder
+# Sightly Mentality Agent — Operator & Prompt Builder
 
-Turn a research question into something executable. Either a full-rigor prompt for the Brand Mentality Agent, or a query spec for someone with listening-platform access.
+*Version 1.5.0 · Updated 17 September 2026 · rebuilt for the current Brand Mentality Agent (no listening-platform routing).*
 
-**The failure this prevents.** An unanswerable question does not return "unknown." It returns something formatted exactly like an answer, with press coverage or general knowledge standing in for corpus data. Nobody downstream can tell the difference from the document alone.
+This skill turns a research or RFP question into rigorous, executable work on Sightly's Brand Mentality Agent, and drives the agent to produce the actual outputs the RFP process needs: ad-hoc reads, Insights and Highlights reports, signals, audience targeting, HTML artifacts, and the visualizations inside them.
 
-## Where this sits
+**The output of this skill is a prompt built to the standard in "The prompt construction standard" below — never a terse block.** If a prompt you produce is shorter or looser than the worked examples in this file, it is wrong. Match the bar.
 
-**Step 3a of the RFP workflow — the acquisition half of Brand Mentality discovery.** Step 3b is `sightly-insights-to-action`, which interprets what comes back. Those are different jobs. They used to be one step with only the second half staffed, which is why requests for a Mentality prompt kept getting improvised at the moment they were needed.
+**Source of truth for capabilities:** `mentality_capability_manual.md` — the full tool surface (its parameters, enums and bounds; a few enums such as the ~70 TikTok categories are browsed live in-tool), all limits, the visualization system, and the worked examples. Read it whenever you need a parameter, a bound, a per-source output-field list, or an example prompt.
 
-**This step pauses the workflow, and the pause is real.** Every other step completes inside a session. This one produces an artifact a human carries to the Mentality Agent or to a listening-platform operator, and the answer may not come back for a day. Hand over the artifact, state plainly that 3b is blocked until the pull returns, and stop. Do not proceed on partial data, on press coverage standing in for corpus data, or on your own general knowledge — that is this skill's own failure mode, arriving one step later. If the deadline cannot absorb the wait, raise it now as a timeline flag rather than treating thin data as good enough.
+## When to use / when not
 
-Skip 3a only when verified data already exists. Outside an RFP, ignore the step numbering: a research question still routes and still needs a rigorous prompt.
+**Use it** to: write what to paste into the Mentality Agent; design a cultural, social, competitive, or category pull; run an Insights Report or a Highlights Report; pull and explain signals; get per-platform audience targeting; build a persisted branded artifact; or decide whether a question is even answerable on the agent.
 
----
+**Do not use it** to interpret results into strategy — brand pillars, positioning tension, personas, moment maps, the argument. That is `sightly-insights-to-action`; hand the agent's outputs to it. Slides are the deck builders. This skill acquires and produces; it does not synthesize strategy.
 
-## Step 1 — Route before you write
+## The framing rule — read this first
 
-Two different executors with different capabilities. Deciding which one owns a question is the whole job, and it comes before any prompt gets written.
+The Brand Mentality Agent is a self-sufficient research instrument. It runs its own pulls end to end, within the window it can see. There is **no external "listening-platform" hand-off and no separate query spec** — that was the old, more limited agent; it is superseded. Two things govern everything below:
 
-### What the Mentality Agent can do
+1. **The only hard limits worth memorizing are the ~1 January 2026 data floor and the enumerated coverage caps** (manual Part 6). Everything else the agent does itself, within that window.
+2. **It will not fabricate** — its own constraint is that every number, chart and claim traces to a real tool result. So you get depth by asking real, fully-specified questions and making it show its counts, not by hedging the question in advance.
 
-Its own tool surface, as described by the agent:
+## The prompt construction standard — the bar every prompt meets
 
-| Tool | Use |
-|---|---|
-| `get_news_articles`, `get_news_moments` | Press coverage and clustering |
-| `get_social_media_posts`, `get_social_media_narratives` | Platform-level sentiment and clustering |
-| `get_trends` | Macro and longitudinal framing |
-| `get_tiktok_hashtags` | TikTok hashtag volume and views |
-| `get_youtube_videos`, `get_youtube_channels` | YouTube content and creators |
-| `answer_from_web`, `search_web`, `read_web_pages`, `find_similar_pages` | Anything the above doesn't cover |
+Every prompt this skill hands over is one block the strategist pastes whole into the Mentality Agent. It has two parts, and it is not finished until both are complete. **Never abbreviate the preamble. Never tell the strategist to "prepend" anything. Never ship a terse block.** Terseness is the failure mode; specificity is the product.
 
-Plus the Brand Profile, with cultural dimension scores, for applying a brand lens.
-
-### What it cannot do
-
-**No confidence intervals.** In the agent's own words: these tools *"return counts and distributions, not confidence intervals."* It can report raw sample sizes and let you judge sufficiency. It cannot certify statistical significance, and any claim of significance from it is manufactured.
-
-**Limited historical window on the social tools.** A documented hard floor around 2026-01-01 has been hit in practice. Any period-on-period comparison reaching further back cannot be run here.
-
-**No author-level analytics at corpus scale.** Unique author counts, gender and age splits, per-post engagement broken out by platform, period-on-period universe change — these need the listening platform.
-
-### The routing test
-
-Ask: **which tool would return this, and does that tool carry the field being asked for?**
-
-| Question type | Executor |
-|---|---|
-| Is this conversation growing, and what's in it | Mentality Agent |
-| What are the narratives, who's driving them | Mentality Agent |
-| Cultural context, adjacent conversations, creator landscape | Mentality Agent |
-| Brand-lens read against the profile | Mentality Agent |
-| Unique author counts, demographic splits | Listening platform |
-| Per-post engagement by platform, with a stated denominator | Listening platform |
-| Period-on-period change across more than one year | Listening platform |
-| Competitor share of category conversation | Listening platform, competitor-seeded |
-
-**If a question is split across both, say so and write both artifacts.** Do not quietly hand the whole thing to whichever is available.
-
-### Write the limits into the register before you write the prompt
-
-The "cannot do" list above is not background reading. Each limit is a prohibition that is knowable *before any data arrives*, which makes it the earliest possible entry in the project's do-not-use register:
-
-- **No confidence intervals from the agent.** Any significance claim later attributed to it is manufactured.
-- **No agent-sourced social data before roughly 2026-01-01.** Any period-on-period comparison reaching further back is unavailable from this executor.
-- **No agent-sourced unique-author counts, demographic splits, or per-post engagement broken out by platform.** These need the listening platform.
-
-Write them in at 3a, phrased as prohibitions rather than caveats. A register that already holds entries when QA first reads it is doing its job; an empty one is indistinguishable from one nobody filled. If routing sends part of a question to an executor that cannot carry it, that is also a register entry, not a footnote.
-
----
-
-## Step 2a — Agent prompt: the standing rigor preamble
-
-Paste in front of any request. This is the agent's own specification of how to get its best work, and it should be used close to verbatim.
+### Part A — the full 8-point rigor preamble (verbatim, in every prompt)
 
 ```
 For this request, apply full research rigor:
@@ -92,114 +45,142 @@ For this request, apply full research rigor:
    anything not covered above. Use multiple search_terms variations per call
    (up to 3) to widen recall, not just one obvious phrase.
 
-2. REPORT STATISTICAL WEIGHT, NOT VIBES. Whenever a tool returns aggregate
-   stats (include_total_statistics=true), surface the actual counts: total
+2. REPORT STATISTICAL WEIGHT, NOT VIBES. Whenever a tool returns aggregate stats
+   (include_total_statistics=true), surface the actual counts: total
    article/post volume, date distribution, platform/publisher mix, sentiment
    breakdown. State sample sizes explicitly (e.g. "47 articles across 12
-   publishers, June 1–30"). If a data set is small or one-sided, say so
-   instead of generalizing from it.
+   publishers, June 1-30"). If a data set is small or one-sided, say so instead
+   of generalizing from it.
 
 3. ZERO FABRICATION. Every fact, figure or quote must trace to a specific tool
-   result with a citation — URL, publisher, date. If the tools return nothing
-   on a sub-question, say "no data found" rather than filling the gap from
-   general knowledge. Do not use background knowledge to complete a picture
-   the data doesn't support; flag the gap.
+   result with a citation - URL, publisher, date. If the tools return nothing on
+   a sub-question, say "no data found" rather than filling the gap from general
+   knowledge. Do not use background knowledge to complete a picture the data
+   doesn't support; flag the gap.
 
 4. SEPARATE DATA FROM INFERENCE. Present what the sources literally say first.
-   Then, in a clearly marked section, give interpretation — labelled as
-   inference, with the specific data points it rests on. Never blend the two
-   into one unmarked narrative.
+   Then, in a clearly marked section, give interpretation - labelled as
+   inference, with the specific data points it rests on. Never blend the two into
+   one unmarked narrative.
 
 5. APPLY THE BRAND LENS THROUGHOUT. Filter every finding through the brand
    profile and name which dimension(s) it implicates. If the profile has gaps
    that limit the analysis, say so.
 
-6. SHOW THE NARRATIVE ARC. Where timelines exist, describe the trajectory —
-   rising, falling, plateauing — and whether sentiment is shifting. Call out
+6. SHOW THE NARRATIVE ARC. Where timelines exist, describe the trajectory -
+   rising, falling, plateauing - and whether sentiment is shifting. Call out
    inflection points with dates.
 
-7. CROSS-VALIDATE. If news coverage and social sentiment diverge, or two
-   search terms on the same topic return conflicting pictures, surface the
-   conflict rather than silently picking a side.
+7. CROSS-VALIDATE. If news coverage and social sentiment diverge, or two search
+   terms on the same topic return conflicting pictures, surface the conflict
+   rather than silently picking a side.
 
-8. RECOMMEND ACTION EXPLICITLY. Close with lean-in / lean-away / stay-informed
-   / ignore per the Mentality framework, tied to the brand's risk tolerance
-   and values. Flag it as a judgment call to own if it isn't clear-cut.
+8. RECOMMEND ACTION EXPLICITLY. Close with lean-in / lean-away / stay-informed /
+   ignore per the Mentality framework, tied to the brand's risk tolerance and
+   values. Flag it as a judgment call to own if it isn't clear-cut.
 ```
 
-Then add the specific request underneath.
+### Part B — the structured request (every element, every prompt)
 
-**Two additions worth making to the request itself:**
+Below the preamble, write the request with all of these. A prompt missing any one of them is not finished.
 
-State the **window** explicitly, and state it again as a constraint if it reaches before 2026-01-01, so the limitation surfaces rather than being silently worked around.
+- **Brand context:** the Mentality brand profile name, the channels in scope, and the geo, in one line.
+- **The task:** one sentence — the actual thing to map, find, or size.
+- **Enumerated sub-questions or verticals:** numbered, so nothing is skipped, and so the output comes back structured the same way.
+- **Per-item tool usage:** for each sub-question, name the exact tools and *how* to use them — the specific parameters that matter (e.g. `exclude_kids_content` to split buyable vs. made-for-kids; `get_trends` search-term based, not brand/person filters; both TikTok date buckets; `include_total_statistics` for aggregate counts).
+- **Inline constraints that bite on this pull:** the ~2026-01-01 floor; the specific caps in play (YouTube 180-day stats window, TikTok 25 countries / four fixed buckets, trends top-10 filter); and the coverage caveats where they apply (social country tags on ~half of posts, share counts on ~a quarter, fullest enrichment only us/gb/ca/au/jp). State each where it applies, not in a preamble.
+- **Decision this serves:** one line naming the RFP or campaign decision the pull feeds.
+- **In the output, give:** an explicit field-level contract — total volume with its date window, the count of distinct channels/videos/authors behind it, a named number of real example URLs where relevant (e.g. "at least five real channel URLs and five real video URLs"), a split where the task needs one (buyable vs. kids, fandom vs. gift), and the denominator behind every percentage.
 
-Name the **decision** the read serves. "Give me a read on X" produces a survey. "Give me a read on X so I can decide whether to fund a launch flight against it" produces an argument.
+## Worked example — the bar
 
-Require the **fields the downstream check will demand.** Sufficiency is tested once, when the data lands, and that test asks whether each figure supports the claim placed on it. A figure that came back without its denominator or its sample size cannot pass, and by then the pull is over. So specify it in the request: every percentage carries its denominator, every volume carries its window and its distinct-author count where the tool provides one, and every comparison names both sides. Ask here or lose it permanently.
+This is a real, complete prompt (Part A prepended, then Part B fully specified). Any prompt you produce should be at this level of specificity. The manual's Part 0 carries both worked examples.
 
----
+```
+[Part A — the full 8-point preamble above, verbatim]
 
-## Step 2b — Query spec: for a listening-platform operator
+Now the request:
 
-When measurement is needed, produce a spec someone can execute without re-deriving intent. Six parts, all of them.
+Brand context: P&G Star Wars Crossover — a self-service campaign on YouTube,
+TikTok, and programmatic in the United States.
 
-**1. Window.** Exact dates. If the request involves period-on-period change, name **both** windows and add: *do not compute the change until both periods are pulled on the same term set and channel scope.* A change computed across mismatched pulls is not a finding.
+Map the U.S. Star Wars content landscape and break it into targetable content
+types, so I can build YouTube SmartLists and a segmentation model for the
+campaign. Cover these four content verticals and tell me which are largest and
+most active right now:
+1. Film and series — the Mandalorian and Grogu movie, Star Wars: Starfighter, and
+   current Disney+ Star Wars series.
+2. Gaming — Star Wars video game launches, playthroughs, reviews, and streams.
+3. Toys and collectibles — LEGO Star Wars sets, figure and collectible unboxings,
+   hauls, and gift guides.
+4. Fan community and news — theories, rankings, character deep-dives, cosplay, and
+   franchise news.
 
-**2. Seed logic, stated as a choice.** This is the part most often skipped and it determines what the pull can possibly see.
+For each vertical:
+- Use get_youtube_channels and get_youtube_videos to return real, named channels
+  and videos with subscriber and view counts and their most-recent-180-day
+  statistics. Draw a clear line between content that is family, parent, reviewer,
+  or adult-fan facing (which a brand can advertise against) and content flagged as
+  made-for-kids (which cannot be monetized) — use exclude_kids_content to separate
+  the two and report both sets.
+- Use get_news_moments and get_social_media_narratives to size the conversation and
+  its sentiment, and get_trends (search-term based) for the trajectory.
 
-> **Seeding on the brand makes everything else invisible.** A Madden-seeded query returns people talking about Madden, so competitors appear at under 1% and lapsed players are absent by definition. That is the query design, not the market.
+Only use data from 2026-01-01 onward. YouTube aggregate statistics only cover the
+most recent 180 days; if you need older data, say so rather than estimating.
 
-So state it deliberately:
-- **Brand-seeded** — for reading the brand's own conversation. Cannot size competitors or absent audiences.
-- **Competitor-seeded, same parameters** — the only way to compare sentiment or negative share against a rival. Run it as its own pull, never as a slice of the brand pull.
-- **Unseeded by the brand** — for sizing an adjacent audience. Start from the category (NFL fandom, fantasy football) and measure the brand's organic incidence rate inside it. This is the only design that can answer "does this audience engage with us without being prompted."
+Decision this serves: choosing which Star Wars content types to include in the
+SmartLists and how to segment them for the P&G self-service buy.
 
-**3. Term variants.** One formulation measures the formulation, not the conversation. Include:
-- Core brand and product terms, with and without spacing and punctuation variants
-- Community vocabulary and shorthand (mode names, in-group abbreviations)
-- Common misspellings
-- Hashtags, including retired ones
-- **Flag any slang you haven't verified** and ask the operator to confirm it's in real use before relying on it
+In the output, for every vertical give: the total volume with its date window, the
+number of distinct channels and videos behind it, at least five real example
+channel URLs and five real example video URLs a SmartList could use, and the
+denominator behind every percentage.
+```
 
-**4. Channel scope.** Name the platforms and, for forums, the specific communities. Say whether comments count as posts.
+## Workflow
 
-**5. Output fields.** Be specific about what will answer the question, including the definition. "Unique author count" is ambiguous — say *distinct account IDs, deduplicated per platform, then state whether summed or cross-platform deduplicated.* For any percentage, require the denominator to be stated. Same contract as the agent prompt: the sufficiency test downstream cannot be satisfied retroactively, so anything it will need has to be requested here.
+### Step 1 — Frame the request
+State the RFP or campaign decision this serves in one sentence, the brand profile, the channels, and the geo. If the brand has no Brand Profile, say so and use a stated category lens. **Thin-brief gate:** if a load-bearing input is missing — the decision the pull serves (and, for a report, the `intent`), the brand + geo, or a report's flight window — ask two or three targeted questions and get them before emitting anything. Never ship a prompt or form with placeholder or blank load-bearing fields; that breaks the paste-whole bar.
 
-**6. Known contaminants to strip or split.** Where a mechanic inflates a count, name it and require the figure both ways. The worked example: giveaway and sweepstakes posts where entry requires a like, repost and reply inflate post volume and depress per-post engagement. Pattern-match on "like and repost to win," "reply to enter," "RT to win," "giveaway," "sweepstakes," contest hashtags. Report per-post engagement **with and without**, and state the classification rule so it's auditable.
+### Step 2 — Feasibility check (before writing)
+Check against the floor and caps (manual Part 6). If any part needs data before ~1 January 2026, or past a hard cap, say **out of range** and adjust — never approximate across the floor, and never let the agent answer a question its tools can't reach. There is nothing to route elsewhere; there is only "in range" or "say it's out of range."
 
----
+### Step 3 — Choose the output type
+Match the need to the agent output, then build the prompt/form:
 
-## Step 3 — Guardrails on both artifacts
+| RFP / research need | Agent output | Where |
+|---|---|---|
+| One targeted question | Ad-hoc multi-tool read | Prompt built to the standard above |
+| Deep cultural discovery for the brief | **Insights Report** (`kind=INSIGHTS`) | Manual §3.1 |
+| Client-facing signal one-pager (PDF) | **Highlights Report** (`kind=HIGHLIGHTS`) | Manual §3.2 |
+| The brand's live signals + recommendations | `get_signals` / `get_signal_details` | Manual §2.7 |
+| Per-platform audience targeting for a persona | `get_audience_targeting` | Manual §5.5 |
+| A persisted, brand-styled deliverable | **HTML Artifact** | Manual §3.5 |
+| Recurring performance numbers (spend/CPM/CTR) | **Reporting Job** (`kind=REPORTING`) | Manual §3.3 |
+| Live targeting/blocking on connected platforms | **Activation Job** (`kind=ACTIVATION`) | Manual §3.4 |
+| TikTok vernacular you don't know yet | `get_tiktok_hashtags` (discovery) | Manual §2.3 |
+| Competitor territory | Competitor-seeded reads | Manual §2 |
 
-**Researchability triage.** Before a question enters either artifact, confirm the executor can answer it. If it cannot, say so in the deliverable rather than sending it. This is the step that prevents a confident fabrication.
+Routing the two apart: a broad brand / competitor / culture **discovery** run — ranked signals, moments, planning — is the **Insights Report**; don't hand-assemble a parallel one. A **targeted acquisition** with a specific buyable output — seeding SmartList content types, one platform's landscape, a competitor territory scan — is an **ad-hoc read**, even when it "maps a landscape." (Worked example 1, content-type seeding, is an ad-hoc read for exactly that reason.)
 
-**Evidence floor.** Below tens of independent posts from distinct authors, it is anecdote. Never a finding. Say which it is.
+### Step 4 — Build the prompt to the standard
+Write Part A verbatim, then Part B with every element. For a report/job, fill the form fields from the manual and carry the same rigor into the `intent` field and the output expectations. **Always replace `<BRAND>` / profile name before handing it over** — a leftover placeholder is how the wrong brand enters a pull.
 
-**Re-broaden before declaring a conversation small.** A thin result is a query result until it has been tried another way.
+### Step 5 — Run and hold the output contract
+Enforce what Part B asked for: every percentage with its denominator; every volume with its window; distinct-entity counts; real URLs; source on every figure; coverage caveats at the point of use; data and inference separated; "no data found" over a filled gap. State sample sizes; never dress a count up as significance.
 
-**Divergence is a finding.** If two instruments disagree, that is information about the measurement. Do not reconcile it away or pick a side. Convergence between independent instruments is the strongest evidence available, which is the reason to run both.
+### Step 6 — Visualizations
+Describe the shape of the answer, not the component — "a ranked horizontal bar of theme volume," "the sentiment split as a donut with denominators" — and the agent renders it from real arrays. It won't draw data the tools didn't return. Full render set in manual Part 4.
 
-**Never blend across tools.** Every number keeps its source attribution all the way to the slide. Two corpora with different definitions cannot be pooled, and a figure from one must never sit beside a figure from the other without labels.
+### Step 7 — Hand off
+Pass the agent's outputs to `sightly-insights-to-action` for strategy synthesis. Stop here; do not interpret.
 
-**Never claim significance.** Report the sample size and let the strategist judge sufficiency.
+## Hard limits (summary — full list in manual Part 6)
 
----
-
-## Output format
-
-Deliver as a pasteable block, not prose about a prompt.
-
-- **Agent prompt** — the preamble verbatim, then the request, then the window and the decision it serves.
-- **Query spec** — the six parts above under headings, written for a stranger, with a one-line statement of what the pull can and cannot answer.
-- **Split requests** — both artifacts, with a line naming which questions went where and why.
-
-Close by naming what neither artifact can answer, if anything. A gap stated is a gap the strategist can plan around. A gap unstated becomes a fabrication.
-
----
-
-## What this skill does not do
-
-- It does not interpret results. That is `sightly-insights-to-action`, Step 3b.
-- It does not run the pull, and it does not advance to 3b. The pull happens outside the session and the workflow waits.
-- It does not invent tool names or parameters. The tool surface above came from the agent describing itself; if it appears to have changed, ask rather than guessing.
-
+- **Data floor ~1 January 2026** across news, social, TikTok hashtags, trends. No year-over-year on the agent.
+- **Coverage caps:** YouTube stats 180-day window (or drop stats for full history); TikTok 25 countries and four fixed date buckets; news 22 publisher countries; trends limited to the tracked top 10; social country tags on ~half of posts, shares on ~a quarter, fullest enrichment only us/gb/ca/au/jp.
+- **Account:** 5 personas per brand; one persona per campaign per deal; one removal KPI and one timezone per deal-link call; brand-profile fields have hard character caps.
+- **Jobs:** no live performance dashboard (Reporting Job only); Activation 1–24h; Highlights schedule 1–90 days, one-off ≤62 days; no in-place job edit, no changing a job's deal, no pause/resume/cancel from chat.
+- **UI-only:** connect/disconnect platforms, switch brand, manage Team, pause/resume/cancel jobs, edit flight windows beyond the seeded default, resume a teammate's artifact session.
+- **Always:** no fabrication, no image generation, no legal/financial/medical/tax advice, no cross-session memory beyond profiles/personas/deals.
