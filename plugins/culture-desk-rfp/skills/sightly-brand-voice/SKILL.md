@@ -114,32 +114,37 @@ point into something quotable and meaningless.
 
 ## Terminology (must enforce)
 
-Approved: "Brand Suitability" (never "brand safety" externally), "Social Intelligence" (never
+Approved: "Brand Suitability" (preferred default; "brand safety" is permitted where a client or RFP
+uses it, but do not volunteer it, Hard Rule 16), "Social Intelligence" (never
 "social listening"), "Brand Mentality®", "Anticipation Software®", "SmartLists™", "Speed of
-Culture". YouTube = "badged YouTube Measurement Program (YTMP) partner"; TikTok = "badged TikTok
+Culture". YouTube = "Google Premier Partner" with "Non-Public API Access"
+(never "YTMP" or "YouTube Measurement Program", retired in 2026, Hard Rule 21); TikTok = "badged TikTok
 Marketing Partner, Media Buying Technology category".
 
 The creative deliverable is a **"sizzle"** (a sizzle reel). "Scissors" is a speech-to-text error that
 has circulated in planning guidance and is not a term.
 
-Prohibited: "Brand Safety" and "Social Listening" (external); competitor names in client-facing
-materials; white-label partner names (Infegy, Transmit Live, the news-API provider, the Spotify audio
+Prohibited: "Social Listening" (external); retired YTMP language ("YouTube Measurement Program",
+"YTMP", "1 of 7 badged partners"); stale counts ("150K" news sources, "60+" IRIS.TV publishers,
+"4x" IAB); names of Sightly's own competitors
+(Channel Factory, Zefr, Pixability, IAS, DoubleVerify, etc.) in client-facing materials, while the
+advertiser's category competitors may be named (Hard Rule 10); white-label partner names (Infegy, Transmit Live, the news-API provider, the Spotify audio
 partner name). IRIS.TV and Spectrum Reach are the only externally nameable partners, and always
 lead with Sightly.
 
 ## Messaging pillars and proof points
 
 Anchor claims to the six messaging pillars and back them with the citable proof points in the
-reference file (e.g. 2X search intent / 3X purchase intent — MAGNA study; 1 of 7 global YTMP
-partners; 2B daily data assessments). Never invent a proof point or a number that is not in the
+reference file (e.g. 2X search intent / 3X purchase intent — MAGNA study; Google Premier Partner
+with Non-Public API Access; 2B daily data assessments). Never invent a proof point or a number that is not in the
 reference.
 
 **No proof point is drop-in ready.** Check each against the project's do-not-use register before
 use. Some have been retired, some are disputed, and one carries no named source at all: the "+20%
-engagement lift" in the reference file has no study attached and should not ship until it does. Two
-further figures are under dispute and are not to be used pending resolution — the CA Lottery "Set
-for Life" brand lift, and the YTMP data-volume multiple, which appears in circulation as both 400x
-and 4,000x. Where another skill or a template hands you a proof point as pre-cleared, this list
+engagement lift" in the reference file has no study attached and should not ship until it does. One
+further figure is under dispute and is not to be used pending resolution: the CA Lottery "Set
+for Life" brand lift. The YouTube data multiple is settled at 400x (Sightly Overview, August 2026
+GTM deck); the older 4,000x figure is suspended. Where another skill or a template hands you a proof point as pre-cleared, this list
 overrides it.
 
 ## Data trust — provenance is given, sufficiency is tested once
