@@ -93,23 +93,24 @@ Use these constructions when they fit naturally. Do not overuse.
 ## Terminology — Approved and Prohibited
 
 ### Approved / Preferred
-- "Brand Suitability" (use instead of "brand safety" in all external materials)
+- "Brand Suitability" (preferred default). "Brand safety" is permitted since August 2026 but describes a narrower product: use it where a client or RFP uses it, do not volunteer it (Hard Rule 16)
 - "Social Intelligence" (use instead of "social listening" in all external materials)
 - "Brand Mentality®" (always with registered mark, treat as proper noun)
 - "Anticipation Software®" (same treatment)
 - "SmartLists™" (with trademark symbol)
 - "Speed of Culture" (recurring brand phrase, de facto tagline territory)
 - "Cultural intelligence" / "contextual intelligence" (acceptable umbrella terms)
-- "Brand Risk" or "Risk Avoidance" (approved alternatives to "brand safety")
-- "Over 150K news sources" (how to describe the news data partner)
-- YouTube: "badged YouTube Measurement Program (YTMP) partner" (must include "badged" and "YTMP")
+- "Brand Risk" or "Risk Avoidance" (acceptable alternatives)
+- "200K+ news and publisher sources" (how to describe the news data partner). Source: Sightly Overview, August 2026 GTM deck. The old "150K" and "90K" counts are retired
+- YouTube: "Google Premier Partner" with "Non-Public API Access" as the supporting proof-point tag. Data-advantage phrasing: "18M+ videos analyzed daily through 200M+ API calls, video-level data 400x greater than standard access." (Hard Rule 21)
 - TikTok: "badged TikTok Marketing Partner, Media Buying Technology category"
-- IRIS.TV: always lead with Sightly; IRIS.TV is "the data partner" not the product name
+- IRIS.TV: always lead with Sightly; IRIS.TV is "the data partner" not the product name. Inventory scale is 80+ premium publishers
 
 ### Prohibited
-- "Brand Safety" (prohibited in all external-facing materials)
+- Retired YouTube partnership language: "YouTube Measurement Program," "YTMP," "badged YTMP partner," "1 of 7 badged partners." Google sunset the program in 2026 (Hard Rule 21)
+- Stale counts: "90K" or "150K" news sources (now 200K+); "60+ premium publishers" for IRIS.TV (now 80+); "4x larger than IAB" (now 5x)
 - "Social Listening" (prohibited due to data partnership sensitivity)
-- Competitor names in client-facing collateral (use "Sightly's offering vs. other offerings in the market")
+- Sightly's competitors named in client-facing collateral (use "Sightly's offering vs. other offerings in the market"). Hard Rule 10 is scoped: the client's category competitors may be named where relevant to the strategy, including sentiment and competitive analysis.
 - Infegy (social data partner, white-labeled, do not name externally)
 - News API provider (white-labeled, do not name externally)
 - Spotify audio partner name (white-labeled, do not name externally)
@@ -122,7 +123,7 @@ Use these constructions when they fit naturally. Do not overuse.
 
 1. **Real-Time Cultural Intelligence.** "We move at the speed of culture." Sightly surfaces moments before they peak, not after.
 2. **Brand Suitability and Control.** Placement-level precision to align media with brand values and avoid unsuitable environments.
-3. **Patented, Data-Scale Advantage.** 1 of 7 Global YouTube Measurement Program partners. 2B daily data assessments. 18M YouTube videos. 150K+ news sources. Proprietary taxonomy 4x larger than IAB.
+3. **Patented, Data-Scale Advantage.** Google Premier Partner with Non-Public API Access: 18M+ YouTube videos analyzed daily through 200M+ API calls, video-level data 400x greater than standard access. 2B daily data assessments. 200K+ news and publisher sources. Proprietary taxonomy 5x larger than IAB (2,500+ Google Ads Topics, 4,800+ content categories, 700+ IAB categories).
 4. **Cross-Platform, Channel-Agnostic Activation.** YouTube, TikTok, Programmatic OLV/Display, CTV, Reddit, Spotify. All powered by the same Brand Profile.
 5. **Proven Outcomes.** 2X search intent, 3X purchase intent (MAGNA study). Specific case study results documented in proof points below.
 6. **The Brand Mentality Difference.** The platform translates a brand's DNA (values, opinions, scenarios) into an always-on targeting algorithm. This is what makes Sightly different from every other partner in market.
@@ -146,14 +147,12 @@ drop-in ready. Two items below are marked as unusable pending resolution and mus
 - **50% CTR lift** for Chinet (TikTok trending data connected to live campaigns)
 - **4.5x relative lift in ad recall** among Females A24-49 (QSR Big Game campaign)
 - **3,270 store visits in one week** (QSR Big Game campaign)
-- **1 of 7** global YouTube Measurement Program partners
+- **Google Premier Partner** with **Non-Public API Access** on YouTube
 - **Badged TikTok Marketing Partner** (Media Buying Technology category)
-- **2B data assessments per day; 18M YouTube videos in database**
+- **2B data assessments per day; 18M+ YouTube videos analyzed daily through 200M+ API calls**
+- **200K+ news and publisher sources scanned continuously**
 - **Data refresh every 5 minutes**
-- **YouTube API access: 200M calls vs. 50K standard (4,000x advantage)**. **Multiple disputed —
-  do not cite it.** The advantage circulates as both 400x and 4,000x. 200M ÷ 50K is 4,000, so if
-  400x is the correct figure then one of the call counts is also wrong. Until that is resolved,
-  describe the access advantage qualitatively and leave the multiple out.
+- **Video-level YouTube data 400x greater than standard access.** Sanctioned in the Sightly Overview, August 2026 GTM deck. The older "4,000x" figure is suspended; do not cite it.
 
 ---
 
