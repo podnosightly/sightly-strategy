@@ -53,10 +53,13 @@ Load the relevant references and check against them. Cite the specific rule for 
   (no em dashes or hyphens used for rhythm/drama); no AI tells (no triplet headlines, no "not just X
   but Y", no "it's not X, it's Y", no "that's why / that's how" pivots); bullets are sentences with
   the bold on a real data point, never a front label; setup then payoff per slide.
-- Terminology: **Brand Suitability** not "brand safety"; **Social Intelligence** not "social
+- Terminology: **Brand Suitability** as the default ("brand safety" only where the client uses it,
+  Hard Rule 16); **Social Intelligence** not "social
   listening"; marks on **Brand Mentality®**, **Anticipation Software®**, **SmartLists™**; YouTube =
-  "badged YouTube Measurement Program (YTMP) partner"; TikTok = "badged TikTok Marketing Partner,
-  Media Buying Technology category"; no competitor names; no white-label partner names.
+  "Google Premier Partner" with "Non-Public API Access" (never "YTMP", Hard Rule 21); TikTok = "badged TikTok Marketing Partner,
+  Media Buying Technology category"; no names of Sightly's own competitors (ad-tech/verification vendors such as
+  Channel Factory, Zefr, IAS); the advertiser's category competitors may be named (Hard Rule 10);
+  no white-label partner names.
 - Proof points: every stat traces to a citable proof point in the reference, and the same claim uses
   the same number everywhere in the asset (watch for a claim stated with different figures).
 
