@@ -31,7 +31,7 @@ Each slide below lists its fixed structural elements: the constant lines that ar
 
 **Fixed supply line (reproduce, adjust the platform clause to the buy):**
 "Sightly supplies the Brand Profile, Anticipation Boards, and SmartLists™. Only a one-click push to your [DSP] seat."
-For a badged-platform buy, replace the platform clause with the correct badged-partner phrasing (for example, the badged TikTok Marketing Partner, Media Buying Technology category line, or the badged YouTube Measurement Program (YTMP) partner line).
+For a badged-platform buy, replace the platform clause with the correct badged-partner phrasing (for example, the badged TikTok Marketing Partner, Media Buying Technology category line, or the Google Premier Partner with Non-Public API Access line).
 
 ---
 
