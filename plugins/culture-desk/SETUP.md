@@ -10,9 +10,10 @@ connector settings:
 
 - **Monday.com** — required for the guide's "My open RFPs" panel and for
   rfp-tracker-logger / rfp-reconciliation-audit (RFP Tracker board).
-- **Google Drive** — the rate recommender (comparable plans and the rate library) and
-  the proposal-drive-filer read/write here.
-- **Gmail** — rfp-reconciliation-audit reads the rfp@ alias.
+- **Google Drive** — the rate recommender (comparable plans and the rate library),
+  the proposal-drive-filer and staging-log-writer (the Staging Log folder) read/write here.
+- **Gmail** — rfp-reconciliation-audit reads the rfp@ alias; sightly-strategy-email reads your
+  recent sent emails as a style benchmark and can save a draft on the thread.
 
 Until a connector is authorized, its skill will say so rather than run.
 

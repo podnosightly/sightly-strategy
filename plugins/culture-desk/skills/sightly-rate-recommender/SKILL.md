@@ -9,7 +9,7 @@ description: >-
   comparable plan", "what have we charged for this before", "any similar RFPs we've done", "comparable
   plan retrieval", "help me price this RFP", "set rates for this brief", "what's our benchmark CPM for
   TikTok", "is $28 a reasonable CPM here". Feeds sightly-media-plan-builder. Not for updating the
-  library (sightly-rate-library-monthly-update), building the plan CSV (sightly-media-plan-builder) or
+  library, building the plan CSV (sightly-media-plan-builder) or
   setting a deck's structure.
 ---
 
@@ -17,7 +17,7 @@ description: >-
 
 ## What this skill does and why it exists
 
-Sightly maintains a rate library — historical CPM/CPV/CPC/CPCV rates pulled from real client media plans, refreshed monthly by `sightly-rate-library-monthly-update` and stored in Google Drive. The media plan builder deliberately refuses to guess rates: every rate follows the rate hierarchy (the deal's rate card, delivered rates from a comparable campaign, prior Sightly plans and the rate library, then a cited external benchmark labeled as a comparison; Rule 17 and `06_Media_Planning_Principles.md` › Where rates come from) and is confirmed by the strategist. That leaves a gap. Somebody has to turn the library's evidence into a confirmed number for each line before the plan gets built.
+Sightly maintains a rate library — historical CPM/CPV/CPC/CPCV rates pulled from real client media plans, refreshed on the 1st of each month by a maintenance run outside this plugin and stored in Google Drive. The media plan builder deliberately refuses to guess rates: every rate follows the rate hierarchy (the deal's rate card, delivered rates from a comparable campaign, prior Sightly plans and the rate library, then a cited external benchmark labeled as a comparison; Rule 17 and `06_Media_Planning_Principles.md` › Where rates come from) and is confirmed by the strategist. That leaves a gap. Somebody has to turn the library's evidence into a confirmed number for each line before the plan gets built.
 
 This skill fills that gap. It is a decision partner, not an autopilot. It lays the historical evidence in front of the strategist — for each tactic, every relevant benchmark cut with its sample size — and lets the strategist decide. The output is a confirmed rate card that becomes the strategist-confirmed rates the media plan builder consumes. The rate hierarchy stays intact, because by the time the builder runs, nothing is assumed — every rate was confirmed by a human against real data.
 
@@ -141,7 +141,7 @@ Every number this skill shows must trace to the rate library or to a comparable 
 
 ## What this skill does not do
 
-- It does not update the rate library — that's the monthly `sightly-rate-library-monthly-update`.
+- It does not update the rate library. That's the monthly maintenance run, outside this plugin.
 - It does not build the plan CSV, allocate budget across personas, or run feasibility checks — that's `sightly-media-plan-builder`, which this skill feeds.
 - It does not put benchmark distributions, ranges, or sample counts into client-facing materials — only the single confirmed rate travels downstream.
 - It does not build the new audience, strategy or deck, and it does not set a deck's structure or arc.

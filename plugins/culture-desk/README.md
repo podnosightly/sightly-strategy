@@ -1,7 +1,7 @@
 # Culture Desk (v2) — RFP Workflow
 
 The complete Sightly Culture Desk skills pack behind the **Sightly RFP Guide**.
-Installing this plugin drops all 18 workflow skills into Cowork at once, so the
+Installing this plugin drops all 19 workflow skills into Cowork at once, so the
 trigger phrases in the guide actually do something. It is the V4-aligned successor to
 `culture-desk-rfp` (1.7.0); install one or the other, not both, or every skill appears twice.
 
@@ -25,12 +25,13 @@ trigger phrases in the guide actually do something. It is the V4-aligned success
 | 6 · Platform roles | sightly-platform-role-planner |
 | 7 · Media plan | sightly-rate-recommender, sightly-media-plan-builder |
 | 8 · Timing/geo/feasibility | sightly-media-plan-builder |
-| 9 · Deck, QA & handoff | sightly-selfservice-deck-builder (or the personal sightly-deck-build where installed), sightly-brand-voice, sightly-visual-brand, sightly-qa-gate (the quick check before handover; skipped when sightly-deck-build has run its own QC) |
+| 9 · Deck, QA & handoff | sightly-selfservice-deck-builder (or the personal sightly-deck-build where installed), sightly-brand-voice, sightly-visual-brand, sightly-qa-gate (the quick check before handover; skipped when sightly-deck-build has run its own QC), sightly-strategy-email (the seller handoff) |
 | Every step with client-facing copy | sightly-claim-integrity |
 
 ## Supporting skills
 
-sightly-brand-check, sightly-rate-library-monthly-update, rfp-tracker-logger,
+sightly-brand-check, sightly-strategy-email (seller handoffs and client notes),
+staging-log-writer (knowledge-base corrections to the Staging Log), rfp-tracker-logger,
 rfp-reconciliation-audit, rfp-proposal-drive-filer.
 
 ## Before it all works
