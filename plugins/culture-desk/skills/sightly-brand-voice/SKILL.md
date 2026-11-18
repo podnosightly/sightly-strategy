@@ -1,0 +1,175 @@
+---
+name: sightly-brand-voice
+description: >-
+  Applies Sightly's codified written brand voice — tone, the enforced copy rules, banned
+  patterns, approved/prohibited terminology, messaging pillars, and citable proof points — to
+  any writing, and audits existing copy for voice drift. Use when writing or editing Sightly
+  copy of any kind: decks, slide copy, proposals, one-pagers, emails, LinkedIn posts, sales
+  content, or when the user says "make this on-brand", "apply Sightly voice", "write in our
+  voice", "check the voice", "does this follow our copy rules", "clean up this copy", or "find
+  voice drift". Not for visual/design work (use sightly-visual-brand) and not for generating a
+  brand-voice guide from scratch.
+---
+
+# Sightly Brand Voice
+
+Enforce Sightly's written brand voice on every piece of copy this skill touches. The complete
+codification lives in `references/brand-voice-full.md` — load it before writing or auditing. It is
+a portable copy of `02_Voice_and_Terminology.md` with proof points from
+`08_Proof_Points_and_Battle_Cards.md`; when the Culture Desk knowledge base is loaded, `01`, `02`
+and `08` win where they differ. This body is the operational summary.
+
+## Gate 0 — read before writing
+
+Before producing any copy, state which reference material you have read in this session, by
+filename. If that list is empty, stop and read it. Do not draft first and consult the reference
+after the user pushes back.
+
+For long-form prose written in a named person’s voice — emails to sellers or clients, internal
+notes, written strategy summaries — the voice exemplars in `references/voice-exemplars.md` are
+required reading, not optional context. Approximating someone’s voice from a description of it
+produces copy they will reject.
+
+**The exemplars do not apply to slide copy.** They are long-form emails, and their register will
+produce sprawl inside a slide’s word budget. Slide copy follows `sightly-selfservice-deck-builder` for
+structure, `sightly-visual-brand` for design tokens, and the copy rules below for the sentences.
+
+## When writing new copy
+
+1. Read `references/brand-voice-full.md` first.
+2. Draft to the tone: professional, confident, sharp, strategic, grounded in execution;
+   consultative not transactional; an experienced media strategist speaking, never a generic ad-tech
+   or vague-AI voice.
+3. Apply the copy rules below to every sentence.
+4. Run the Gate 1 self-audit below before returning anything. Fix violations silently — do not
+   hand back copy that breaks a rule.
+
+## Gate 1 — the self-audit that actually catches things
+
+Ordinary self-assessment fails on your own writing. Run these seven checks explicitly and report
+what each one found.
+
+**Favorite-line first.** Audit the lines you are most pleased with before anything else. Any line
+that reads as quotable, aphoristic, slogan-shaped or "punchy" is a prime suspect.
+
+**Restate in plain words.** The ban on aphorisms is useless without a test, so here it is. Take any
+line that reads as quotable and restate it as a flat factual sentence. If the restatement says
+nothing a reader could act on or disagree with, the line was decoration and it comes out. Reversal
+and mirror constructions are the highest-yield suspects — "owns its category, and that has stopped
+protecting it", "we're not selling reach, we're selling compression" — because the symmetry is doing
+the work an argument should be doing. Ask what the sentence asserts, not whether it reads well.
+
+**No exemption for inherited copy.** Lines carried from an approved deck, a template, a shell or a
+colleague’s draft get audited exactly like new copy. Approved layout does not mean approved cadence.
+
+**Sweep the class, not the instance.** When you find a violation, search the whole artifact for
+every other instance of that pattern before reporting. State the count: "found and fixed 6 em
+dashes", not "fixed the em dashes". A fix reported without a count is incomplete.
+
+**Invented-term check.** Scan for any term you coined during the session and then used as though it
+were established vocabulary. If a reader outside the conversation could not define it, it is jargon.
+Replace it with the plain description.
+
+**Money-and-abstraction actor check.** Scan for any dollar figure or abstract noun (a budget, a plan, a tier, a scenario) sitting in the subject slot of a verb, and rewrite each with a human subject: "$500K holds the mix" becomes "at $500K we hold the mix"; "the plan carries the reach" becomes "we carry the reach at that level". A product or channel as the actor is fine; money and abstractions are not.
+
+**Pipeline-jargon check.** Scan client copy for Brand Mentality pipeline words carried over from the working session: "the pull flagged", "discovery pass", "mid-window", or "the X cluster" used as a label for a conversation group. Say what was tracked and what it showed. ("Cluster" stays fine as the defined persona term.)
+
+## When auditing / cleaning up existing copy
+
+Go line by line. For each issue, name the rule it breaks and give the fix. Group findings by
+severity (terminology/compliance first, then copy-rule violations, then polish). Flag any prohibited
+term, banned pattern, or unsupported claim explicitly.
+
+## The 13 copy rules (enforced)
+
+1. First sentence of every paragraph carries the idea. No warm-up, no restating the brief.
+2. One job per sentence. Two ideas joined by a dash or "but" → split or cut the weaker half.
+3. Specific beats generic. Named behaviors, real numbers, real platforms over vague phrasing.
+4. Plain punctuation. Commas and periods; colons/semicolons only when they carry meaning.
+5. No AI cadence tells. No "X. Y. Z." triplets, no "Not just X, but Y", no "It's not X, it's Y",
+   no "That's why / that's how" pivots, no fragment stacks for rhythm.
+6. Bullets are sentences. Bold a real data point inside the sentence, not a label at the front.
+7. Deck-slide word budget: strategy/persona slides 80–130 words; over 140 cut, under 40 too thin.
+8. Setup then payoff per slide: frame the idea in one sentence, then pay it off with evidence.
+   Never open cold into a bullet list.
+9. Three line-wraps maximum per paragraph.
+10. No orphan words (a single word alone on a line).
+11. Every number carries its denominator and its consequence in the same visual unit. "23.7%" is
+    an orphan. "23.7% of everyone engaging with the title arrived through slate coverage, so the
+    buy puts it in front of fans already paying for the platform" is a claim. A stat without both
+    does not ship.
+12. No bare label fragments as section beats. "The opportunity." followed by nothing is the
+    bold-label bullet executed in prose. A named opener is fine when a full sentence immediately
+    does the work.
+13. No dollar figure or abstract noun as the actor of a verb. A budget, a plan, a tier or a scenario cannot perform the action: not "$500K holds the mix", not "the plan carries the reach". Put a human subject on the verb, "at $500K we hold the mix", "we add the reach". A product or channel as the actor is fine and matches real Sightly emails ("Brand Mentality reads the conversation", "YouTube anchors the plan"); the rule targets money and abstractions only.
+
+## Hard "never use" list (abbreviated — full list in reference)
+
+Em dashes for rhythm; hyphens as sentence breaks; the phrase "trade areas"; agency buzzwords
+("best-in-class", "cutting-edge", "innovative solutions", "disruptive", "leverage synergies");
+cliches ("move the needle", "at the end of the day"); hollow intensifiers ("game-changing",
+"transformative", "crucial", "vital"); triplet patterns; "It's not X, it's Y"; "Not just X but Y";
+throat-clearing openers ("In today's landscape", "It's no secret", "When it comes to"); bold-label
+bullets; "we believe" / "we feel" (say "here is what this does and why").
+
+Also never: comma-stacked fragment cadence ("One file, two plans, built to split"); status-field
+phrasing in prose ("Numbers are directional until we hear budget"); aphorisms that compress a real
+point into something quotable and meaningless.
+
+## Terminology (must enforce)
+
+Approved: "Brand Suitability" (the default; "brand safety" is permitted where the client or RFP uses
+it or where it is the clearer word; otherwise match the client's language and don't volunteer it),
+"Social Intelligence" (never "social listening"), "SmartLists" (always plain, never a trademark
+symbol), "Brand Mentality" (® once, at its first mention in a proposal; plain everywhere else, emails and internal material included), "Anticipation Software" (always plain, never ®), "Speed of Culture". YouTube = "Google Premier Partner" with "Non-Public
+API Access" (never "YTMP" or "YouTube Measurement Program", retired in 2026); TikTok = "badged TikTok
+Marketing Partner, Media Buying Technology category".
+
+The creative deliverable is a **"sizzle"** (a sizzle reel). "Scissors" is a speech-to-text error that
+has circulated in planning guidance and is not a term.
+
+Prohibited: "Social Listening" (external); retired YTMP language ("YouTube Measurement Program",
+"YTMP", "1 of 7 badged partners"); a trademark symbol on SmartLists; GARM (discontinued by the WFA in 2024);
+stale counts ("150K" or "90K" news sources, "60+" IRIS.TV publishers, "4x" IAB, "4,000x"); names of
+Sightly's own competitors (Pixability, Channel Factory, Zefr, OpenSlate, VuePlanner, CreatorIQ,
+Tubular Labs, Wizdeo, Sprinklr and other ad-tech, suitability, contextual, measurement or social intelligence vendors) in client-facing materials, while the advertiser's category
+competitors are named whenever the work calls for it (IAS and DoubleVerify may be named as third-party verification integrations, never as competitors); white-label partner names (Infegy, Transmit
+Live, the news-API provider, the Spotify audio partner name). IRIS.TV and Spectrum Reach are the only
+nameable CTV partners, and always lead with Sightly.
+
+## Messaging pillars and proof points
+
+Anchor claims to the six messaging pillars and back them with the citable proof points in the
+reference file (e.g. 2X search intent / 3X purchase intent — MAGNA study; Google Premier Partner
+with Non-Public API Access; 200K+ news and publisher sources). Never invent a proof point or a number that is not in
+`08_Proof_Points_and_Battle_Cards.md` or the reference.
+
+**No proof point is drop-in ready.** Check each against the project's do-not-use register before
+use. Some have been retired and some are disputed. The current set and the do-not-use list are in
+`08_Proof_Points_and_Battle_Cards.md`; where the reference file differs, follow `08`. `08` lists the SmartLists "+20% engagement lift" as usable, with its source recorded only as earlier knowledge-base versions. The CA Lottery "Set
+for Life" brand lift is on the do-not-use list (below-average results, marked confidential). The YouTube data multiple is settled at 400x (Sightly Overview, August 2026
+GTM deck); the older 4,000x figure is suspended. Where another skill or a template hands you a proof point as pre-cleared, this list
+overrides it.
+
+## Data trust — provenance is given, sufficiency is tested once
+
+Two different things hide under the word "verified", and separating them is what makes this work.
+
+**Provenance is given.** Client-provided data, Brand Mentality outputs, research-team pulls and
+anything the strategist confirms are real and correctly measured. Never audit whether the number
+exists, never rate the source's reliability, never hedge it in output. Caveats appear only where the
+source document itself states a limitation, and are attributed to that document rather than
+presented as your own doubt.
+
+**Sufficiency is tested once, on intake.** Before anything is built on a figure, name the claim it
+will be used to support and check whether it supports that claim. A number can be real, correctly
+measured, and still not carry the sentence written on top of it. Sufficiency is a property of the
+claim, not of the data, so confirming the data does not settle it.
+
+**Then the verdict is durable.** Whatever survives intake is true for the rest of the project. Do
+not re-open it, re-hedge it, or raise it again mid-build. Whatever fails goes to the do-not-use
+register and does not come back, however useful it looks later. Skepticism belongs at the boundary;
+certainty after it.
+
+Re-litigating confirmed data mid-build is a failure, not diligence. So is carrying a figure into
+copy because nobody asked what it was being made to prove.
