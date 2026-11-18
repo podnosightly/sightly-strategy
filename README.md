@@ -4,10 +4,7 @@ This folder is a "shelf" that holds a Claude plugin so the Sightly team can inst
 
 ## What's on the shelf
 
-- **culture-desk** (version 2) — the current Sightly Culture Desk plugin, aligned to the Culture Desk V4 knowledge base: the full RFP workflow (brief intake all the way through the deck and QA), plus the Sightly brand voice and design tools.
-- **culture-desk-rfp** (version 1.7) — the previous version, kept unchanged so nothing breaks for anyone still using it.
-
-Install one or the other, not both. With both installed, every skill shows up twice.
+- **culture-desk** — the Sightly Culture Desk plugin, aligned to the Culture Desk V4 knowledge base: the full RFP workflow (brief intake all the way through the deck and QA), plus the Sightly brand voice and design tools. It replaces the earlier test plugin, `culture-desk-rfp`; if you have that one installed, uninstall it, or every skill shows up twice.
 
 ## How a teammate gets it
 

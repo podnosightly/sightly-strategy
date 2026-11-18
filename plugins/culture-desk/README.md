@@ -2,8 +2,8 @@
 
 The complete Sightly Culture Desk skills pack behind the **Sightly RFP Guide**.
 Installing this plugin drops all 19 workflow skills into Cowork at once, so the
-trigger phrases in the guide actually do something. It is the V4-aligned successor to
-`culture-desk-rfp` (1.7.0); install one or the other, not both, or every skill appears twice.
+trigger phrases in the guide actually do something. It replaces the earlier test
+plugin `culture-desk-rfp`; uninstall that one if you have it, or every skill appears twice.
 
 ## The orchestrator
 
