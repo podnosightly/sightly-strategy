@@ -233,6 +233,8 @@ Routing the two apart: a broad brand / competitor / culture **discovery** run �
 ### Step 4 — Build the prompt to the standard
 Write Part A0 (the Execution Protocol) and Part A verbatim, then Part B with every element. For a report/job, the form fields carry the rigor — fold the Execution Protocol's intent (full sweep, term variation, full-body reads, thin-is-a-trigger, self-audit) into the `intent` field and the output expectations, since a form doesn't take the pasted preamble. **Always replace `<BRAND>` / profile name before handing it over** — a leftover placeholder is how the wrong brand enters a pull.
 
+**One Agent session per prompt.** Tell the strategist to run each prompt in its own Agent session, so the artifacts it makes belong to them and they can edit them. **In a chain of prompts, the signal check and press reconciliation run first,** before any visualization, because later cards hardcode the numbers that come before them.
+
 ### Step 5 — Run and hold the output contract
 Enforce what Part B asked for: every percentage with its denominator; every volume with its window; distinct-entity counts; real URLs; source on every figure; coverage caveats at the point of use; data and inference separated; "no data found" over a filled gap. State sample sizes; never dress a count up as significance. **Require the coverage self-audit before any conclusions** — an empty or thin row means a tool was skipped or a pull was too narrow, so send it back to widen and re-run rather than accepting the thin read. "Limited results" is never the final answer until the recall floor is met.
 

@@ -25,10 +25,10 @@ Before producing any copy, state which reference material you have read in this 
 filename. If that list is empty, stop and read it. Do not draft first and consult the reference
 after the user pushes back.
 
-For long-form prose written in a named person’s voice — emails to sellers or clients, internal
-notes, written strategy summaries — the voice exemplars in `references/voice-exemplars.md` are
-required reading, not optional context. Approximating someone’s voice from a description of it
-produces copy they will reject.
+For long-form prose — emails to sellers or clients, internal notes, written strategy summaries —
+read `references/voice-exemplars.md` for structure: openers that do work, a recommendation with its
+reason, numbers with their consequence, "One thing to flag". Use them for structure only. The voice is the writer's own: where the Gmail connector is available, read two or
+three of the writer's recent sent emails of the same kind and match those.
 
 **The exemplars do not apply to slide copy.** They are long-form emails, and their register will
 produce sprawl inside a slide’s word budget. Slide copy follows `sightly-selfservice-deck-builder` for
@@ -102,6 +102,8 @@ term, banned pattern, or unsupported claim explicitly.
     bold-label bullet executed in prose. A named opener is fine when a full sentence immediately
     does the work.
 13. No dollar figure or abstract noun as the actor of a verb. A budget, a plan, a tier or a scenario cannot perform the action: not "$500K holds the mix", not "the plan carries the reach". Put a human subject on the verb, "at $500K we hold the mix", "we add the reach". A product or channel as the actor is fine and matches real Sightly emails ("Brand Mentality reads the conversation", "YouTube anchors the plan"); the rule targets money and abstractions only.
+14. Client-facing copy never makes its point by naming a limitation, either a gap in the client's position or something Sightly can't do, even when it is true. State the same fact from the gain side and end on what the client gets, and keep the mechanism, number, behavior or consequence in the line; copy that only sounds positive is filler. Caveats belong in internal notes and the seller's email.
+15. Plain is not terse. Write full sentences a person would say; compressed, headline-shaped clauses ("reach leads", "arithmetic off it") are their own AI tell.
 
 ## Hard "never use" list (abbreviated — full list in reference)
 

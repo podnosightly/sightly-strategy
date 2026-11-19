@@ -27,6 +27,7 @@ If the Culture Desk knowledge base is present, read `04_Platform_Reference.md` (
 
 ## Guardrails
 
+- **Recommend from Sightly's core platforms:** YouTube, TikTok, Reddit, programmatic display, programmatic video, livestreaming and CTV. Suggest Meta only when the client specifically calls it out, and don't push it otherwise; LinkedIn even less so. A seller suggesting a platform is not a reason to add it.
 - **Role before math.** This skill defines roles and rationale; it does not allocate budget or build line items — that's `sightly-media-plan-builder`, which this feeds.
 - **Scope to the brief's channels.** If the brief names specific channels, work within them (and flag if a named channel is a weak fit); if it's open, recommend the mix the objective justifies. Don't inherit channels from a template the brief didn't buy.
 - **Every platform earns its place.** If a platform can't be given a distinct, defensible role, leave it out and say why.

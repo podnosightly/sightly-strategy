@@ -33,7 +33,7 @@ Inputs: the deck copy, the media plan, the persona framing, and the client-facin
 
 ## Before the gates — read the do-not-use register
 
-**Ask for the project's do-not-use register and read it before running a single gate.** State what it contains, by item. If there isn't one, say so explicitly and treat every figure in the deliverable as unverified for Gate 2 — an absent register does not mean nothing was ruled out.
+**Find the project's do-not-use register (`active-<brand>-do-not-use-register.md`, in the project or the outputs folder) and read it before running a single gate.** Ask for it only if you can't find it. State what it contains, by item. If there isn't one, say so explicitly and treat every figure in the deliverable as unverified for Gate 2 — an absent register does not mean nothing was ruled out.
 
 Anything a session already flagged is a **prohibition, not context**. A figure ruled out in an audit does not become usable because the session has since moved on to persuasive writing. That switch from auditing to selling is the most common point of failure, and it is why this lookup runs first rather than inside a gate.
 
@@ -43,7 +43,7 @@ Run all five gates in order. For each, produce a **PASS** or **FAIL**, and for e
 
 ## The five gates
 
-**Gate 1 — Voice & AI-tell.** Does the output follow `02_Voice_and_Terminology.md`? Check: no em dashes for rhythm, no triplet patterns, no negation-pivots in any form ("not just X but Y," "it's not X, it's Y," "X, not Y," "X rather than Y," and the version split across two sentences), no internal pipeline words in client copy ("the pull flagged," "discovery pass," "mid-window"), no eyebrow labels above slide titles, no throat-clearing openers, no "X. Y. Z." headlines, no fragment stacks, no bold-label bullets, no hollow intensifiers; strategy/persona slides within 80–130 words; setup-then-payoff on each slide; no orphan words; no "guaranteed 100% VCR" or "100% completion" on non-skip or bumper formats; "sizzle", never "scissors". *Run the copy through `sightly-brand-voice` if installed.* Flag every instance with a fix.
+**Gate 1 — Voice & AI-tell.** Does the output follow `02_Voice_and_Terminology.md`? Check: no em dashes for rhythm, no triplet patterns, no negation-pivots in any form ("not just X but Y," "it's not X, it's Y," "X, not Y," "X rather than Y," and the version split across two sentences), no internal pipeline words in client copy ("the pull flagged," "discovery pass," "mid-window"), no eyebrow labels above slide titles, no throat-clearing openers, no "X. Y. Z." headlines, no fragment stacks, no bold-label bullets, no hollow intensifiers; strategy/persona slides within 80–130 words; setup-then-payoff on each slide; no orphan words; no "guaranteed 100% VCR" or "100% completion" on non-skip or bumper formats; "sizzle", never "scissors"; no client-facing point made by naming a limitation (state it from the gain side, keeping the mechanism or number). *Run the copy through `sightly-brand-voice` if installed.* Flag every instance with a fix.
 
 **Gate 2 — Number, source & sufficiency.** Does every number trace to a source, does it support the claim attached to it, and does the plan hold up? Sourcing and sufficiency are separate tests and both can fail independently — a correctly-sourced figure can still fail to carry the sentence it has been placed under, and that is a Gate 2 failure, not a style note. For every number, state the claim it is being used to make and whether it carries that claim. Apply the same test to non-numeric assertions: any sentence asserting a state of affairs needs something behind it, and "owns its category" fails this check as surely as an unsourced percentage does. Check: every CPM, benchmark, persona stat, and tactic cites a source; numbers trace to the media plan or brief; no invented data points; CPM accuracy audit (rates realistic for platform/format/targeting); buying-methodology validation (auction vs. reservation, CPM/CPV/CPC correct per line); rates trace to the rate hierarchy (the deal's rate card, delivered rates, prior Sightly plans and the rate library, a cited external benchmark labeled comparison) and match what the strategist confirmed; impressions recompute as budget ÷ CPM × 1,000; dates, lead times and derived figures have a source or are labeled an assumption next to the figure; two-pass verification (check numbers, then re-check from a different angle). Check every figure against the do-not-use register before passing it. Flag every unsourced or off-looking number.
 
@@ -59,7 +59,11 @@ Run all five gates in order. For each, produce a **PASS** or **FAIL**, and for e
 - **Full run: gate-by-gate report** — PASS/FAIL for each of the five gates, with quoted findings and corrected versions.
 - **Full run: overall verdict** — clear for handoff, or **blocked** with the list of failures the strategist must resolve first.
 
-Never mark a deliverable clear for handoff while any gate is failing. On-brand checks (Gates 1 and 4) should call `sightly-brand-voice` and `sightly-visual-brand` when available; otherwise apply their rules directly and say so.
+Never mark a deliverable clear for handoff while any gate is failing.
+
+**After pushback.** When the strategist pushes back that copy didn't meet the bar, the revision runs the full chain before it goes back (brand voice, the AI-tell check, these gates and the clean-context claim check); don't offer it as optional.
+
+**Decks.** Check deck copy on the rendered slides: view each slide, compare it with the template it came from (type sizes, weights, colors, alignment, slot counts), and fix polish issues such as mismatched corner radii, alignment and spacing directly. On-brand checks (Gates 1 and 4) should call `sightly-brand-voice` and `sightly-visual-brand` when available; otherwise apply their rules directly and say so.
 
 ## What this skill does not do
 

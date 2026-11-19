@@ -16,6 +16,8 @@ Before handover, Culture Desk runs the quick check in `13_When_Asked_to_Build.md
 
 A sourced number can carry an invalid inference. A stylistically clean sentence can assert nothing. Both can pass a review that checks style and sourcing one rule at a time.
 
+**What the check is for.** The check makes sure the sales story holds up in front of a client; it is not built for audit defensibility. Verified Brand Mentality outputs are findings Sightly can sell ("here's what Sightly got a read on"), and the check does not re-open their provenance. Stripping genuine findings out of caution serves no one: for every claim that fails, give the strongest version the evidence supports, and cut only what nothing supports.
+
 ---
 
 ## Default mode: spawn a clean-context verification agent
@@ -76,7 +78,8 @@ Run these four checks on every assertion in the draft:
    recommendations, never as findings.
 
 Output format: a numbered list of findings. For each — the quoted text,
-which check it fails, and why. If a check produces nothing, say so in one
+which check it fails, why, and the strongest version of the claim the
+evidence does support (or "nothing supports it"). If a check produces nothing, say so in one
 line. Do not pad.
 ```
 
@@ -161,7 +164,7 @@ Where a claim depends on a judgment input, say so. A frequency calculation built
 
 A finding recorded in a document does not constrain anything. Findings sit in files; rules block output. Converting one into the other is the whole point.
 
-Every project keeps `<client>-do-not-use-register.md` alongside its working files. When a claim is disqualified it goes in with three fields:
+Every project keeps `active-<brand>-do-not-use-register.md` alongside its working files. When a Claude project is attached, save it to the project (and update it there) so later sessions find it; otherwise keep it in the outputs folder. When a claim is disqualified it goes in with three fields:
 
 1. The claim or figure, verbatim
 2. Why it is disqualified

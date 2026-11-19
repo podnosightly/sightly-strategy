@@ -22,7 +22,7 @@ The one idea that governs everything: static physical build, fluid narrative arc
 
 ## Before you start
 
-**Required input: the confirmed Insights-to-Action lock file** for this client (`<client>_insights_to_action_CONFIRMED.md`), holding at minimum the positioning tension, the personas (one per cluster), the priority moments, and the chosen argument. If it doesn't exist, stop and route to `sightly-insights-to-action` to write it. Do not invent strategy inside a slide.
+**Required input: the confirmed Insights-to-Action lock file** for this client (`<brand>_insights_to_action_CONFIRMED.md`), holding at minimum the positioning tension, the personas (one per cluster), the priority moments, and the chosen argument. If it doesn't exist, stop and route to `sightly-insights-to-action` to write it. Do not invent strategy inside a slide.
 
 **The layout is built in, not pasted.** The five-slide physical build lives in `references/slide_layout.md`. Read it before writing. The strategist does not need to paste a template. If they choose to paste a different template or ask for a different structure for a specific deck, follow that for that deck; otherwise the built-in layout is the build every time.
 
@@ -36,6 +36,7 @@ The gate, in order:
 
 1. Render every slide of the existing deck to an image and actually view it. In this environment that means exporting or rendering to PNG (or opening the live deck in present mode) and looking at the images.
 2. Write a one-line-per-slide inventory before any copy: for each slide, what it is (its role) and what it is doing (the job it performs in the argument). Note which slides already carry the moments, personas, proof, and any tentpole or section content, so you extend what the deck already carries. Capture the real visual system too (background, gradient, accent marks, fonts) so any new slide matches what is already there. Check any template or exemplar for retired terms (YTMP language, a trademark symbol after SmartLists) and report a defect against the template.
+   Count every slot on each slide (bullets, cards, tiles, fields) and its length, and write to exactly that count and length. If a slide's structure doesn't fit the content (a one-persona slide when there are two personas), flag it so the strategist can supply the right template slide; don't cram the content in.
 3. Only after that inventory exists do you write or revise copy. No copy before the inventory. If you cannot render the deck, say so and have the strategist confirm the slide-by-slide reality before you write. Do not proceed from a text dump alone.
 
 This is the same discipline as the anchor-inventory pass below, pointed at the existing artifact instead of the strategy: ground in what is actually there before you produce.
@@ -49,6 +50,8 @@ This is the same discipline as the anchor-inventory pass below, pointed at the e
 **Scope copy to the actual buy.** If the buy is display only, strip video, CTV, and YouTube activation copy from the template even when the template leads with it. If a channel is not in the plan, it is not in the copy. Let the format the strategist confirmed decide what stays.
 
 **Trust the data, then test what it is being asked to prove.** Stats the strategist provides from Brand Mentality outputs are pre-verified as real and correctly measured. Use them directly; do not hold them out or hedge them. Two things still have to happen. **Attribution:** when a figure is third-party in origin (viewership numbers, subscriber counts, platform view counts, external research that Brand Mentality surfaced rather than generated), carry its source label on the slide so it holds up under a skeptical agency read. **Sufficiency:** before a figure goes on a slide, check that it supports the specific claim the slide makes with it, because a real number can still fail to carry the sentence built on it. Run that check once; whatever passes is settled and is not re-opened. Sightly's own proof points carry their own attribution, but check each against the project's do-not-use register rather than treating any as drop-in ready; the current approved set and the do-not-use list are in `08_Proof_Points_and_Battle_Cards.md`, and the `sightly-brand-voice` reference is a portable copy that follows `08` where they differ. Never invent a figure or a source; if a line needs a number that was not provided, flag the gap rather than filling it.
+
+**Case studies and platform images.** Case-study slides draw on Sightly's Case Study Matrix sheet (https://docs.google.com/spreadsheets/d/1VSndHvH3CuEek2zExrfcrYF2pHuPiyTWberQiYCnMLA). Images from Sightly's own platform (moment cards, thumbnails, SmartList and Persona Builder screenshots) go in unaltered and never blurred; Sightly has every right to show them.
 
 **Placeholders for pending inputs.** Budget, CPM, and unconfirmed dates get a bracketed placeholder such as `[Budget: TBD pending confirmation]`, never a guessed value. Rates come from the rate hierarchy and are confirmed by the strategist.
 
@@ -68,7 +71,7 @@ The one failure this prevents: a clean visual idea quietly overriding what the d
 
 **Before proposing any slide concept:**
 
-1. Open the confirmed Insights-to-Action lock file for this client (`<client>_insights_to_action_CONFIRMED.md`, written at the end of Phase 3 of `sightly-insights-to-action`). If it does not exist, stop and get it written first. Build from the file. Memory drifts; the file does not.
+1. Open the confirmed Insights-to-Action lock file for this client (`<brand>_insights_to_action_CONFIRMED.md`, kept by `sightly-insights-to-action` from Phase 1 and complete at Phase 3; look in the project first). If it does not exist, stop and get it written first. Build from the file. Memory drifts; the file does not.
 2. Restate, one line each, the load-bearing structure the deck must honor: the positioning tension, the exact cluster/persona count with each one's name and motivation, the priority moments, and the chosen argument. This restatement opens the anchor inventory below; show both to the strategist together, before any concept, at the one stop in "Plan the narrative".
 3. Test the concept against that restatement. The concept must express the full structure. If the concept only works by changing the count, or by collapsing, merging, or renaming clusters or personas, that is a strategy change. Stop and flag it; do not ship it.
 
@@ -150,7 +153,7 @@ If `sightly-brand-voice` and `sightly-visual-brand` are not installed in this se
 
 ## Handoff to a built deck
 
-This skill ends at slide-ready copy in the fixed five-slide structure, cleared through the check above. If the strategist wants an actual `.pptx` built from the approved copy, that is the `pptx` skill's job. Hand off with the confirmed copy and the Sightly design tokens from `sightly-visual-brand` (`references/design-tokens.json`: dark mode on #000000 / #111111, Sightly Blue #00AEEF, Mentality Purple #7B61FF, Mentality Teal #6FEABC, Sightly Orange #FF6F07, Inter, 16:9; 720 x 405 pt for .pptx), and note that the copy is locked so the deck build is layout and formatting, not a rewrite.
+This skill ends at slide-ready copy in the fixed five-slide structure, cleared through the check above. When the strategist wants the built deck, build it as a Slides artifact if the session offers that type, so they can edit it and export .pptx or PDF; otherwise hand to the `pptx` skill. Apply polish fixes (corner radii, alignment, spacing) as part of the build; don't offer them as follow-ups. Hand off with the confirmed copy and the Sightly design tokens from `sightly-visual-brand` (`references/design-tokens.json`: dark mode on #000000 / #111111, Sightly Blue #00AEEF, Mentality Purple #7B61FF, Mentality Teal #6FEABC, Sightly Orange #FF6F07, Inter, 16:9; 720 x 405 pt for .pptx), and note that the copy is locked so the deck build is layout and formatting, not a rewrite.
 
 ---
 

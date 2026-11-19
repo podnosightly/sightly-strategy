@@ -27,7 +27,7 @@ These are the exact places the manual version goes wrong. Get these right and th
 
 **Scope to the brief's channels, not the template's.** The single most common failure is inheriting channels from the template deck you're adapting. If the brief is YouTube VRC + Display via DV360, do not carry TikTok, CTV, or Demand Gen into the core strategy just because the source deck had them. Park out-of-scope channels as a clearly-labeled *expansion* option, never as a promise. If the brief *is* multi-channel (e.g. YouTube + TikTok + Programmatic CTV), cover every channel it names — don't collapse it to one.
 
-**Feasibility gates persona count.** "Fewest personas covering the audience with minimal overlap" is a math rule, not a vibe. Persona count × channels = line-item cuts. Check that against platform minimums (see `sightly-media-plan-builder` and `05_Budget_Minimums_and_Feasibility.md`). A $95K two-format, two-month awareness buy supports ~2 personas (four cuts, healthily above DV360 floors); a third persona thins delivery. Recommend the core count, and if you define an optional extra persona, say explicitly what budget/scope would need to grow to switch it on.
+**The brief sets the persona count, and feasibility problems are raised as flags.** When the brief names its audiences, those are the personas: use exactly those, and never trim a client-named audience on your own authority. When the brief names none, build the fewest personas that cover the whole breadth of the audience with the least overlap. Check feasibility on how each platform actually structures lines before raising a concern: a YouTube VRC line optimizes across formats inside one line, so three personas is three lines, not three times the format count. Compare each line's share of budget with the minimums in `05_Budget_Minimums_and_Feasibility.md` (`sightly-media-plan-builder` confirms the numbers). If a line falls short, raise it as a flag with the tradeoff and let the strategist decide.
 
 **Split personas by relationship/behavior, not demographics.** This is what keeps overlap near zero. "Ride-or-Die Fan vs. Nostalgic Returner," "Fresh-Start Furnisher vs. Considered Upgrader" — one is always-on, the other is reactivatable. Two personas that differ only by age or gender will overlap heavily and bid against each other.
 
@@ -39,7 +39,7 @@ These are the exact places the manual version goes wrong. Get these right and th
 
 ## Inputs the skill needs
 
-Confirm these before building. Ask in one batch (2–3 questions max), not one at a time.
+Find these in the brief, the email thread and the project first. Ask only questions whose answer changes what you do next. Ask them one at a time, in the session's ask-question widget where there is one, with each option explained. Never ask for a due date or a schedule to plan against.
 
 - **Brand + what success looks like** — the campaign goal drives the payoff verb (tune-in vs. purchase vs. sign-ups vs. store visits). Anchor persona and board copy on the *right* action.
 - **Brief specifics** — budget, flight dates, **channels in scope**, geo, agency/DSP (e.g. PHD / DV360). Channels and budget together gate persona count.
@@ -53,7 +53,7 @@ If a required input is missing, ask before building. Do not invent budget, fligh
 
 ### Step A — Persona architecture (drives everything else)
 
-Propose the fewest personas that cover the audience with minimal overlap, split by behavior/relationship, feasibility-checked against budget ÷ channels. Recommend the core count and flag any optional persona with the scope needed to activate it. Persona Builder holds up to 10 personas in production per account, created 5 at a time; check the Agent's `add_persona` limit before relying on it, since the Agent's capability audit (16 September 2026) recorded five per brand. Get the strategist's call before proposing a set that would exceed it.
+Use exactly the audiences the brief names. When it names none, propose the fewest personas that cover the audience with minimal overlap, split by behavior/relationship. Check feasibility per line as above and raise any shortfall as a flag; the strategist decides. Persona Builder holds up to 10 personas in production per account, created 5 at a time; check the Agent's `add_persona` limit before relying on it, since the Agent's capability audit (16 September 2026) recorded five per brand. Get the strategist's call before proposing a set that would exceed it.
 
 Each persona uses this structure:
 
@@ -78,7 +78,7 @@ Also define **Target / Monitor / Block** conditions where the brief warrants it 
 
 ### Step C — SmartList sample lists
 
-For each persona or board, propose example contextually-curated channel/video lists — the inventory the buy would run against, refreshed on a stated cadence. Apply Block conditions as automatic video-level exclusions. Keep examples concrete (creator archetypes, publication names, content types), and mark anything speculative as an example, not a guarantee.
+For each persona or board, propose example contextually-curated channel/video lists — the inventory the buy would run against, refreshed on a stated cadence. Apply Block conditions as automatic video-level exclusions. Keep examples concrete (creator archetypes, publication names, content types), and mark anything speculative as an example, not a guarantee. These are illustrative examples of a list Sightly's SmartList technology builds at scale, from hundreds to thousands of channels and videos; never present them as the list, and never shortlist or cut channels on creator audience data, since age and similar filters are set at campaign level.
 
 ## Output
 

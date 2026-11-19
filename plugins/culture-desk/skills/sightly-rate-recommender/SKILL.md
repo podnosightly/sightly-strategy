@@ -46,7 +46,7 @@ Rates in the library are **`billing_rate`** — billing (gross). Label everythin
 
 ## Inputs you need before you start
 
-Collect these from the brief or the conversation. Ask in one batch if missing — don't interrogate one at a time.
+Collect these from the brief, the conversation and the project. Ask only questions whose answer changes what you do next. Ask them one at a time, in the session's ask-question widget where there is one, with each option explained. Never ask for a due date or a schedule to plan against.
 
 - **Tactics** — the channel + format + rate_type for each line the plan will include (e.g., "YouTube VRC Efficient Reach, Multi-Format, CPV"; "TikTok Spark Ads, CPM"). This is the list you'll walk through.
 - **Agency** — so you can pull the `BY_AGENCY_TACTIC` cut. If none, say so and skip that cut.
@@ -63,7 +63,7 @@ If the strategist hasn't named the tactics yet, that's fine — help them assemb
 
 Requires the **Google Drive connector** (the Sales and Strategy campaign folders and past decks live there). If it isn't authorized, say so and stop. Do not guess at past work. At Step 2 of the RFP workflow, run only this step and stop: the tactic walk runs at Step 7, once the platform lineup exists.
 
-1. **Search Drive** for past media plans (and their decks or wrap reports) that match the pricing profile. Prioritize (a) the same agency or deal structure with the same platforms and formats, (b) the same vertical and budget size, (c) the same objective or audience. Search the campaign folders, agency folders and proposal folders.
+1. **Search Drive** for past media plans (and their decks or wrap reports) that match the pricing profile. Prioritize (a) the same agency or deal structure with the same platforms and formats, (b) the same vertical and budget size, (c) the same objective or audience. Search the campaign folders, agency folders and proposal folders. Folder-title crawls undercount, so also run a full-text search (`fullText contains 'Billing CPU'`) across spreadsheet types; where `download_file_content` returns an error, `read_file_content` usually works.
 2. **Rank the candidates** and present the top 2–3, each with the client and campaign, plan date, why it matches, budget size, platform mix, the billing rate per tactic, and a link.
 3. **Summarize what the matches tell the new plan:** the rate range per tactic with plan names and dates, carried into the tactic walk below; any past results or relationship history worth citing, each checked against the do-not-use list; and how the new brief differs (budget size, flight, geo, formats), so the strategist knows how far each comparable applies.
 

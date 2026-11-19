@@ -1,7 +1,7 @@
 ---
 name: sightly-rfp-orchestrator
 description: >-
-  UPDATED 17 November 2026 (culture-desk v2.0.0). Points every knowledge-base reference at the
+  UPDATED 19 November 2026 (culture-desk v2.1.0). Researches the brief before asking, asks one decision at a time, and keeps the register and lock file in the project. Points every knowledge-base reference at the
   Culture Desk V4 files, keeps the 9-step workflow and the seven execution guards, runs brief intake
   itself at Step 1, and sends Step 9 to sightly-selfservice-deck-builder, or to sightly-deck-build
   where that skill is installed. If you see more than one sightly-rfp-orchestrator, this is the
@@ -72,6 +72,8 @@ Step 3a produces a prompt a **human** carries to the Brand Mentality Agent. That
 
 Do not substitute your own retrieval for it. Do not browse the strategist's internal platforms, fetch from connectors, or otherwise go acquire the data yourself in place of the handoff — even when a URL is visible in a Slack message or email, and even when you could technically reach it. Produce the prompt and hand it over.
 
+This guard covers Brand Mentality data only. Researching the brief itself (the email thread, the brand's website, the project, a web search for public facts) is expected; see Step 1.
+
 ### 7. Do not invent ownership, and do not assert an unstated assumption as fact
 
 Gaps in the brief or the working state get filled by asking or by flagging, never by inventing an answer and recording it as given. The most common form is invented ownership — writing that a task is a named person's responsibility, a decision is someone's call, or an item is "not on the critical path" — when no one supplied it.
@@ -95,7 +97,7 @@ Gaps in the brief or the working state get filled by asking or by flagging, neve
 
 Three things persist across every step and get restated at each handoff, in one or two lines. Not a recap of the whole workflow — just the constraints the next step could violate.
 
-**1. The do-not-use register.** Created empty at Step 1 as `<client>-do-not-use-register.md`, and given its first entries at Step 3a from the Agent's known limits. Every disqualified figure or claim goes in with the reason and the replacement. **Restate any register entry relevant to the step being handed off.** A finding recorded three steps ago does not constrain the current step unless it is carried forward, and this is the mechanism that carries it. Internal only; never travels into client-facing material.
+**1. The do-not-use register.** Created empty at Step 1 as `active-<brand>-do-not-use-register.md` (saved to the project when one is attached, otherwise the outputs folder), and given its first entries at Step 3a from the Agent's known limits. Every disqualified figure or claim goes in with the reason and the replacement. **Restate any register entry relevant to the step being handed off.** A finding recorded three steps ago does not constrain the current step unless it is carried forward, and this is the mechanism that carries it. Internal only; never travels into client-facing material.
 
 When a register entry is later overturned by the strategist, record the resolution and who made the call. Do not delete the entry — a corrected error should stay visible so it cannot silently return.
 
@@ -126,9 +128,9 @@ Still nine. Step 3 has two halves because acquiring Brand Mentality data and int
 
 Turn a raw brief (pasted text, a forwarded email, or an attached document) into a confirmed intake before any building starts. Get the ask completely understood, surface every gap, and flag compliance risk up front, so nothing downstream is built on a misread brief. If the Culture Desk knowledge base is present, read `13_When_Asked_to_Build.md` › What to collect (the canonical checklist) and `09_Compliance.md` (regulated categories) first. They are the source of truth; the lists below are copied from them as of 17 November 2026, and where they differ, the knowledge base wins.
 
-1. **Read the whole brief first,** including any attached RFP document, before extracting anything.
-2. **Extract into the checklist below.** Fill only what the brief actually states. Never guess a value.
-3. **List the gaps as questions.** Turn every missing or ambiguous field into a targeted question. If the brief is thin, ask the 2–3 questions that most unlock the build, not a wall of them. If it's solid, list the remaining gaps inline and recommend proceeding.
+1. **Read the whole brief first,** including any attached RFP document and the full email thread it came in (search Gmail by the subject when the strategist gives one), before extracting anything.
+2. **Research before you ask.** Fill what the sources state: the brief and thread, the brand's own website (the source of record for business facts), the project's earlier work on this brand, and a web search for anything publicly checkable (event dates, launches, sponsorship terms). Never guess a value. The brief's own framing is the premise the pitch is built on; research supports and sharpens it, and never reframes or corrects it.
+3. **Ask only what you couldn't find or what is the strategist's call** (the Sightly budget slice, rates, scope, sign-offs). Ask only questions whose answer changes what you do next. Ask them one at a time, in the session's ask-question widget where there is one, with each option explained. Never ask for a due date or a schedule to plan against. Record an informational note in the brief as a note; don't turn it into a question.
 4. **Flag a regulated category** at the top, before anything else proceeds (below).
 5. **Output the intake summary** and stop for the strategist to confirm.
 
@@ -181,6 +183,8 @@ End by asking the strategist to confirm the intake and answer the questions befo
 ## Behavior at each checkpoint
 
 State it like this: "**Step N — [name].** This step produces [output]. The skill for it is `[skill]`; it needs [input]. [Any relevant register entry or open flag.] Want me to hand off to it now, skip it, or do something else first?"
+
+When a step finishes, show the alternatives it considered next to the one it recommends, so the strategist can check that the output makes sense and combine ideas from more than one.
 
 Then stop. Do not begin the step in the same turn you propose it, and do not chain several steps into one turn because the schedule is tight.
 

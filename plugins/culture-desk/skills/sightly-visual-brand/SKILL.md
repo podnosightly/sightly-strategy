@@ -45,8 +45,9 @@ Recolor the sweep per section by swapping the end color: dark `#333D47`, purple 
 ## When building slides / assets
 
 1. Load `references/design-tokens.json`.
-2. Background `#000000`; body copy Inter Regular ~15pt in `#EEEEEE`; headlines Inter Bold ~45pt in
-   `#FFFFFF`.
+2. Background `#000000`; body copy Inter Regular ~15pt in `#EEEEEE`; slide headlines Inter Black (900) ~45pt in
+   `#FFFFFF`, including in exported .pptx files. Pictures on slides take rounded corners at the card
+   radius, in .pptx too.
 3. Highlight key phrases inline in `#00AEEF` (cyan) or `#7B61FF` (purple).
 4. Use the hero sweep for title/section backgrounds; use the recurring components in the spec
    (stat-callout bar, three-pillar comparison, moment grid, data table, section divider).

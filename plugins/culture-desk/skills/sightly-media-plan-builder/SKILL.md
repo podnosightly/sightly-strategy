@@ -36,7 +36,7 @@ Column meanings — internalize these before building:
 - **PLACEMENT TYPE**: the category (Video, Display, Native, Audio, Social, Search).
 - **NETWORK**: the platform / network (YouTube, Meta, DV360, TikTok, Reddit, Spotify, Pinterest).
 - **PLACEMENT**: the specific ad unit (e.g., "In-Stream Skippable", "Bumper", "Carousel", "Promoted Pin", "Audio Everywhere").
-- **TARGET**: which persona this line item serves. Use the persona's working name (e.g., "Persona 1 — Hopeful Renter").
+- **TARGET**: which persona this line item serves. Use the persona's name exactly as the brief wrote it (or its confirmed persona name when the brief named none), never a numbered code like "Persona 1".
 - **FEATURES**: targeting features, format specs, special capabilities — Anticipation Board moments, SmartLists, BAV quadrant alignment, custom intent, IAS categories applied at line-item level.
 - **START DATE**, **END DATE**: flight dates in ISO format (`YYYY-MM-DD`).
 - **BILLING CPU**: the **pricing unit label** — `CPM`, `CPV`, `CPC`, or `Flat`. Not a dollar amount; the rate per unit goes in CPU, as in Sightly's live plans. `06_Media_Planning_Principles.md` and `13_When_Asked_to_Build.md` define BILLING CPU as the client-facing rate. A correction to both files is staged (17 November 2026); until it is applied, follow this skill for these two columns.
@@ -46,6 +46,8 @@ Column meanings — internalize these before building:
 - **ESTIMATED VIEWS**: video lines only; otherwise leave blank.
 - **ESTIMATED VIEW RATE**: video lines only; from the strategist or a cited benchmark (see "Estimated view rate" below). Non-skip and bumper lines carry no default view rate.
 - **NOTES**: caveats, callouts, dependencies, reservations needed, anything the strategist or sales lead must know about this line.
+
+**UK plans.** When the plan's geo or currency is UK/GBP, replace the single CPU column with two: **NET CPU** (net + 15%) and **GROSS CPU** (net + 30%), both taken as margin off gross (NET CPU = GROSS CPU × 0.85; Sightly net = GROSS CPU × 0.70). Use the strategy team's most recent UK plans as the reference for headers and rate estimates.
 
 Additional fields that may belong as columns or in NOTES depending on plan complexity: **Site Served**, **IAS Blocking**, **Device** (default to "All Devices" unless device-level breakouts are part of the strategy). When unsure, put them in NOTES.
 
@@ -97,7 +99,7 @@ If the deal runs through MX (Horizon), Active or Agyle, apply the deal mechanics
 
 ### Step B — Persona-level budget allocation
 
-**The confirmed strategy sets the plan's structure, and it overrides this skill's defaults.** Before allocating anything, check the confirmed strategy (the `<client>_insights_to_action_CONFIRMED.md` file, or the strategist's locked direction). If it specifies a single consolidated, auto-optimizing buy — one line that optimizes across inventory itself, with the personas rolling up inside it — then that is the plan: one fluid line per budget scenario, with no per-persona line items, no moments reserve, and no separate always-on line for a broad or catch-all audience. Do not split by persona, add a reserve, or add a catch-all line unless the brief or the confirmed strategy asks for it. The per-persona allocation below is the default only when the strategy leaves the structure open.
+**The confirmed strategy sets the plan's structure, and it overrides this skill's defaults.** Before allocating anything, check the confirmed strategy (the `<brand>_insights_to_action_CONFIRMED.md` file, or the strategist's locked direction). If it specifies a single consolidated, auto-optimizing buy — one line that optimizes across inventory itself, with the personas rolling up inside it — then that is the plan: one fluid line per budget scenario, with no per-persona line items, no moments reserve, and no separate always-on line for a broad or catch-all audience. Do not split by persona, add a reserve, or add a catch-all line unless the brief or the confirmed strategy asks for it. The per-persona allocation below is the default only when the strategy leaves the structure open.
 
 Read the persona list from the brief or from Step 5 of the RFP Workflow. The skill does **not** prescribe a default split — every campaign is different and the strategist owns the allocation decision.
 
@@ -123,7 +125,7 @@ For each persona, build the line items. Apply these rules:
 
 **Grade each format on a KPI it can move** (`06_Media_Planning_Principles.md` › KPI by format).
 
-**No fantasy planning.** Real rates, real inventory, real targeting. If you do not have a confirmed rate for a placement, either ask the strategist or take a baseline from comparable prior plans via `sightly-rate-recommender` and label it as a baseline. What you never do is invent a number.
+**No fantasy planning.** Real rates, real inventory, real targeting. If you do not have a confirmed rate for a placement, run `sightly-rate-recommender` and bring the strategist its evidence to decide on. What you never do is invent a number.
 
 **The same rule covers audience size.** Any addressable-audience or reach figure that did not come from a platform, a Persona Builder run, or the strategist is your own estimate. Label it as an estimate at the point of use, and state any budget recommendation resting on it as contingent on that figure. A budget recommendation quietly built on a self-generated audience number is fantasy planning with a media plan wrapped around it.
 
@@ -138,12 +140,14 @@ For each persona, build the line items. Apply these rules:
 Once the lines are drafted, walk the table once more and look for:
 
 - **Pacing / flight length** — is the flight long enough for each platform to exit its learning period? No learning-period length is documented in the knowledge base, so don't state one; flag a short flight as a risk and ask the strategist or the platform rep for the figure.
-- **Saturation** — does any persona's frequency exposure risk burnout? Estimate reach and frequency per channel; Sightly doesn't deduplicate across channels. Google Reach Planner can't model contextual targeting (SmartLists), so for SmartLists lines apply a stated frequency assumption (the team plans at 3x) to the line's impressions to estimate reach, and label it directional.
+- **Saturation** — does any persona's frequency exposure risk burnout? Estimate reach and frequency per channel; Sightly doesn't deduplicate across channels. Google Reach Planner can't model contextual targeting (SmartLists), so for SmartLists lines apply the team's planning frequency of 3x per week: reach = impressions ÷ (3 × weeks in the flight). State the assumption and label the reach directional. Every frequency figure carries its time window; a frequency number without one means nothing.
 - **Geo spread** — is the geo split too broad for the budget to land, or are larger markets getting equal weight to smaller ones? Larger markets should get more weight, not equal splits.
 - **Reservation lead times** — use only the lead times the knowledge base documents (`05_Budget_Minimums_and_Feasibility.md` › Lead times). TikTok TopView, Pulse and Branded Effect: 2–4 weeks, and that figure applies to TikTok reservation products only. TopView's booking runway of up to 225 days is a booking window; it sets no lead time and says nothing about availability. YouTube reservation booking, Reddit takeovers, Spectrum Reach live sports and livestreaming have no documented lead time: say so in NOTES and route the question, never borrow another product's figure.
 - **Learning periods on pulsed Demand Gen** — pulsing causes re-entry into learning. Flag and recommend always-on if applicable.
 
-Every callout goes either in the line-item NOTES column (if it's local to one line) or in the narrative summary (if it's structural).
+Every callout goes either in the line-item NOTES column (if it's local to one line) or in the narrative summary (if it's structural). Whenever the summary or a message points to a spreadsheet, name the tab and the column by its header and letter (for example, the `Plan` tab, column J `BUDGET`), never "the column".
+
+**Minimums in an RFP answer.** When an RFP asks for "minimum spending requirements", answer with hard requirements only: platform-enforced minimums and anything set by Sightly contract or a partner. Sightly's recommended monthly minimums and the line-item floor are internal planning guidance, not client-facing minimums.
 
 **Added value and lift.** Put the two default added-value items on every plan, Brand Mentality Platform Access and Brand Mentality Reporting; anything beyond them is a recommendation the strategist decides (`06_Media_Planning_Principles.md` › Added value). If the brief or the plan points to measurement, offer the lift-study feasibility read: Google checks its minimums against net spend, so convert the plan's gross spend in each study window to net at the deal's margin (net = gross × (1 − margin)), then compare the non-Demand-Gen net spend in any 10-day window (28 days for Search Lift) with the minimum buffered by 20–30%. Count only lines Brand Lift can measure: Video campaigns (skippable, non-skip, bumper, in-feed and Shorts); audio runs as its own audio-only study and can't be mixed with video; display and Performance Max can't be measured (`10_Brand_Lift_and_Measurement.md` › What Brand Lift can measure, and › Checking whether a plan can support a study).
 
@@ -208,7 +212,7 @@ Sightly's voice is direct, strategist-to-strategist. The NOTES column is not mar
 - `TikTok reservation: book at least 2–4 weeks before flight start (lead time per `05_Budget_Minimums_and_Feasibility.md`).`
 - `YouTube reservation: lead time not documented; confirm with the Google team.`
 - `Pulsed delivery will re-enter learning each cycle; recommend always-on.`
-- `Persona 2 retargeting depends on Persona 1 awareness pixel firing; sequence required.`
+- `Sleep-Curious Parent retargeting depends on the Burned-Out Knowledge Worker awareness pixel firing; sequence required.`
 
 Bad NOTES entries (do not write these):
 
@@ -240,7 +244,7 @@ Before building anything, confirm you have:
 - **Rates** — a billing rate for every line, from the rate hierarchy: the deal's rate card, delivered rates from a comparable campaign, prior Sightly plans and the rate library (via `sightly-rate-recommender`, labeled as a baseline), then a cited external benchmark labeled as a comparison (Rule 17; `06_Media_Planning_Principles.md` › Where rates come from). The strategist confirms every rate. Never invent one.
 - **Brand Mentality data** — Anticipation Board moments, SmartLists, BAV quadrant — if available.
 
-If anything is missing, ask before building. Ask in batches (two-to-three clarifying questions max in one go), not one at a time.
+If anything is missing, look for it in the brief, the email thread and the project before asking. Ask only questions whose answer changes what you do next. Ask them one at a time, in the session's ask-question widget where there is one, with each option explained. Never ask for a due date or a schedule to plan against.
 
 ## Output
 

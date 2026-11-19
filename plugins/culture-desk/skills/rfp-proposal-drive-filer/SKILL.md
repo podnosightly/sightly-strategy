@@ -28,9 +28,10 @@ Drive, copying out of the strategist's personal drive when they're loose there.
    Proposal chain as needed.
 
 ## Key facts about this environment
-- The strategist's personal **My Drive** root = `0AFRN_-IJLSxGUk9PVA` (for Dan
-  Podnos). A file whose parent chain leads here is "on personal drive" and needs
-  copying into the Sales Drive. Confirm the current user's My Drive id if different.
+- The strategist's personal **My Drive** root: look it up for the person running
+  the skill at the start (get_file_metadata on `root`); never reuse another
+  strategist's id. A file whose parent chain leads there is "on personal drive" and
+  needs copying into the Sales Drive.
 - Sales Drive hierarchy: **Agency ▸ Brand ▸ Campaign ▸ {Prep, Proposal}**. Final
   proposals go in the campaign's **Proposal** subfolder (briefs/working docs go in **Prep**).
 - Agencies root (where agency folders live) = `11sDjjhwm3EzCm2iXNwVa-4s5MTokvI_u`.

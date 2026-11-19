@@ -13,9 +13,9 @@ Two end-to-end examples showing how the math, allocation, and CSV structure come
 - **Flight:** 2026-06-01 to 2026-08-31.
 - **Geos:** Top-10 US DMAs.
 - **Personas (from Step 5):**
-  - Persona 1 — Burned-Out Knowledge Worker (primary; closest to the conversion objective)
-  - Persona 2 — Sleep-Curious Parent (secondary)
-  - Persona 3 — Wellness Adjacent Gen Z (tertiary)
+  - Burned-Out Knowledge Worker (primary; closest to the conversion objective)
+  - Sleep-Curious Parent (secondary)
+  - Wellness Adjacent Gen Z (tertiary)
 - **Platforms requested:** YouTube (auction), Meta, Programmatic Display via DV360.
 - **Rates provided by the strategist:**
   - YouTube In-Stream Skippable: $0.04 CPV
@@ -38,12 +38,12 @@ All platforms clear their gross monthly minimums. Every line also clears the $10
 
 The skill proposes an allocation with rationale, the strategist confirms. Flight totals for this brief:
 
-- Persona 1 (Primary, conversion-proximate): $60,000 (40%)
-- Persona 2 (Secondary): $45,000 (30%)
-- Persona 3 (Tertiary): $30,000 (20%)
+- Burned-Out Knowledge Worker (primary, conversion-proximate): $60,000 (40%)
+- Sleep-Curious Parent (secondary): $45,000 (30%)
+- Wellness Adjacent Gen Z (tertiary): $30,000 (20%)
 - Moments reserve: $15,000 (10%)
 
-Rationale (goes in narrative summary): Persona 1 is closest to conversion intent and gets the largest share to reflect funnel proximity. Persona 2 carries the broadest reach opportunity (parents) and warrants more than the tertiary. Persona 3 is a longer-horizon culture play. We hold the moments reserve for Anticipation Board triggers around sleep and wellness conversations (mid-summer heatwave coverage is on the board).
+Rationale (goes in narrative summary): Burned-Out Knowledge Worker is closest to conversion intent and gets the largest share to reflect funnel proximity. Sleep-Curious Parent carries the broadest reach opportunity and warrants more than the tertiary. Wellness Adjacent Gen Z is a longer-horizon culture play. We hold the moments reserve for Anticipation Board triggers around sleep and wellness conversations (mid-summer heatwave coverage is on the board).
 
 ### Step C — Line items (CSV preview)
 
@@ -51,11 +51,11 @@ Note the formatting conventions: BILLING CPU holds the pricing unit, CPU holds t
 
 ```
 PLACEMENT TYPE,NETWORK,PLACEMENT,TARGET,FEATURES,START DATE,END DATE,BILLING CPU,CPU,BUDGET,ESTIMATED IMPRESSIONS,ESTIMATED VIEWS,ESTIMATED VIEW RATE,NOTES
-Video,YouTube,In-Stream Skippable,Persona 1 — Burned-Out Knowledge Worker,Custom Intent + Affinity overlay,2026-06-01,2026-08-31,CPV,0.04,48000.00,4444444,1200000,0.27,Primary persona. View rate supplied by strategist.
-Video,YouTube,Bumper,Persona 1 — Burned-Out Knowledge Worker,Frequency cap 3/wk per user,2026-06-01,2026-08-31,CPM,5.50,12000.00,2181818,,,No default view rate for bumpers.
-Video,Meta,Feed Video,Persona 2 — Sleep-Curious Parent,Lookalike + interest stack; Feed only,2026-06-01,2026-08-31,CPM,9.00,30000.00,3333333,666667,0.20,Secondary persona. View rate supplied by strategist.
-Social,Meta,Carousel,Persona 2 — Sleep-Curious Parent,Product carousel; standard creative,2026-06-01,2026-08-31,CPC,1.20,15000.00,,,,Click-driven buy; impressions not estimated.
-Display,DV360,Programmatic Display,Persona 3 — Wellness Adjacent Gen Z,Contextual + SmartList: wellness publishers,2026-06-01,2026-08-31,CPM,4.50,30000.00,6666667,,,Tertiary persona; contextual display for efficient reach.
+Video,YouTube,In-Stream Skippable,Burned-Out Knowledge Worker,Custom Intent + Affinity overlay,2026-06-01,2026-08-31,CPV,0.04,48000.00,4444444,1200000,0.27,Primary persona. View rate supplied by strategist.
+Video,YouTube,Bumper,Burned-Out Knowledge Worker,Frequency cap 3/wk per user,2026-06-01,2026-08-31,CPM,5.50,12000.00,2181818,,,No default view rate for bumpers.
+Video,Meta,Feed Video,Sleep-Curious Parent,Lookalike + interest stack; Feed only,2026-06-01,2026-08-31,CPM,9.00,30000.00,3333333,666667,0.20,Secondary persona. View rate supplied by strategist.
+Social,Meta,Carousel,Sleep-Curious Parent,Product carousel; standard creative,2026-06-01,2026-08-31,CPC,1.20,15000.00,,,,Click-driven buy; impressions not estimated.
+Display,DV360,Programmatic Display,Wellness Adjacent Gen Z,Contextual + SmartList: wellness publishers,2026-06-01,2026-08-31,CPM,4.50,30000.00,6666667,,,Tertiary persona; contextual display for efficient reach.
 Reserve,DV360,Moments Reserve — Programmatic Display,All personas,Anticipation Board triggers (heatwave / sleep / wellness),2026-06-01,2026-08-31,CPM,4.50,15000.00,3333333,,,Activated reactively; creative variants required by 2026-05-25 (assumed date).
 TOTAL,,,,,,,,,150000.00,,,,
 ```
@@ -87,13 +87,13 @@ TOTAL,,,,,,,,,150000.00,,,,
 
 ### Narrative summary (output alongside CSV)
 
-> 92-day, $150,000 plan against three personas, anchored on YouTube + Meta with DV360 display rounding out reach. Persona 1 gets 40% as the conversion-proximate audience; secondary and tertiary scale down by funnel role. We hold a 10% moments reserve in DV360 to activate against the Anticipation Board's mid-summer sleep and wellness conversations.
+> 92-day, $150,000 plan against three personas, anchored on YouTube + Meta with DV360 display rounding out reach. Burned-Out Knowledge Worker gets 40% as the conversion-proximate audience; secondary and tertiary scale down by funnel role. We hold a 10% moments reserve in DV360 to activate against the Anticipation Board's mid-summer sleep and wellness conversations.
 >
 > All platforms clear their gross monthly minimums. No feasibility flags.
 >
 > One pressure-test callout: the 10-DMA spread thins delivery in lower-ranked markets. Recommend concentrating to top-5 DMAs if Week-2 delivery reports show under-pacing.
 >
-> Open question for strategist: confirm the Persona 3 contextual SmartList is current; the wellness publisher list was last refreshed in Q1.
+> Open question for strategist: confirm the Wellness Adjacent Gen Z contextual SmartList is current; the wellness publisher list was last refreshed in Q1.
 
 ---
 
@@ -105,7 +105,7 @@ TOTAL,,,,,,,,,150000.00,,,,
 - **Budget:** $4,000 gross for a 30-day flight.
 - **Flight:** 2026-07-01 to 2026-07-30.
 - **Geo:** US national.
-- **Personas:** Persona 1 — Gen Z Snack Seeker.
+- **Personas:** Gen Z Snack Seeker.
 - **Platforms requested:** TikTok only.
 - **Rates provided:** TikTok In-Feed Video: $8.00 CPM; view rate 0.12, supplied by the strategist.
 
@@ -119,13 +119,13 @@ The brief is testing TikTok over 30 days. No learning-period length is documente
 
 ### Step B — Persona allocation
 
-Single persona, so 100% goes to Persona 1. No moments reserve unless Brand Mentality data supports it (the brief doesn't reference any).
+Single persona, so 100% goes to Gen Z Snack Seeker. No moments reserve unless Brand Mentality data supports it (the brief doesn't reference any).
 
 ### Step C — Line items
 
 ```
 PLACEMENT TYPE,NETWORK,PLACEMENT,TARGET,FEATURES,START DATE,END DATE,BILLING CPU,CPU,BUDGET,ESTIMATED IMPRESSIONS,ESTIMATED VIEWS,ESTIMATED VIEW RATE,NOTES
-Video,TikTok,In-Feed Video,Persona 1 — Gen Z Snack Seeker,Interest stack + creator content,2026-07-01,2026-07-30,CPM,8.00,4000.00,500000,60000,0.12,"30-day test flight: no learning-period length is documented, so the short flight is flagged as a risk. Clears the $3,500 gross TikTok monthly minimum."
+Video,TikTok,In-Feed Video,Gen Z Snack Seeker,Interest stack + creator content,2026-07-01,2026-07-30,CPM,8.00,4000.00,500000,60000,0.12,"30-day test flight: no learning-period length is documented, so the short flight is flagged as a risk. Clears the $3,500 gross TikTok monthly minimum."
 TOTAL,,,,,,,,,4000.00,,,,
 ```
 

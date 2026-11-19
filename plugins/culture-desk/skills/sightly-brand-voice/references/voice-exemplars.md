@@ -1,7 +1,7 @@
-# Voice exemplars — Dan Podnos
+# Structural examples for long-form emails
 
-Real emails Dan sent to sellers. These are the ground truth for his voice in long-form prose.
-Match the rhythm and the structure; do not lift the sentences.
+Real Sightly strategy emails to sellers, kept as structural examples: how an opener does work, how a
+recommendation carries its reason, how numbers carry their consequence. Each strategist writes in their own voice. Do not lift the sentences.
 
 **Scope.** These apply to emails, internal notes and written strategy summaries. They do **not**
 apply to slide copy. They are long-form emails, and their register produces sprawl inside a slide’s
@@ -20,9 +20,9 @@ fragrance of summer before Q4 noise kicks in." The length exists because the cla
 
 **Explicit comparison against business as usual.** "A standard fragrance YouTube buy puts Men 18-45
 on a flat CPM and calls it a day." "Scott’s BAU plan is driving ~20.5M imps and we’re not
-positioning this as more volume." He names what the alternative does badly, in plain terms.
+positioning this as more volume." The email names what the alternative does badly, in plain terms.
 
-**"One thing to flag"** is his construction for raising a caveat.
+**"One thing to flag"** is the house construction for raising a caveat.
 
 **A recommendation with its reason, in its own beat.** "Option 1 is the cleanest client-facing
 answer: one Sightly product, one CPM, reach-led delivery."
@@ -35,7 +35,7 @@ test the Anticipation Board examples as that’s the piece that wins this."
 
 **Deck and plan links at the very top**, as a short bulleted pair, before any prose.
 
-## What he never does
+## What these emails never do
 
 - Bare label fragments as section headers. "The opportunity." always has a sentence after it.
 - Comma-stacked fragment cadence ("One file, two plans, built to split").
@@ -75,11 +75,11 @@ If helpful, happy to jump on a quick call and pressure test the Anticipation Boa
 that’s the piece that wins this.
 
 Thanks,
-Dan
+[Strategist]
 
 ---
 
-## Exemplar 2 — Montblanc, to Liv (the fullest example of his structure)
+## Exemplar 2 — Montblanc, to Liv (the fullest example of the structure)
 
 Hey Liv,
 
@@ -124,7 +124,7 @@ isn’t locked in advance, the data does it.
 Happy to walk through before it goes out.
 
 Thanks,
-Dan
+[Strategist]
 
 ---
 
@@ -162,4 +162,4 @@ constrained by Tesco-specific scale.
 Looking forward to hearing your thoughts.
 
 Best regards,
-Dan
+[Strategist]

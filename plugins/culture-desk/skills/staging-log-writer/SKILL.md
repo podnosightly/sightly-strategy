@@ -121,7 +121,7 @@ If "how you handle X" is about how a skill or plugin behaves, it is not a stagin
 - It does not number, rename or modify entries already in the folder.
 - It does not invent the substance of an entry. If the correction isn't clear enough to write down, ask what changed rather than guessing.
 - It does not file conversation-specific working information. A rate confirmed for one deal is not a staging entry; a discovery that the recorded minimum is wrong is.
-- It does not file fixes to a skill's or plugin's behavior. Those go to the skill's owner, who edits the skill directly. For Dan's personal skills and the culture-desk-rfp plugin, that is Dan. Staging entries cover the knowledge base files and the project instructions.
+- It does not file fixes to a skill's or plugin's behavior. Those go to the skill's owner, who edits the skill directly. For the culture-desk plugin, that is its owner, Dan Podnos. Staging entries cover the knowledge base files and the project instructions.
 
 ---
 
