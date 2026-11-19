@@ -105,6 +105,8 @@ When a register entry is later overturned by the strategist, record the resoluti
 
 **3. Open flags.** Feasibility, compliance, timing, geo, budget, missing inputs. Anything raised and unresolved stays visible rather than being absorbed into the next step's assumptions.
 
+**Where working files live.** A Claude project has a size cap, so keep it for the files later steps read: the CONFIRMED lock file, the do-not-use register, the claim ledger and the current deliverables. Brand Mentality pull transcripts, Brand Profile snapshots and Agent prompt files go to the brand's subfolder of Strategy Team / Culture Desk / Project Archive in Google Drive (create the subfolder if it's missing). Record each pull's findings in the CONFIRMED file or the register, with the Drive file named as the source. When an engagement closes, move its superseded drafts to the same subfolder.
+
 ## The 9 steps and their skills
 
 Still nine. Step 3 has two halves because acquiring Brand Mentality data and interpreting it are different jobs with different skills — 3a gets the data, 3b reads it. Nothing downstream renumbers, so every "Step 7" and "Step 9" reference elsewhere in the plugin stays correct.

@@ -28,6 +28,8 @@ Confirm you have both inputs. If either is missing, ask for it rather than guess
 1. **Verified Brand Mentality data** — Brand Profile output, Anticipation Board moments and narratives, social/competitive intelligence, targeting exports, or similar. The strategist should confirm the data is verified. Once confirmed, its provenance is settled — do not re-audit it or hedge it later. What that confirmation does *not* settle is sufficiency: whether a given figure supports the specific claim you build on it. Test that once, here, before Phase 1 proceeds, and record anything that fails.
 2. **The client brief** — at minimum: client, brand(s), objective, budget, geos, flight dates, target audience, platform preferences or constraints, and any hard client asks (for example "self-service only", "anti-news", named partnerships).
 
+Pull transcripts and Brand Profile snapshots live in the brand's subfolder of Strategy Team / Culture Desk / Project Archive in Google Drive; read them from there or from the chat, and carry their findings into the lock file with the Drive file named as the source.
+
 If the Culture Desk knowledge base is available in the project, read these first; they govern everything downstream: `11_Reading_Brand_Mentality_Data.md`, `01_Hard_Rules.md`, `02_Voice_and_Terminology.md`, `07_Persona_Standards.md`, `08_Proof_Points_and_Battle_Cards.md`. The rules below are the working summary, but the knowledge base is the source of truth if it is present.
 
 ## Guardrails that apply the whole way through

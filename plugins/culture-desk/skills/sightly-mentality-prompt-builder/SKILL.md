@@ -242,7 +242,7 @@ Enforce what Part B asked for: every percentage with its denominator; every volu
 Describe the shape of the answer, not the component — "a ranked horizontal bar of theme volume," "the sentiment split as a donut with denominators" — and the agent renders it from real arrays. It won't draw data the tools didn't return. Full render set in manual Part 4.
 
 ### Step 7 — Hand off
-Pass the agent's outputs to `sightly-insights-to-action` for strategy synthesis, with `sightly-claim-integrity` run on them as they come in. Stop here; do not interpret.
+Pass the agent's outputs to `sightly-insights-to-action` for strategy synthesis, with `sightly-claim-integrity` run on them as they come in. Save the prompt and the returned transcript to the brand's subfolder of Strategy Team / Culture Desk / Project Archive in Google Drive. The Claude project has a size cap and keeps only the CONFIRMED file, register and ledger. Stop here; do not interpret.
 
 ## Hard limits (summary — full list in manual Part 6)
 
